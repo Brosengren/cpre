@@ -1,0 +1,8 @@
+vcom -work work singlecycle.vhd
+vsim -novopt work.singlecycle
+add wave sim:/singlecycle/*
+force -freeze sim:/singlecycle/PCCLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/singlecycle/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/singlecycle/RESET 1 0
+run 50 ns
+force -freeze sim:/singlecycle/RESET 0

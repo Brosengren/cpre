@@ -1,0 +1,83 @@
+# //  ModelSim SE-64 10.1c Jul 27 2012 Linux 3.10.0-327.28.3.el7.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+OpenFile control.vhd
+vcom -work work MEM_register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# ** Error: MEM_register.vhd(1): near ":": expecting ';'
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -work work MEM_register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MEM_register
+# -- Compiling architecture BV of MEM_register
+# ** Error: MEM_register.vhd(30): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Warning: [4] MEM_register.vhd(31): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Error: MEM_register.vhd(31): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: MEM_register.vhd(33): near "intoSignalReg": expecting BEGIN
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -work work MEM_register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MEM_register
+# -- Compiling architecture BV of MEM_register
+# ** Error: MEM_register.vhd(33): near "intoSignalReg": expecting BEGIN
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -work work MEM_register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MEM_register
+# -- Compiling architecture BV of MEM_register
+# ** Error: MEM_register.vhd(47): Illegal type conversion from Integer to ieee.std_logic_1164.STD_LOGIC (numeric to non-numeric).
+# ** Error: MEM_register.vhd(54): Cannot read output "MemOut_o".
+# ** Error: MEM_register.vhd(56): Symbol "reg1" has already been declared in this region.
+# ** Error: MEM_register.vhd(61): Cannot read output "RdRt_o".
+# ** Error: MEM_register.vhd(63): Symbol "reg1" has already been declared in this region.
+# ** Error: MEM_register.vhd(68): Cannot read output "ALUOut_o".
+# ** Error: MEM_register.vhd(70): VHDL Compiler exiting
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -work work MEM_register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MEM_register
+# -- Compiling architecture BV of MEM_register
+# ** Error: MEM_register.vhd(47): Illegal type conversion from Integer to ieee.std_logic_1164.STD_LOGIC (numeric to non-numeric).
+# ** Error: MEM_register.vhd(54): Cannot read output "MemOut_o".
+# ** Error: MEM_register.vhd(61): Cannot read output "RdRt_o".
+# ** Error: MEM_register.vhd(68): Cannot read output "ALUOut_o".
+# ** Error: MEM_register.vhd(70): VHDL Compiler exiting
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -work work MEM_register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MEM_register
+# -- Compiling architecture BV of MEM_register
+# ** Error: MEM_register.vhd(54): Cannot read output "MemOut_o".
+# ** Error: MEM_register.vhd(61): Cannot read output "RdRt_o".
+# ** Error: MEM_register.vhd(68): Cannot read output "ALUOut_o".
+# ** Error: MEM_register.vhd(70): VHDL Compiler exiting
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -work work MEM_register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MEM_register
+# -- Compiling architecture BV of MEM_register
