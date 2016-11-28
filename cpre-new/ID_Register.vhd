@@ -5,7 +5,7 @@ entity ID_Register is
   port( i_CLK     : in std_logic;
         i_RST     : in std_logic;
         i_WE      : in std_logic;
-        
+
         i_Branch  : in std_logic;
         i_RegDst  : in std_logic;
         i_Jump    : in std_logic;
@@ -17,7 +17,7 @@ entity ID_Register is
         i_Rt      : in std_logic_vector(4 downto 0);
         i_Rs      : in std_logic_vector(4 downto 0);
         i_PCplus4 : in std_logic_vector(31 downto 0);
-        
+
         o_Branch  : out std_logic;
         o_RegDst  : out std_logic;
         o_Jump    : out std_logic;
@@ -33,7 +33,7 @@ entity ID_Register is
 end ID_Register;
 
 architecture veeandbee of ID_Register is
-  
+
   component Nbit_reg is
   generic(N : integer := 32);
   port( i_CLK  : in std_logic;
@@ -44,14 +44,14 @@ architecture veeandbee of ID_Register is
   end component;
 
 begin
-  
+
   Branch_reg : Nbit_reg
     port MAP( i_CLK => i_CLK,
               i_RST => i_RST,
               i_WE  => i_WE,
               i_D   => i_Branch,
               o_Q   => o_Branch);
-              
+
   RegDst_reg : Nbit_reg
     port MAP( i_CLK => i_CLK,
               i_RST => i_RST,
@@ -65,33 +65,62 @@ begin
               i_WE  => i_WE,
               i_D   => i_Jump,
               o_Q   => o_Jump);
-              
+
   JR_reg : Nbit_reg
     port MAP( i_CLK => i_CLK,
               i_RST => i_RST,
               i_WE  => i_WE,
               i_D   => i_JR,
               o_Q   => o_JR);
-              
+
   EqNe_reg : Nbit_reg
     port MAP( i_CLK => i_CLK,
               i_RST => i_RST,
               i_WE  => i_WE,
               i_D   => i_EqNe,
               o_Q   => o_EqNe);
-              
+
   LtGt_reg : Nbit_reg
     port MAP( i_CLK => i_CLK,
               i_RST => i_RST,
               i_WE  => i_WE,
               i_D   => i_LtGt,
               o_Q   => o_LtGt);
-              
+
   LSSigned_reg : Nbit_reg
     port MAP( i_CLK => i_CLK,
               i_RST => i_RST,
               i_WE  => i_WE,
               i_D   => i_LSSigned,
               o_Q   => o_LSSigned);
-                                            
+
+  ALUOp_reg : Nbit_reg
+    port MAP( i_CLK => i_CLK,
+              i_RST => i_RST,
+              i_WE  => i_WE,
+              i_D   => i_ALUOp,
+              o_Q   => o_ALUOp);
+
+  Rt_reg : Nbit_reg
+    port MAP( i_CLK => i_CLK,
+              i_RST => i_RST,
+              i_WE  => i_WE,
+              i_D   => i_Rt,
+              o_Q   => o_Rt);
+
+  Rs_reg : Nbit_reg
+    port MAP( i_CLK => i_CLK,
+              i_RST => i_RST,
+              i_WE  => i_WE,
+              i_D   => i_Rs,
+              o_Q   => o_Rs);
+
+  PCplus4_reg : Nbit_reg
+    port MAP( i_CLK => i_CLK,
+              i_RST => i_RST,
+              i_WE  => i_WE,
+              i_D   => i_PCplus4,
+              o_Q   => o_PCplus4);
+
+
 end veeandbee;
