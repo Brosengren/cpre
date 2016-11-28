@@ -159,8 +159,11 @@ architecture BV of pipeline is
 	signal s33, s34, s35, s36, s37, s38, s39, s40	: std_logic_vector(31 downto 0);
 	signal s41, s42, s43, s44, s45, s46, s47, s48	: std_logic_vector(31 downto 0);
 	signal s49, s50, s51, s52, s53, s54, s55, s56	: std_logic_vector(31 downto 0);
+	signal s57, s58, s59, s60, s61, s62, s63, s64	: std_logic_vector(31 downto 0);
+
 	signal sup : std_logic_vector(4 downto 0);
-	signal regDst, jump, jr, branch, memWrite, regWrite, link, numOrZero, eqne, gtlt, shiftlog, shiftdir, zero, lssigned : std_logic;
+	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero	: std_logic; 
+	signal shiftlog, shiftdir, zero, lssigned, eqne, gtlt, link : std_logic;
 	signal data2reg, ALUSrc, shiftSrc, lssize : std_logic_vector(1 downto 0);
 	signal ALUOp : std_logic_vector(4 downto 0);
 	signal garbage1 : std_logic;
@@ -168,7 +171,7 @@ architecture BV of pipeline is
 	signal in2ls1 : std_logic_vector(31 downto 0);
 	signal intomux1, intomux2, intomux3, intomux4 : std_logic_vector(31 downto 0);
 
-
+	begin 
 
 
 
