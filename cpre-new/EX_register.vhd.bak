@@ -13,7 +13,7 @@ entity EX_register is
 			MemWr_o		: out std_logic;
 			MemSign_o	: out std_logic;
 			MemHW_o : out std_logic;
-			MemByte_o : out std_logic
+			MemByte_o : out std_logic;
 
 		);
 end EX_register;

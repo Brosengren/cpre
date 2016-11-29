@@ -133,3 +133,63 @@ vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-ne
 # -- Loading package NUMERIC_STD
 # -- Compiling entity tb_pipelineregs
 # -- Compiling architecture behavior of tb_pipelineregs
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/EX_register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity EX_register
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/EX_register.vhd(18): near ")": expecting FUNCTION or PROCEDURE or IMPURE or PURE
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ID_Register
+# -- Compiling architecture veeandbee of ID_Register
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(111): Cannot drive signal 'i_Data2Reg' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(112): Cannot drive signal 'i_MemWrite' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(113): Cannot drive signal 'i_ALUSrc' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(114): Cannot drive signal 'i_RegWrite' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(115): Cannot drive signal 'i_Link' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(116): Cannot drive signal 'i_ShiftSrc' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(117): Cannot drive signal 'i_numorzero' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(118): Cannot drive signal 'i_shiftLog' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(119): Cannot drive signal 'i_shiftDir' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(120): Cannot drive signal 'i_LSSize' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(122): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ID_Register
+# -- Compiling architecture veeandbee of ID_Register
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(111): Cannot drive signal 'i_Data2Reg' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(112): Cannot drive signal 'i_MemWrite' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(113): Cannot drive signal 'i_ALUSrc' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(114): Cannot drive signal 'i_RegWrite' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(115): Cannot drive signal 'i_Link' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(116): Cannot drive signal 'i_ShiftSrc' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(117): Cannot drive signal 'i_numorzero' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(118): Cannot drive signal 'i_shiftLog' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(119): Cannot drive signal 'i_shiftDir' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(120): Cannot drive signal 'i_LSSize' of mode IN.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(122): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ID_Register
+# -- Compiling architecture veeandbee of ID_Register
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity pipeline
+# -- Compiling architecture BV of pipeline
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(249): (vcom-1294) Declaration with designator "s33" already exists in this region.
+# ** =====> Prior declaration of "s33" is at /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(248).
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(270): VHDL Compiler exiting
