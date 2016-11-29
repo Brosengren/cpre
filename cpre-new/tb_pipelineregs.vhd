@@ -11,47 +11,77 @@ end tb_pipelineregs;
 
 architecture behavior of tb_pipelineregs is
 
-  component IF_Register2 is
+component IF_Register2 is
   port( i_CLK     : in std_logic;
         i_RST     : in std_logic;
         i_WE      : in std_logic;
+
         i_instr   : in std_logic_vector(31 downto 0);
         i_PCplus4 : in std_logic_vector(31 downto 0);
+
         o_instr   : out std_logic_vector(31 downto 0);
-        o_PCplus4 : out std_logic_vector(31 downto 0)
-        );
-  end component;
+        o_PCplus4 : out std_logic_vector(31 downto 0));
+end component;
 
-  entity ID_Register is
-    port( i_CLK     : in std_logic;
-          i_RST     : in std_logic;
-          i_WE      : in std_logic;
+component ID_Register is
+  port( i_CLK     : in std_logic;
+        i_RST     : in std_logic;
+        i_WE      : in std_logic;
 
-          i_Branch  : in std_logic;
-          i_RegDst  : in std_logic;
-          i_Jump    : in std_logic;
-          i_JR      : in std_logic; --jump register instruction
-          i_EqNe    : in std_logic;
-          i_LtGt    : in std_logic;
-          i_LSSigned: in std_logic;
-          i_ALUOp   : in std_logic(4 downto 0);
-          i_Rt      : in std_logic_vector(4 downto 0);
-          i_Rs      : in std_logic_vector(4 downto 0);
-          i_PCplus4 : in std_logic_vector(31 downto 0);
+        i_Branch  : in std_logic;
+        i_RegDst  : in std_logic;
+        i_Jump    : in std_logic;
+        i_JR      : in std_logic; --jump register instruction
+        i_EqNe    : in std_logic;
+        i_LtGt    : in std_logic;
+        i_LSSigned: in std_logic;
+        i_ALUOp   : in std_logic(4 downto 0);
+        i_Rt      : in std_logic_vector(4 downto 0);
+        i_Rs      : in std_logic_vector(4 downto 0);
+        i_PCplus4 : in std_logic_vector(31 downto 0);
 
-          o_Branch  : out std_logic;
-          o_RegDst  : out std_logic;
-          o_Jump    : out std_logic;
-          o_JR      : out std_logic; --jump register instruction
-          o_EqNe    : out std_logic;
-          o_LtGt    : out std_logic;
-          o_LSSigned: out std_logic;
-          o_ALUOp   : out std_logic(4 downto 0);
-          o_Rt      : out std_logic_vector(4 downto 0);
-          o_Rs      : out std_logic_vector(4 downto 0);
-          o_PCplus4 : out std_logic_vector(31 downto 0);
-          );
-  end ID_Register;
+        o_Branch  : out std_logic;
+        o_RegDst  : out std_logic;
+        o_Jump    : out std_logic;
+        o_JR      : out std_logic; --jump register instruction
+        o_EqNe    : out std_logic;
+        o_LtGt    : out std_logic;
+        o_LSSigned: out std_logic;
+        o_ALUOp   : out std_logic(4 downto 0);
+        o_Rt      : out std_logic_vector(4 downto 0);
+        o_Rs      : out std_logic_vector(4 downto 0);
+        o_PCplus4 : out std_logic_vector(31 downto 0));
+		end component;
+
+component EX_register is
+	port(	CLK		: in std_logic;
+			Reset	: in std_logic;
+
+			MemWr 	: in std_logic;
+			MemSign	: in std_logic;
+			MemHW	: in std_logic;
+			MemByte	: in std_logic;
+
+			MemWr_o		: out std_logic;
+			MemSign_o	: out std_logic;
+			MemHW_o : out std_logic;
+			MemByte_o : out std_logic);
+end component;
+
+component MEM_register is
+	port( CLK       : in std_logic;
+				Reset     : in std_logic;
+				Data2Reg  : in std_logic_vector(1 downto 0);
+				RegWrite  : in std_logic;
+				MemOut    : in std_logic_vector(31 downto 0);
+				RdRt      : in std_logic_vector(31 downto 0);
+				AluOut    : in std_logic_vector(31 downto 0);
+				Data2Reg_o : out std_logic_vector(1 downto 0);
+				RegWrite_o : out std_logic;
+				MemOut_o   : out std_logic_vector(31 downto 0);
+				RdRt_o     : out std_logic_vector(31 downto 0);
+				ALUOut_o   : out std_logic_vector(31 downto 0));
+		end component;
 
   constant cCLK_PER  : time := gCLK_HPER * 2;
 
