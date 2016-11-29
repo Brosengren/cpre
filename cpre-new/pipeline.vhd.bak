@@ -23,7 +23,6 @@ component ID_Register is
   port( i_CLK     : in std_logic;
         i_RST     : in std_logic;
         i_WE      : in std_logic;
-
         i_Branch  : in std_logic;
         i_RegDst  : in std_logic;
         i_Jump    : in std_logic;
@@ -35,7 +34,16 @@ component ID_Register is
         i_Rt      : in std_logic_vector(4 downto 0);
         i_Rs      : in std_logic_vector(4 downto 0);
         i_PCplus4 : in std_logic_vector(31 downto 0);
-
+				i_Data2Reg: in std_logic_vector(1 downto 0);
+				i_MemWrite: in std_logic;
+				i_ALUSrc  : in std_logic_vector(1 downto 0);
+				i_RegWrite: in std_logic_vector(1 downto 0);
+				i_Link    : in std_logic;
+				i_ShiftSrc: in std_logic_vector(1 downto 0);
+				i_numorzero: in std_logic;
+				i_shiftLog: in std_logic;
+				i_shiftDir: in std_logic;
+				i_LSSize  : in std_logic_vector(1 downto 0);
         o_Branch  : out std_logic;
         o_RegDst  : out std_logic;
         o_Jump    : out std_logic;
@@ -46,8 +54,18 @@ component ID_Register is
         o_ALUOp   : out std_logic_vector(4 downto 0);
         o_Rt      : out std_logic_vector(4 downto 0);
         o_Rs      : out std_logic_vector(4 downto 0);
-        o_PCplus4 : out std_logic_vector(31 downto 0));
-		end component;
+        o_PCplus4 : out std_logic_vector(31 downto 0);
+				o_Data2Reg: out std_logic_vector(1 downto 0);
+				o_MemWrite: out std_logic;
+				o_ALUSrc  : out std_logic_vector(1 downto 0);
+				o_RegWrite: out std_logic_vector(1 downto 0);
+				o_Link    : out std_logic;
+				o_ShiftSrc: out std_logic_vector(1 downto 0);
+				o_numorzero: out std_logic;
+				o_shiftLog: out std_logic;
+				o_shiftDir: out std_logic;
+				o_LSSize  : out std_logic_vector(1 downto 0));
+end component;
 
 component EX_register is
 	port(	CLK		: in std_logic;

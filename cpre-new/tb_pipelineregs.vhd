@@ -27,7 +27,6 @@ component ID_Register is
   port( i_CLK     : in std_logic;
         i_RST     : in std_logic;
         i_WE      : in std_logic;
-
         i_Branch  : in std_logic;
         i_RegDst  : in std_logic;
         i_Jump    : in std_logic;
@@ -39,7 +38,16 @@ component ID_Register is
         i_Rt      : in std_logic_vector(4 downto 0);
         i_Rs      : in std_logic_vector(4 downto 0);
         i_PCplus4 : in std_logic_vector(31 downto 0);
-
+				i_Data2Reg: in std_logic_vector(1 downto 0);
+				i_MemWrite: in std_logic;
+				i_ALUSrc  : in std_logic_vector(1 downto 0);
+				i_RegWrite: in std_logic;
+				i_Link    : in std_logic;
+				i_ShiftSrc: in std_logic_vector(1 downto 0);
+				i_numorzero: in std_logic;
+				i_shiftLog: in std_logic;
+				i_shiftDir: in std_logic;
+				i_LSSize  : in std_logic_vector(1 downto 0);
         o_Branch  : out std_logic;
         o_RegDst  : out std_logic;
         o_Jump    : out std_logic;
@@ -50,8 +58,18 @@ component ID_Register is
         o_ALUOp   : out std_logic_vector(4 downto 0);
         o_Rt      : out std_logic_vector(4 downto 0);
         o_Rs      : out std_logic_vector(4 downto 0);
-        o_PCplus4 : out std_logic_vector(31 downto 0));
-		end component;
+        o_PCplus4 : out std_logic_vector(31 downto 0);
+				o_Data2Reg: out std_logic_vector(1 downto 0);
+				o_MemWrite: out std_logic;
+				o_ALUSrc  : out std_logic_vector(1 downto 0);
+				o_RegWrite: out std_logic;
+				o_Link    : out std_logic;
+				o_ShiftSrc: out std_logic_vector(1 downto 0);
+				o_numorzero: out std_logic;
+				o_shiftLog: out std_logic;
+				o_shiftDir: out std_logic;
+				o_LSSize  : out std_logic_vector(1 downto 0));
+end component;
 
 component EX_register is
 	port(	CLK		: in std_logic;
@@ -105,6 +123,16 @@ component MEM_register is
   signal ID_i_Rt, ID_o_Rt : std_logic_vector(4 downto 0);
   signal ID_i_Rs, ID_o_Rs : std_logic_vector(4 downto 0);
   signal ID_i_PCplus4, ID_o_PCplus4 : std_logic_vector(31 downto 0);
+  signal ID_i_Data2Reg, ID_o_Data2Reg : std_logic_vector(1 downto 0);
+	signal ID_i_MemWrite, ID_o_MemWrite : std_logic;
+	signal ID_i_ALUSrc, ID_o_ALUSrc : std_logic_vector(1 downto 0);
+  signal ID_i_RegWrite, ID_o_RegWrite : std_logic;
+  signal ID_i_Link, ID_o_Link       : std_logic;
+  signal ID_i_ShiftSrc, ID_o_ShiftSrc : std_logic_vector(1 downto 0);
+  signal ID_i_numorzero, ID_o_numorzero :std_logic;
+  signal ID_i_shiftLog, ID_o_shiftLog : std_logic;
+  signal ID_i_shiftDir, ID_o_shiftDir : std_logic;
+  signal ID_i_LSSize, ID_o_LSSize : std_logic_vector (1 downto 0);
   
   --EX signals
   signal EX_RST: std_logic;
@@ -147,6 +175,16 @@ begin
               i_Rt       => ID_i_Rt,
               i_Rs       => ID_i_Rs,
               i_PCplus4  => ID_i_PCplus4,
+              i_Data2Reg => ID_i_Data2Reg,
+              i_MemWrite => ID_i_MemWrite,
+              i_ALUSrc   => ID_i_ALUSrc,
+              i_RegWrite => ID_i_RegWrite,
+              i_Link     => ID_i_Link,
+              i_ShiftSrc => ID_i_ShiftSrc,
+              i_numorzero=> ID_i_numorzero,
+              i_shiftLog => ID_i_shiftLog,
+              i_shiftDir => ID_i_shiftDir,
+              i_LSSize   => ID_i_LSSize,
               o_Branch   => ID_o_Branch,
               o_RegDst   => ID_o_RegDst,
               o_Jump     => ID_o_Jump,
@@ -157,7 +195,18 @@ begin
               o_ALUOp    => ID_o_ALUOp,
               o_Rt       => ID_o_Rt,
               o_Rs       => ID_o_Rs,
-              o_PCplus4  => ID_o_PCplus4);
+              o_PCplus4  => ID_o_PCplus4,
+              o_Data2Reg => ID_o_Data2Reg,
+              o_MemWrite => ID_o_MemWrite,
+              o_ALUSrc   => ID_o_ALUSrc,
+              o_RegWrite => ID_o_RegWrite,
+              o_Link     => ID_o_Link,
+              o_ShiftSrc => ID_o_ShiftSrc,
+              o_numorzero=> ID_o_numorzero,
+              o_shiftLog => ID_o_shiftLog,
+              o_shiftDir => ID_o_shiftDir,
+              o_LSSize   => ID_o_LSSize
+              );
               
   testEX: EX_Register
       port map( CLK       => s_CLK,

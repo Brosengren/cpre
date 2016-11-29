@@ -37,7 +37,7 @@ component ID_Register is
 				i_Data2Reg: in std_logic_vector(1 downto 0);
 				i_MemWrite: in std_logic;
 				i_ALUSrc  : in std_logic_vector(1 downto 0);
-				i_RegWrite: in std_logic_vector(1 downto 0);
+				i_RegWrite: in std_logic;
 				i_Link    : in std_logic;
 				i_ShiftSrc: in std_logic_vector(1 downto 0);
 				i_numorzero: in std_logic;
@@ -58,7 +58,7 @@ component ID_Register is
 				o_Data2Reg: out std_logic_vector(1 downto 0);
 				o_MemWrite: out std_logic;
 				o_ALUSrc  : out std_logic_vector(1 downto 0);
-				o_RegWrite: out std_logic_vector(1 downto 0);
+				o_RegWrite: out std_logic;
 				o_Link    : out std_logic;
 				o_ShiftSrc: out std_logic_vector(1 downto 0);
 				o_numorzero: out std_logic;

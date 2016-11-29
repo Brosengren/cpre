@@ -20,7 +20,7 @@ entity ID_Register is
 				i_Data2Reg: in std_logic_vector(1 downto 0);
 				i_MemWrite: in std_logic;
 				i_ALUSrc  : in std_logic_vector(1 downto 0);
-				i_RegWrite: in std_logic_vector(1 downto 0);
+				i_RegWrite: in std_logic;
 				i_Link    : in std_logic;
 				i_ShiftSrc: in std_logic_vector(1 downto 0);
 				i_numorzero: in std_logic;
@@ -43,7 +43,7 @@ entity ID_Register is
 				o_Data2Reg: out std_logic_vector(1 downto 0);
 				o_MemWrite: out std_logic;
 				o_ALUSrc  : out std_logic_vector(1 downto 0);
-				o_RegWrite: out std_logic_vector(1 downto 0);
+				o_RegWrite: out std_logic;
 				o_Link    : out std_logic;
 				o_ShiftSrc: out std_logic_vector(1 downto 0);
 				o_numorzero: out std_logic;
@@ -82,7 +82,7 @@ begin
 	tempSignalIn(55 downto 54) <= i_Data2Reg;
 	tempSignalIn(56) <= i_MemWrite;
 	tempSignalIn(58 downto 57) <= i_ALUSrc;
-	tempSignalIn(60 downto 59) <= i_RegWrite;
+	tempSignalIn(60) <= i_RegWrite; --skipping bit 59 because i accidentally made RegWrite 2 bits at first
 	tempSignalIn(61) <= i_Link;
 	tempSignalIn(63 downto 62) <= i_ShiftSrc;
 	tempSignalIn(64) <= i_numorzero;
@@ -111,7 +111,7 @@ begin
 	o_Data2Reg <= tempSignalOut(55 downto 54);
 	o_MemWrite <= tempSignalOut(56);
 	o_ALUSrc   <= tempSignalOut(58 downto 57);
-	o_RegWrite <= tempSignalOut(60 downto 59);
+	o_RegWrite <= tempSignalOut(60);
 	o_Link     <= tempSignalOut(61);
 	o_ShiftSrc <= tempSignalOut(63 downto 62);
 	o_numorzero<= tempSignalOut(64);

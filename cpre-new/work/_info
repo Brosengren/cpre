@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 d/home/valvarez/cpre381/ProjectC/cpre/cpre-new
 Eid_register
-Z1 w1480448234
+Z1 w1480448625
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z4 d/home/valvarez/cpre381/ProjectC/cpre/cpre-new
@@ -12,23 +12,23 @@ Z5 8/home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
 Z6 F/home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
 l0
 L4
-V;@l31QzkV^iR_1L2oFf[Q2
+Va3LW2MY9Tk940f=UjH8ge2
 Z7 OL;C;10.1c;51
 32
-Z8 !s108 1480448236.356431
+Z8 !s108 1480448627.034226
 Z9 !s90 -reportprogress|300|-work|work|/home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd|
 Z10 !s107 /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd|
 Z11 o-work work
 Z12 tExplicit 1
-!s100 b7SDKbN6>[UWI[LklfXHJ2
+!s100 a[FbFfcLogSJzY>PE?`_o2
 !i10b 1
 Aveeandbee
 R2
 R3
-DEx4 work 11 id_register 0 22 ;@l31QzkV^iR_1L2oFf[Q2
+DEx4 work 11 id_register 0 22 a3LW2MY9Tk940f=UjH8ge2
 l69
 L55
-VOBYAM]j>oPNR?FEk`NFIb1
+VcoS6V8gEBNG0H0oDK`6a61
 R7
 32
 R8
@@ -36,7 +36,7 @@ R9
 R10
 R11
 R12
-!s100 `g0<^46;YAZKjbN@MD^[43
+!s100 ^00Le6P7G25]DY^IU2B@82
 !i10b 1
 Eif_register2
 Z13 w1480444426
@@ -109,7 +109,7 @@ R12
 !s100 M?eWb<<MohjKY<OMeF_Tf0
 !i10b 1
 Epipeline
-w1480448275
+w1480448537
 R2
 R3
 R4
@@ -118,17 +118,17 @@ F/home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
 l0
 L4
 VaTj[KH>Fe?0CYHN;05NOZ2
-!s100 CMmBYg0GVTUJD=XEK199E3
 R7
 32
-!i10b 1
-!s108 1480448279.398713
-!s90 -reportprogress|300|-work|work|/home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd|
-!s107 /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd|
 R11
 R12
+!s100 CMmBYg0GVTUJD=XEK199E3
+!i10b 1
+!s108 1480448630.115694
+!s90 -reportprogress|300|-work|work|/home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd|
+!s107 /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd|
 Etb_pipelineregs
-Z24 w1480446994
+Z24 w1480449024
 Z25 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 R2
 R3
@@ -138,29 +138,29 @@ Z27 F/home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
 l0
 L8
 VZnA;Te3<OS6LcMKIzee<g2
+!s100 3m_^KCbSA8IUBf@N^ijYT3
 R7
 32
-Z28 !s108 1480446999.742696
+!i10b 1
+Z28 !s108 1480449026.029369
 Z29 !s90 -reportprogress|300|-work|work|/home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd|
 Z30 !s107 /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd|
 R11
 R12
-!s100 3m_^KCbSA8IUBf@N^ijYT3
-!i10b 1
 Abehavior
 R25
 R2
 R3
-DEx4 work 15 tb_pipelineregs 0 22 ZnA;Te3<OS6LcMKIzee<g2
-l124
+Z31 DEx4 work 15 tb_pipelineregs 0 22 ZnA;Te3<OS6LcMKIzee<g2
+l152
 L12
-Vi@mD74VW=E?Xj6U?3NCj30
+VD^0WRm=EJ33kIPkAIT41;0
+!s100 SPldZE_mVaCDlY=ib>SLC3
 R7
 32
+!i10b 1
 R28
 R29
 R30
 R11
 R12
-!s100 Hh7=WVRZ6k<2BH7[CA0z]0
-!i10b 1
