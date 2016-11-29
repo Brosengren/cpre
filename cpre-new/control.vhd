@@ -3,6 +3,7 @@ use IEEE.std_logic_1164.all;
 
 entity control is
   port( I 			 : in std_logic_vector(31 downto 0);
+		hazard		: in std_logic;
         LSSigned  : out std_logic;
 				RegDst   : out std_logic;
 				Jump		 : out std_logic;
@@ -104,6 +105,13 @@ architecture BRADENV of control is
 			else
 				output <= output3;
 
+			end if;
+		end process;
+
+		hazarddetection : process(hazard)
+		begin
+			if(hazard = '1')then
+				output <= "000000000000000000000000000";
 			end if;
 		end process;
 
