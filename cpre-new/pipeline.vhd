@@ -16,8 +16,7 @@ component IF_Register2 is
         i_PCplus4 : in std_logic_vector(31 downto 0);
 
         o_instr   : out std_logic_vector(31 downto 0);
-        o_PCplus4 : out std_logic_vector(31 downto 0)
-        );
+        o_PCplus4 : out std_logic_vector(31 downto 0));
 end component;
 
 component ID_Register is
@@ -47,8 +46,7 @@ component ID_Register is
         o_ALUOp   : out std_logic(4 downto 0);
         o_Rt      : out std_logic_vector(4 downto 0);
         o_Rs      : out std_logic_vector(4 downto 0);
-        o_PCplus4 : out std_logic_vector(31 downto 0);
-        );
+        o_PCplus4 : out std_logic_vector(31 downto 0));
 		end component;
 
 component EX_register is
@@ -63,9 +61,7 @@ component EX_register is
 			MemWr_o		: out std_logic;
 			MemSign_o	: out std_logic;
 			MemHW_o : out std_logic;
-			MemByte_o : out std_logic;
-
-		);
+			MemByte_o : out std_logic);
 end component;
 
 component MEM_register is
