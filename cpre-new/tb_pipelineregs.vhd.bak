@@ -199,10 +199,8 @@ begin
   P_TB: process
   begin
 
-    IF_RST  <= '1';
-    ID_RST  <= '1';
-    EX_RST  <= '1';
-    MEM_RST <= '1';
+    IF_RST <= '1';
+    ID_RST <= '1';
     wait for cCLK_PER;
 
     IF_i_instr <= x"10101010";

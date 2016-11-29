@@ -31,7 +31,7 @@ component ID_Register is
         i_EqNe    : in std_logic;
         i_LtGt    : in std_logic;
         i_LSSigned: in std_logic;
-        i_ALUOp   : in std_logic_vector(4 downto 0);
+        i_ALUOp   : in std_logic(4 downto 0);
         i_Rt      : in std_logic_vector(4 downto 0);
         i_Rs      : in std_logic_vector(4 downto 0);
         i_PCplus4 : in std_logic_vector(31 downto 0);
@@ -43,7 +43,7 @@ component ID_Register is
         o_EqNe    : out std_logic;
         o_LtGt    : out std_logic;
         o_LSSigned: out std_logic;
-        o_ALUOp   : out std_logic_vector(4 downto 0);
+        o_ALUOp   : out std_logic(4 downto 0);
         o_Rt      : out std_logic_vector(4 downto 0);
         o_Rs      : out std_logic_vector(4 downto 0);
         o_PCplus4 : out std_logic_vector(31 downto 0));

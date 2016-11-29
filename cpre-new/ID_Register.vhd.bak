@@ -28,7 +28,8 @@ entity ID_Register is
         o_ALUOp   : out std_logic_vector(4 downto 0);
         o_Rt      : out std_logic_vector(4 downto 0);
         o_Rs      : out std_logic_vector(4 downto 0);
-        o_PCplus4 : out std_logic_vector(31 downto 0));
+        o_PCplus4 : out std_logic_vector(31 downto 0);
+        );
 end ID_Register;
 
 architecture veeandbee of ID_Register is
