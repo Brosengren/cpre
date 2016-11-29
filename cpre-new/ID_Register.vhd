@@ -35,7 +35,7 @@ end ID_Register;
 architecture veeandbee of ID_Register is
 
   component Nbit_reg is
-  generic(N : integer := 53);
+  generic(N : integer := 54);
   port( i_CLK  : in std_logic;
         i_RST  : in std_logic;
         i_WE   : in std_logic;
@@ -43,8 +43,8 @@ architecture veeandbee of ID_Register is
         o_Q    : out std_logic_vector(N-1 downto 0));
   end component;
 
-  signal tempSignalIn : std_logic_vector(31 downto 0) := (others => '0');
-  signal tempSignalOut : std_logic_vector(31 downto 0) := (others => '0');
+  signal tempSignalIn : std_logic_vector(53 downto 0) := (others => '0');
+  signal tempSignalOut : std_logic_vector(53 downto 0) := (others => '0');
 
 begin
 
