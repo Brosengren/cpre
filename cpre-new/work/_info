@@ -1,0 +1,166 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/valvarez/cpre381/ProjectC/cpre/cpre-new
+Eid_register
+Z1 w1480448625
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 d/home/valvarez/cpre381/ProjectC/cpre/cpre-new
+Z5 8/home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+Z6 F/home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+l0
+L4
+Va3LW2MY9Tk940f=UjH8ge2
+Z7 OL;C;10.1c;51
+32
+Z8 !s108 1480448627.034226
+Z9 !s90 -reportprogress|300|-work|work|/home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd|
+Z10 !s107 /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd|
+Z11 o-work work
+Z12 tExplicit 1
+!s100 a[FbFfcLogSJzY>PE?`_o2
+!i10b 1
+Aveeandbee
+R2
+R3
+DEx4 work 11 id_register 0 22 a3LW2MY9Tk940f=UjH8ge2
+l69
+L55
+VcoS6V8gEBNG0H0oDK`6a61
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 ^00Le6P7G25]DY^IU2B@82
+!i10b 1
+Eif_register2
+Z13 w1480444426
+R2
+R3
+R4
+Z14 8/home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd
+Z15 F/home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd
+l0
+L4
+VgmLjz5KCkTCED_G`eCmc[0
+R7
+32
+Z16 !s108 1480444620.804536
+Z17 !s90 -reportprogress|300|-work|work|/home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd|
+Z18 !s107 /home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd|
+R11
+R12
+!s100 5X@9PdVM7HT[MA@GhdclZ1
+!i10b 1
+Aveeandbee
+R2
+R3
+DEx4 work 12 if_register2 0 22 gmLjz5KCkTCED_G`eCmc[0
+l31
+L17
+VO>kZg3HXTo^3Ma7T>B:9=0
+R7
+32
+R16
+R17
+R18
+R11
+R12
+!s100 eSgQZF<_]MnD8:N>_:PB[3
+!i10b 1
+Emem_register
+R13
+R2
+R3
+R4
+Z19 8/home/valvarez/cpre381/ProjectC/cpre/cpre-new/MEM_register.vhd
+Z20 F/home/valvarez/cpre381/ProjectC/cpre/cpre-new/MEM_register.vhd
+l0
+L4
+Vdgle_418O_ZRJhbjl^H?n0
+R7
+32
+Z21 !s108 1480444613.427828
+Z22 !s90 -reportprogress|300|-work|work|/home/valvarez/cpre381/ProjectC/cpre/cpre-new/MEM_register.vhd|
+Z23 !s107 /home/valvarez/cpre381/ProjectC/cpre/cpre-new/MEM_register.vhd|
+R11
+R12
+!s100 Aa6Ei;Z:;0@CLdRRo=`b@3
+!i10b 1
+Abv
+R2
+R3
+DEx4 work 12 mem_register 0 22 dgle_418O_ZRJhbjl^H?n0
+l33
+L19
+Vd>]M1;91QIS>bMlGW>cHQ3
+R7
+32
+R21
+R22
+R23
+R11
+R12
+!s100 M?eWb<<MohjKY<OMeF_Tf0
+!i10b 1
+Epipeline
+w1480448537
+R2
+R3
+R4
+8/home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
+F/home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
+l0
+L4
+VaTj[KH>Fe?0CYHN;05NOZ2
+R7
+32
+R11
+R12
+!s100 CMmBYg0GVTUJD=XEK199E3
+!i10b 1
+!s108 1480448630.115694
+!s90 -reportprogress|300|-work|work|/home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd|
+!s107 /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd|
+Etb_pipelineregs
+Z24 w1480449024
+Z25 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R2
+R3
+R4
+Z26 8/home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+Z27 F/home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+l0
+L8
+VZnA;Te3<OS6LcMKIzee<g2
+!s100 3m_^KCbSA8IUBf@N^ijYT3
+R7
+32
+!i10b 1
+Z28 !s108 1480449026.029369
+Z29 !s90 -reportprogress|300|-work|work|/home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd|
+Z30 !s107 /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd|
+R11
+R12
+Abehavior
+R25
+R2
+R3
+Z31 DEx4 work 15 tb_pipelineregs 0 22 ZnA;Te3<OS6LcMKIzee<g2
+l152
+L12
+VD^0WRm=EJ33kIPkAIT41;0
+!s100 SPldZE_mVaCDlY=ib>SLC3
+R7
+32
+!i10b 1
+R28
+R29
+R30
+R11
+R12

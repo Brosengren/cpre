@@ -82,7 +82,7 @@ begin
 	tempSignalIn(55 downto 54) <= i_Data2Reg;
 	tempSignalIn(56) <= i_MemWrite;
 	tempSignalIn(58 downto 57) <= i_ALUSrc;
-	tempSignalIn(60) <= i_RegWrite; --skipping bit 59 because i accidentally made RegWrite 2 bits at first
+	tempSignalIn(60) <= i_RegWrite;
 	tempSignalIn(61) <= i_Link;
 	tempSignalIn(63 downto 62) <= i_ShiftSrc;
 	tempSignalIn(64) <= i_numorzero;

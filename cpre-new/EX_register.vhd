@@ -9,9 +9,11 @@ entity EX_register is
 			LSSigned	: in std_logic;
 			LSSize	: in std_logic_vector(1 downto 0);
 
+
 			memWrite_o		: out std_logic;
 			LSSigned_o	: out std_logic;
 			LSSize_o : out std_logic_vector(1 downto 0);
+
 
 		);
 end EX_register;
