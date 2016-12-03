@@ -16,17 +16,36 @@ entity forwardingunit is
         );
 end forwardingunit;
 
-architecture beevee of pipeline is
+architecture beevee of forwardingunit is
 
-	component mux is
-		port( 	i_A : in std_logic;
-				i_B : in std_logic;
-				i_S : in std_logic;
-				o_F : out std_logic);
-		end component;
+	signal EX_hazardA : std_logic;
+	signal EX_hazardB : std_logic;
 
 	begin
 
+		EX_hazardA <= '0';
+		EX_hazardB <= '0';
 
+		--EX hazard
+    if ((EX_RegWrite = '1') and (not(EX_Rd = '0')) and (EX_Rd = ID_Rs)) then
+    	ForwardA <= "10";
+			EX_hazardA <= '1';
+		end if;
+
+		if ((EX_RegWrite = '1') and (not(EX_Rd = '0')) and (EX_Rd = ID_Rt)) then
+			ForwardB <= "10";
+			EX_hazardB <= '1';
+		end if;
+
+		--MEM hazard
+		if ((MEM_RegWrite = '1') and (not(MEM_Rd = '0')) and (MEM_Rd = ID_Rs))
+		and (EX_hazardA = '0') then
+			ForwardA <= "01";
+		end if;
+
+		if ((MEM_RegWrite = '1') and (not(MEM_Rd = '0'))	and (MEM_Rd = ID_Rt))
+		and (EX_hazardB = '0') then
+			ForwardB <= "01";
+		end if;
 
 end beevee;
