@@ -34,9 +34,15 @@ architecture BV of MEM_register is
   begin
   
   intoSignalReg(1 downto 0) <= Data2Reg;
+<<<<<<< HEAD
   intoSignalReg(2)          <= RegWrite;
   intoSignalReg(34 downto 3)<= MemOut;
   intoSignalReg(39 downto 35) <= RdRt;
+=======
+  intoSignalReg(2)          <= RegWrite;
+  intoSignalReg(34 downto 3)<= MemOut;
+  intoSignalReg(39 downto 35) <= RdRt;
+>>>>>>> bb468a737d1fdaf0fd5474158ad8cbd83e2026ef
   intoSignalReg(71 downto 40) <= ALUOut;
   
   
@@ -48,9 +54,15 @@ architecture BV of MEM_register is
               o_Q   => outofSignalReg);
               
   Data2Reg_o <= outofSignalReg(1 downto 0);
+<<<<<<< HEAD
   RegWrite_o <= outofSignalReg(2);
   MemOut_o   <= outofSignalReg(34 downto 3);
   RdRt_o     <= outofSignalReg(39 downto 35);
+=======
+  RegWrite_o <= outofSignalReg(2);
+  MemOut_o   <= outofSignalReg(34 downto 3);
+  RdRt_o     <= outofSignalReg(39 downto 35);
+>>>>>>> bb468a737d1fdaf0fd5474158ad8cbd83e2026ef
   ALUOut_o   <= outofSignalReg(71 downto 40);
   
 
