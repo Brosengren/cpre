@@ -14,9 +14,6 @@ entity ID_Register is
         i_LtGt    : in std_logic;
         i_LSSigned: in std_logic;
         i_ALUOp   : in std_logic_vector(4 downto 0);
-        i_Rt_addr1 : in std_logic_vector(4 downto 0);
-        i_Rs_addr : in std_logic_vector(4 downto 0);
-        i_PCplus4 : in std_logic_vector(31 downto 0);
 		i_Data2Reg: in std_logic_vector(1 downto 0);
 		i_MemWrite: in std_logic;
 		i_ALUSrc  : in std_logic_vector(1 downto 0);
@@ -27,11 +24,14 @@ entity ID_Register is
 		i_shiftLog: in std_logic;
 		i_shiftDir: in std_logic;
 		i_LSSize  : in std_logic_vector(1 downto 0);
+		
 		i_RegRead1: in std_logic_vector(31 downto 0);
 		i_RegRead2: in std_logic_vector(31 downto 0);
-		i_SEimm   : in std_logic_vector(31 downto 0);
 		i_Rd_addr : in std_logic_vector(4 downto 0);
 		i_Rt_addr2 : in std_logic_vector(4 downto 0);
+		i_Rt_addr1 : in std_logic_vector(4 downto 0);
+    i_Rs_addr : in std_logic_vector(4 downto 0);
+    i_PCplus4 : in std_logic_vector(31 downto 0);
 	
 
         o_Branch  : out std_logic;
@@ -42,9 +42,6 @@ entity ID_Register is
         o_LtGt    : out std_logic;
         o_LSSigned: out std_logic;
         o_ALUOp   : out std_logic_vector(4 downto 0);
-        o_Rt_addr1  : out std_logic_vector(4 downto 0);
-        o_Rs_addr   : out std_logic_vector(4 downto 0);
-        o_PCplus4 : out std_logic_vector(31 downto 0);
 		o_Data2Reg: out std_logic_vector(1 downto 0);
 		o_MemWrite: out std_logic;
 		o_ALUSrc  : out std_logic_vector(1 downto 0);
@@ -55,11 +52,14 @@ entity ID_Register is
 		o_shiftLog: out std_logic;
 		o_shiftDir: out std_logic;
 		o_LSSize  : out std_logic_vector(1 downto 0);
+		
 		o_RegRead1: out std_logic_vector(31 downto 0);
 		o_RegRead2: out std_logic_vector(31 downto 0);
-		o_SEimm   : out std_logic_vector(31 downto 0);
 		o_Rd_addr : out std_logic_vector(4 downto 0);
-		o_Rt_addr2 : out std_logic_vector(4 downto 0));
+		o_Rt_addr2 : out std_logic_vector(4 downto 0);
+		o_Rt_addr1  : out std_logic_vector(4 downto 0);
+    o_Rs_addr   : out std_logic_vector(4 downto 0);
+    o_PCplus4 : out std_logic_vector(31 downto 0));
 end ID_Register;
 
 architecture veeandbee of ID_Register is
@@ -101,7 +101,7 @@ begin
 	tempSignalIn(68 downto 67) <= i_LSSize;
 	tempSignalIn(100 downto 69) <= i_RegRead1;
 	tempSignalIn(132 downto 101) <= i_RegRead2;
-	tempSignalIn(164 downto 133) <= i_SEimm;
+	--tempSignalIn(164 downto 133) <= i_SEimm;
 	tempSignalIn(169 downto 165) <= i_Rd_addr;
 	tempSignalIn(174 downto 170) <= i_Rt_addr2;
 
@@ -135,7 +135,7 @@ begin
 	o_LSSize   <= tempSignalOut(68 downto 67);
 	o_RegRead1 <= tempSignalOut(100 downto 69);
 	o_RegRead2 <= tempSignalOut(132 downto 101);
-	o_SEimm   <= tempSignalOut(164 downto 133);
+	--o_SEimm   <= tempSignalOut(164 downto 133);
 	o_Rd_addr  <= tempSignalOut(169 downto 165);
 	o_Rt_addr2 <= tempSignalOut(174 downto 170);
 
