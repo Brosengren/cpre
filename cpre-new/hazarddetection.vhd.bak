@@ -15,11 +15,14 @@ architecture beevee of hazarddetection is
 	begin
 
   --Load-use hazard
+  process(ID_MemRead, ID_Rt, IF_Rs, IF_Rt)
+  begin
   if ( (ID_MemRead = '1')
   and ((ID_Rt = IF_Rs) or (ID_Rt = IF_Rt)) ) then
     Stall <= '1';
   else
     Stall <= '0';
   end if;
+  end process;
 
 end beevee;

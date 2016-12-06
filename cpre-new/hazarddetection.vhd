@@ -4,7 +4,7 @@ use IEEE.std_logic_1164.all;
 entity hazarddetection is
 	port( IF_Rs        : in std_logic_vector(4 downto 0);
 				IF_Rt        : in std_logic_vector(4 downto 0);
-				ID_MemRead   : in std_logic; --need to add this signal into IF and ID pipeline regs
+				ID_MemRead   : in std_logic; 
 				ID_Rt        : in std_logic_vector(4 downto 0);
         Stall        : out std_logic
         );
