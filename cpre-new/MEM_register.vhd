@@ -34,15 +34,9 @@ architecture BV of MEM_register is
   begin
   
   intoSignalReg(1 downto 0) <= Data2Reg;
-<<<<<<< HEAD
   intoSignalReg(2)          <= RegWrite;
   intoSignalReg(34 downto 3)<= MemOut;
   intoSignalReg(39 downto 35) <= RdRt;
-=======
-  intoSignalReg(2)          <= RegWrite;
-  intoSignalReg(34 downto 3)<= MemOut;
-  intoSignalReg(39 downto 35) <= RdRt;
->>>>>>> bb468a737d1fdaf0fd5474158ad8cbd83e2026ef
   intoSignalReg(71 downto 40) <= ALUOut;
   
   
