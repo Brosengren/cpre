@@ -8,13 +8,14 @@ entity EX_register is
 			memWrite 	: in std_logic;
 			LSSigned	: in std_logic;
 			LSSize	: in std_logic_vector(1 downto 0);
-
-
+			Data2Reg  : in std_logic_vector(1 downto 0);
+			RegWrite  : in std_logic;
+			
 			memWrite_o		: out std_logic;
 			LSSigned_o	: out std_logic;
 			LSSize_o : out std_logic_vector(1 downto 0);
-
-
+			Data2Reg_o : out std_logic_vector(1 downto 0);
+			RegWrite_o : out std_logic
 		);
 end EX_register;
 
@@ -36,18 +37,22 @@ begin
 
 tempSignalIn(0) <= memWrite;
 tempSignalIn(1) <= LSSigned;
-tempSignalIn(3 downto 0) <= LSSize;
+tempSignalIn(3 downto 2) <= LSSize;
+tempSignalIn(5 downto 4) <= Data2Reg;
+tempSignalIn(6) <= RegWrite;
 
 
 AllTheSignals : Nbit_reg
 	port MAP( i_CLK => CLK,
 						i_RST => Reset,
-						i_WE  => i_WE,
+						i_WE  => '1',
 						i_D   => tempSignalIn,
 						o_Q   => tempSignalOut);
 
-memWrite_o  		<= tempSignalOut(0);
+memWrite_o   <= tempSignalOut(0);
 LSSigned_o   <= tempSignalOut(1);
-LSSize_o  	  <= tempSignalOut(3 downto 2);
+LSSize_o  	 <= tempSignalOut(3 downto 2);
+Data2Reg_o   <= tempSignalOut(5 downto 4);
+RegWrite_o   <= tempSignalOut(6);
 
 end BV;
