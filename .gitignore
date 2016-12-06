@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+.DS_Store
+=======
 # Compiled source #
 ###################
 #*.com
@@ -39,3 +42,4 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+>>>>>>> bb468a737d1fdaf0fd5474158ad8cbd83e2026ef
