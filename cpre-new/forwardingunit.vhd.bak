@@ -52,7 +52,7 @@ architecture beevee of forwardingunit is
 		end if;
 		end process;
 
-		process(MEM_RegWrite, MEM_Rd, ID_Rt)
+		process(MEM_RegWrite, MEM_Rd, ID_Roperatort)
 		begin
 		if MEM_RegWrite = '1' and not(MEM_Rd = "00000") and MEM_Rd = ID_Rt
 		and (EX_hazardB = '0') then
