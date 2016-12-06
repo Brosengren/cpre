@@ -36,8 +36,8 @@ port( i_CLK  : in std_logic;
 			o_Q    : out std_logic_vector(N-1 downto 0));
 end component;
 
-signal tempSignalIn : std_logic_vector(31 downto 0) := (others => '0');
-signal tempSignalOut : std_logic_vector(31 downto 0) := (others => '0');
+signal tempSignalIn : std_logic_vector(75 downto 0) := (others => '0');
+signal tempSignalOut : std_logic_vector(75 downto 0) := (others => '0');
 
 begin
 

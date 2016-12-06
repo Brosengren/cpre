@@ -10,7 +10,7 @@ entity EX_register is
 			LSSize		: in std_logic_vector(1 downto 0);
 			Data2Reg  	: in std_logic_vector(1 downto 0);
 			RegWrite  	: in std_logic;
-			RdRt 		: in std_logic_vector(4 downto 0);
+			RdRt_addr	: in std_logic_vector(4 downto 0);
 			Rt   		: in std_logic_vector(31 downto 0);
 		    Data 		: in std_logic_vector(31 downto 0);
 			
@@ -19,7 +19,7 @@ entity EX_register is
 			LSSize_o 	: out std_logic_vector(1 downto 0);
 			Data2Reg_o 	: out std_logic_vector(1 downto 0);
 			RegWrite_o 	: out std_logic;
-			RdRt_o 		: out std_logic_vector(4 downto 0);
+			RdRt_addr_o 	: out std_logic_vector(4 downto 0);
 			Rt_o  		: out std_logic_vector(31 downto 0);
 			Data_o 		: out std_logic_vector(31 downto 0)
 		);
@@ -46,7 +46,7 @@ tempSignalIn(1) <= LSSigned;
 tempSignalIn(3 downto 2) <= LSSize;
 tempSignalIn(5 downto 4) <= Data2Reg;
 tempSignalIn(6) <= RegWrite;
-tempSignalIn(11 downto 7) <= RdRt;
+tempSignalIn(11 downto 7) <= RdRt_addr;
 tempSignalIn(43 downto 12) <= Rt;
 tempSignalIn(75 downto 44) <= Data;
 
@@ -63,7 +63,7 @@ LSSigned_o   <= tempSignalOut(1);
 LSSize_o  	 <= tempSignalOut(3 downto 2);
 Data2Reg_o   <= tempSignalOut(5 downto 4);
 RegWrite_o   <= tempSignalOut(6);
-RdRt_o       <= tempSignalOut(11 downto 7);
+RdRt_addr_o       <= tempSignalOut(11 downto 7);
 Rt_o         <= tempSignalOut(43 downto 12);
 Data_o		 <= tempSignalOut(75 downto 44);
 
