@@ -7,9 +7,27 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-<<<<<<< HEAD
-=======
-vlib work
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/forwardingunit.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity forwardingunit
+# -- Compiling architecture beevee of forwardingunit
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/branchLogic.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity branchLogic
+# -- Compiling architecture BV of branchLogic
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity pipeline
+# -- Compiling architecture BV of pipeline
 vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/MEM_register.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
@@ -17,6 +35,13 @@ vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-ne
 # -- Loading package std_logic_1164
 # -- Compiling entity MEM_register
 # -- Compiling architecture BV of MEM_register
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ID_Register
+# -- Compiling architecture veeandbee of ID_Register
 vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
@@ -24,22 +49,303 @@ vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-ne
 # -- Loading package std_logic_1164
 # -- Compiling entity IF_Register2
 # -- Compiling architecture veeandbee of IF_Register2
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/forwardingunit.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(16): Index constraint cannot be applied to non-array type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(28): Index constraint cannot be applied to non-array type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(32): near ")": expecting FUNCTION or PROCEDURE or IMPURE or PURE
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+# -- Compiling entity forwardingunit
+# -- Compiling architecture beevee of forwardingunit
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(32): near ")": expecting FUNCTION or PROCEDURE or IMPURE or PURE
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(201): (vcom-1484) Unknown formal identifier "i_Rt".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(202): (vcom-1484) Unknown formal identifier "i_Rs".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(222): (vcom-1484) Unknown formal identifier "o_Rt".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(223): (vcom-1484) Unknown formal identifier "o_Rs".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(240): (vcom-1484) Unknown formal identifier "MemWr".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(241): (vcom-1484) Unknown formal identifier "MemSign".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(242): (vcom-1484) Unknown formal identifier "MemHW".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(243): (vcom-1484) Unknown formal identifier "MemByte".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(244): (vcom-1484) Unknown formal identifier "MemWr_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(245): (vcom-1484) Unknown formal identifier "MemSign_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(246): (vcom-1484) Unknown formal identifier "MemHW_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(247): (vcom-1484) Unknown formal identifier "MemByte_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(255): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(293): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_RegRead1" has OPEN or no actual associated with it.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_RegRead2" has OPEN or no actual associated with it.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_SEimm" has OPEN or no actual associated with it.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_Rd_addr" has OPEN or no actual associated with it.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_Rt_addr2" has OPEN or no actual associated with it.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(240): (vcom-1484) Unknown formal identifier "MemWr".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(241): (vcom-1484) Unknown formal identifier "MemSign".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(242): (vcom-1484) Unknown formal identifier "MemHW".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(243): (vcom-1484) Unknown formal identifier "MemByte".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(244): (vcom-1484) Unknown formal identifier "MemWr_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(245): (vcom-1484) Unknown formal identifier "MemSign_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(246): (vcom-1484) Unknown formal identifier "MemHW_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(247): (vcom-1484) Unknown formal identifier "MemByte_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(255): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(293): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(212): (vcom-1136) Unknown identifier "ID_i_RegRead1".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(213): (vcom-1136) Unknown identifier "ID_i_RegRead2".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(214): (vcom-1136) Unknown identifier "ID_i_SEimm".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(215): (vcom-1136) Unknown identifier "ID_i_Rd_addr".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(216): (vcom-1136) Unknown identifier "ID_i_Rt_addr2".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(240): (vcom-1136) Unknown identifier "ID_o_RegRead1".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(241): (vcom-1136) Unknown identifier "ID_o_RegRead2".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(242): (vcom-1136) Unknown identifier "ID_o_SEimm".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(243): (vcom-1136) Unknown identifier "ID_o_Rd_addr".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(244): (vcom-1136) Unknown identifier "ID_o_Rt_addr2".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(253): (vcom-1484) Unknown formal identifier "MemWr".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(254): (vcom-1484) Unknown formal identifier "MemSign".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(255): (vcom-1484) Unknown formal identifier "MemHW".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(256): (vcom-1484) Unknown formal identifier "MemByte".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(257): (vcom-1484) Unknown formal identifier "MemWr_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(258): (vcom-1484) Unknown formal identifier "MemSign_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(259): (vcom-1484) Unknown formal identifier "MemHW_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1484) Unknown formal identifier "MemByte_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(268): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(273): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(306): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(222): (vcom-1136) Unknown identifier "ID_i_Rt".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(223): (vcom-1136) Unknown identifier "ID_i_Rs".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(250): (vcom-1136) Unknown identifier "ID_o_Rt".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(251): (vcom-1136) Unknown identifier "ID_o_Rs".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(258): (vcom-1484) Unknown formal identifier "MemWr".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(259): (vcom-1484) Unknown formal identifier "MemSign".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1484) Unknown formal identifier "MemHW".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(261): (vcom-1484) Unknown formal identifier "MemByte".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(262): (vcom-1484) Unknown formal identifier "MemWr_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(263): (vcom-1484) Unknown formal identifier "MemSign_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(264): (vcom-1484) Unknown formal identifier "MemHW_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(265): (vcom-1484) Unknown formal identifier "MemByte_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(273): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(278): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(311): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(258): (vcom-1484) Unknown formal identifier "MemWr".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(259): (vcom-1484) Unknown formal identifier "MemSign".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1484) Unknown formal identifier "MemHW".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(261): (vcom-1484) Unknown formal identifier "MemByte".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(262): (vcom-1484) Unknown formal identifier "MemWr_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(263): (vcom-1484) Unknown formal identifier "MemSign_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(264): (vcom-1484) Unknown formal identifier "MemHW_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(265): (vcom-1484) Unknown formal identifier "MemByte_o".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(273): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(278): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(311): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(266): near "_": expecting ',' or ')'
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(275): Statement cannot be labeled.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(281): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(286): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(281): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(286): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(280): (vcom-1136) Unknown identifier "EX_o_MemOut".
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(338): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): Length field for bit string literal is not defined until VHDL 2008.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): (vcom-1272) Length of expected is 32; length of actual is 0.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(338): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(336): near "'": syntax error
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(340): near "'": syntax error
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(364): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(340): near "'": syntax error
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(364): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+vsim work.tb_pipelineregs
+# vsim work.tb_pipelineregs 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd(41): (vopt-1127) Entity work.nbit_reg was not selected for default binding because it is out of date relative to dependency ieee.std_logic_1164. 
+# ** Warning: [1] /home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd(41): (vopt-3473) Component instance "AllTheSignals : Nbit_reg" is not bound.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(252): (vopt-1130) Port "i_SEimm" of entity "ID_Register" is not in the component being instantiated.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(65): Vopt Compiler exiting
+# Error loading design
 vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
@@ -47,219 +353,27 @@ vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-ne
 # -- Loading package std_logic_1164
 # -- Compiling entity ID_Register
 # -- Compiling architecture veeandbee of ID_Register
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity pipeline
-# -- Compiling architecture BV of pipeline
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(34): Index constraint cannot be applied to non-array type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(46): Index constraint cannot be applied to non-array type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(231): (vcom-1294) Declaration with designator "s33" already exists in this region.
-# ** =====> Prior declaration of "s33" is at /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(230).
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(252): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity pipeline
-# -- Compiling architecture BV of pipeline
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(231): (vcom-1294) Declaration with designator "s33" already exists in this region.
-# ** =====> Prior declaration of "s33" is at /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(230).
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(252): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(38): Index constraint cannot be applied to non-array type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(50): Index constraint cannot be applied to non-array type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(90): near "/": syntax error
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(94): near "/": syntax error
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(113): (vcom-1136) Unknown identifier "IF_i_instr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(115): (vcom-1136) Unknown identifier "IF_o_instr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(134): Illegal target for signal assignment.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(134): (vcom-1136) Unknown identifier "IF_i_instr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(137): Illegal target for signal assignment.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(137): (vcom-1136) Unknown identifier "IF_i_instr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(144): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(145): (vcom-1136) Unknown identifier "ID_o_PSplus4".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(161): Illegal target for signal assignment.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(161): (vcom-1136) Unknown identifier "s_RST".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(174): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(161): Illegal target for signal assignment.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(161): (vcom-1136) Unknown identifier "s_RST".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(174): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
+# -- Compiling entity IF_Register2
+# -- Compiling architecture veeandbee of IF_Register2
 vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/EX_register.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity EX_register
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/EX_register.vhd(18): near ")": expecting FUNCTION or PROCEDURE or IMPURE or PURE
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+# -- Compiling architecture BV of EX_register
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/MEM_register.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# -- Compiling architecture veeandbee of ID_Register
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(111): Cannot drive signal 'i_Data2Reg' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(112): Cannot drive signal 'i_MemWrite' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(113): Cannot drive signal 'i_ALUSrc' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(114): Cannot drive signal 'i_RegWrite' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(115): Cannot drive signal 'i_Link' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(116): Cannot drive signal 'i_ShiftSrc' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(117): Cannot drive signal 'i_numorzero' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(118): Cannot drive signal 'i_shiftLog' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(119): Cannot drive signal 'i_shiftDir' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(120): Cannot drive signal 'i_LSSize' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(122): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# -- Compiling architecture veeandbee of ID_Register
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(111): Cannot drive signal 'i_Data2Reg' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(112): Cannot drive signal 'i_MemWrite' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(113): Cannot drive signal 'i_ALUSrc' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(114): Cannot drive signal 'i_RegWrite' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(115): Cannot drive signal 'i_Link' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(116): Cannot drive signal 'i_ShiftSrc' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(117): Cannot drive signal 'i_numorzero' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(118): Cannot drive signal 'i_shiftLog' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(119): Cannot drive signal 'i_shiftDir' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(120): Cannot drive signal 'i_LSSize' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(122): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# -- Compiling architecture veeandbee of ID_Register
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity pipeline
-# -- Compiling architecture BV of pipeline
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(249): (vcom-1294) Declaration with designator "s33" already exists in this region.
-# ** =====> Prior declaration of "s33" is at /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(248).
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(270): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity pipeline
-# -- Compiling architecture BV of pipeline
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(249): (vcom-1294) Declaration with designator "s33" already exists in this region.
-# ** =====> Prior declaration of "s33" is at /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(248).
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(270): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# -- Compiling architecture veeandbee of ID_Register
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(85): Target type ieee.std_logic_1164.STD_ULOGIC in signal assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(111): Cannot drive signal 'i_Data2Reg' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(112): Cannot drive signal 'i_MemWrite' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(113): Cannot drive signal 'i_ALUSrc' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(114): Cannot drive signal 'i_RegWrite' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(114): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(115): Cannot drive signal 'i_Link' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(116): Cannot drive signal 'i_ShiftSrc' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(117): Cannot drive signal 'i_numorzero' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(118): Cannot drive signal 'i_shiftLog' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(119): Cannot drive signal 'i_shiftDir' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(120): Cannot drive signal 'i_LSSize' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(122): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# -- Compiling architecture veeandbee of ID_Register
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(111): Cannot drive signal 'i_Data2Reg' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(112): Cannot drive signal 'i_MemWrite' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(113): Cannot drive signal 'i_ALUSrc' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(114): Cannot drive signal 'i_RegWrite' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(115): Cannot drive signal 'i_Link' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(116): Cannot drive signal 'i_ShiftSrc' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(117): Cannot drive signal 'i_numorzero' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(118): Cannot drive signal 'i_shiftLog' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(119): Cannot drive signal 'i_shiftDir' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(120): Cannot drive signal 'i_LSSize' of mode IN.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(122): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# -- Compiling architecture veeandbee of ID_Register
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity pipeline
-# -- Compiling architecture BV of pipeline
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(249): (vcom-1294) Declaration with designator "s33" already exists in this region.
-# ** =====> Prior declaration of "s33" is at /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(248).
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd(270): VHDL Compiler exiting
+# -- Compiling entity MEM_register
+# -- Compiling architecture BV of MEM_register
 vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
@@ -268,17 +382,80 @@ vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-ne
 # -- Loading package NUMERIC_STD
 # -- Compiling entity tb_pipelineregs
 # -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_Data2Reg" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_MemWrite" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_ALUSrc" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_RegWrite" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_Link" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_ShiftSrc" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_numorzero" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_shiftLog" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_shiftDir" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(181): (vcom-1035) Formal port "i_LSSize" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(239): VHDL Compiler exiting
+vsim -novopt work.tb_pipelineregs
+# vsim -novopt work.tb_pipelineregs 
+# Loading std.standard
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_pipelineregs(behavior)
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.if_register2(veeandbee)
+# Loading work.if_register2(veeandbee)
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.nbit_reg(mixed)
+# ** Error: D:/cpre/cpre-new/Nbit_reg.vhd: This version of the compiler is incompatible with the library .dat file.
+# ** Error: D:/cpre/cpre-new/Nbit_reg.vhd(1): near "<byte 0x01>": illegal character found in source
+# ** Error: D:/cpre/cpre-new/Nbit_reg.vhd(1): near "pÊ": Identifier may not contain non-graphic character.
+# ** Error: D:/cpre/cpre-new/Nbit_reg.vhd(1): VHDL Compiler exiting
+# ** Error: /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+# ** Error: subinvocation of vcom failed; return status = 1.
+# ** Error: (vsim-3171) Could not find machine code for '/home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.nbit_reg(mixed)'.
+# No such file or directory. (errno = ENOENT)
+# Load interrupted
+# Error loading design
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/Nbit_reg.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Nbit_reg
+# -- Compiling architecture mixed of Nbit_reg
+vsim -novopt work.tb_pipelineregs
+# vsim -novopt work.tb_pipelineregs 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_pipelineregs(behavior)
+# Loading work.if_register2(veeandbee)
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.nbit_reg(mixed)
+# Loading work.nbit_reg(mixed)
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.id_register(veeandbee)
+# Loading work.id_register(veeandbee)
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.ex_register(bv)
+# Loading work.ex_register(bv)
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.mem_register(bv)
+# Loading work.mem_register(bv)
+add wave -position insertpoint  \
+sim:/tb_pipelineregs/testEX/CLK \
+sim:/tb_pipelineregs/testEX/Reset \
+sim:/tb_pipelineregs/testEX/memWrite \
+sim:/tb_pipelineregs/testEX/LSSigned \
+sim:/tb_pipelineregs/testEX/LSSize \
+sim:/tb_pipelineregs/testEX/Data2Reg \
+sim:/tb_pipelineregs/testEX/RegWrite \
+sim:/tb_pipelineregs/testEX/RdRt_addr \
+sim:/tb_pipelineregs/testEX/Rt \
+sim:/tb_pipelineregs/testEX/Data \
+sim:/tb_pipelineregs/testEX/memWrite_o \
+sim:/tb_pipelineregs/testEX/LSSigned_o \
+sim:/tb_pipelineregs/testEX/LSSize_o \
+sim:/tb_pipelineregs/testEX/Data2Reg_o \
+sim:/tb_pipelineregs/testEX/RegWrite_o \
+sim:/tb_pipelineregs/testEX/RdRt_addr_o \
+sim:/tb_pipelineregs/testEX/Rt_o \
+sim:/tb_pipelineregs/testEX/Data_o \
+sim:/tb_pipelineregs/testEX/tempSignalIn \
+sim:/tb_pipelineregs/testEX/tempSignalOut
+run
+run
+run
+run
+run
+run
+run
+run
+run
 vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
@@ -287,18 +464,149 @@ vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-ne
 # -- Loading package NUMERIC_STD
 # -- Compiling entity tb_pipelineregs
 # -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(188): (vcom-1136) Unknown identifier "ID_o_Data2Reg".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_Data2Reg" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_MemWrite" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_ALUSrc" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_RegWrite" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_Link" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_ShiftSrc" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_numorzero" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_shiftLog" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_shiftDir" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(198): (vcom-1035) Formal port "i_LSSize" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(256): VHDL Compiler exiting
+vsim -novopt work.tb_pipelineregs
+# vsim -novopt work.tb_pipelineregs 
+# Loading std.standard
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_pipelineregs(behavior)
+# Loading work.if_register2(veeandbee)
+# Loading work.nbit_reg(mixed)
+# Loading work.id_register(veeandbee)
+# Loading work.ex_register(bv)
+# Loading work.mem_register(bv)
+add wave -position insertpoint  \
+sim:/tb_pipelineregs/gCLK_HPER \
+sim:/tb_pipelineregs/s_CLK \
+sim:/tb_pipelineregs/IF_RST \
+sim:/tb_pipelineregs/IF_WE \
+sim:/tb_pipelineregs/IF_i_instr \
+sim:/tb_pipelineregs/IF_o_instr \
+sim:/tb_pipelineregs/IF_i_PCplus4 \
+sim:/tb_pipelineregs/IF_o_PCplus4 \
+sim:/tb_pipelineregs/ID_RST \
+sim:/tb_pipelineregs/ID_WE \
+sim:/tb_pipelineregs/ID_i_Branch \
+sim:/tb_pipelineregs/ID_o_Branch \
+sim:/tb_pipelineregs/ID_i_RegDst \
+sim:/tb_pipelineregs/ID_o_RegDst \
+sim:/tb_pipelineregs/ID_i_Jump \
+sim:/tb_pipelineregs/ID_o_Jump \
+sim:/tb_pipelineregs/ID_i_JR \
+sim:/tb_pipelineregs/ID_o_JR \
+sim:/tb_pipelineregs/ID_i_EqNe \
+sim:/tb_pipelineregs/ID_o_EqNe \
+sim:/tb_pipelineregs/ID_i_LtGt \
+sim:/tb_pipelineregs/ID_o_LtGt \
+sim:/tb_pipelineregs/ID_i_LSSigned \
+sim:/tb_pipelineregs/ID_o_LSSigned \
+sim:/tb_pipelineregs/ID_i_ALUOp \
+sim:/tb_pipelineregs/ID_o_ALUOp \
+sim:/tb_pipelineregs/ID_i_Data2Reg \
+sim:/tb_pipelineregs/ID_o_Data2Reg \
+sim:/tb_pipelineregs/ID_i_MemWrite \
+sim:/tb_pipelineregs/ID_o_MemWrite \
+sim:/tb_pipelineregs/ID_i_ALUSrc \
+sim:/tb_pipelineregs/ID_o_ALUSrc \
+sim:/tb_pipelineregs/ID_i_RegWrite \
+sim:/tb_pipelineregs/ID_o_RegWrite \
+sim:/tb_pipelineregs/ID_i_Link \
+sim:/tb_pipelineregs/ID_o_Link \
+sim:/tb_pipelineregs/ID_i_ShiftSrc \
+sim:/tb_pipelineregs/ID_o_ShiftSrc \
+sim:/tb_pipelineregs/ID_i_numorzero \
+sim:/tb_pipelineregs/ID_o_numorzero \
+sim:/tb_pipelineregs/ID_i_shiftLog \
+sim:/tb_pipelineregs/ID_o_shiftLog \
+sim:/tb_pipelineregs/ID_i_shiftDir \
+sim:/tb_pipelineregs/ID_o_shiftDir \
+sim:/tb_pipelineregs/ID_i_LSSize \
+sim:/tb_pipelineregs/ID_o_LSSize \
+sim:/tb_pipelineregs/ID_i_Rt_addr1 \
+sim:/tb_pipelineregs/ID_o_Rt_addr1 \
+sim:/tb_pipelineregs/ID_i_Rs_addr \
+sim:/tb_pipelineregs/ID_o_Rs_addr \
+sim:/tb_pipelineregs/ID_i_PCplus4 \
+sim:/tb_pipelineregs/ID_o_PCplus4 \
+sim:/tb_pipelineregs/ID_i_RegRead1 \
+sim:/tb_pipelineregs/ID_o_RegRead1 \
+sim:/tb_pipelineregs/ID_i_RegRead2 \
+sim:/tb_pipelineregs/ID_o_RegRead2 \
+sim:/tb_pipelineregs/ID_i_Rt_addr2 \
+sim:/tb_pipelineregs/ID_o_Rt_addr2 \
+sim:/tb_pipelineregs/ID_i_Rd_addr \
+sim:/tb_pipelineregs/ID_o_Rd_addr \
+sim:/tb_pipelineregs/EX_RST \
+sim:/tb_pipelineregs/EX_i_MemWr \
+sim:/tb_pipelineregs/EX_o_MemWr \
+sim:/tb_pipelineregs/EX_i_LSSigned \
+sim:/tb_pipelineregs/EX_o_LSSigned \
+sim:/tb_pipelineregs/EX_i_LSSize \
+sim:/tb_pipelineregs/EX_o_LSSize \
+sim:/tb_pipelineregs/EX_i_Data2Reg \
+sim:/tb_pipelineregs/EX_o_Data2Reg \
+sim:/tb_pipelineregs/EX_i_RegWrite \
+sim:/tb_pipelineregs/EX_o_RegWrite \
+sim:/tb_pipelineregs/EX_i_RdRt_addr \
+sim:/tb_pipelineregs/EX_o_RdRt_addr \
+sim:/tb_pipelineregs/EX_i_Rt \
+sim:/tb_pipelineregs/EX_o_Rt \
+sim:/tb_pipelineregs/EX_i_Data \
+sim:/tb_pipelineregs/EX_o_Data \
+sim:/tb_pipelineregs/MEM_RST \
+sim:/tb_pipelineregs/MEM_i_Data2Reg \
+sim:/tb_pipelineregs/MEM_o_Data2Reg \
+sim:/tb_pipelineregs/MEM_i_RegWrite \
+sim:/tb_pipelineregs/MEM_o_RegWrite \
+sim:/tb_pipelineregs/MEM_i_MemOut \
+sim:/tb_pipelineregs/MEM_o_MemOut \
+sim:/tb_pipelineregs/MEM_i_RdRt \
+sim:/tb_pipelineregs/MEM_o_RdRt \
+sim:/tb_pipelineregs/MEM_i_ALUOut \
+sim:/tb_pipelineregs/MEM_o_ALUOut \
+sim:/tb_pipelineregs/cCLK_PER
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
@@ -307,17 +615,113 @@ vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-ne
 # -- Loading package NUMERIC_STD
 # -- Compiling entity tb_pipelineregs
 # -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_Data2Reg" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_MemWrite" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_ALUSrc" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_RegWrite" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_Link" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_ShiftSrc" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_numorzero" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_shiftLog" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_shiftDir" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(199): (vcom-1035) Formal port "i_LSSize" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(257): VHDL Compiler exiting
+vsim -novopt work.tb_pipelineregs
+# vsim -novopt work.tb_pipelineregs 
+# Loading std.standard
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_pipelineregs(behavior)
+# Loading work.if_register2(veeandbee)
+# Loading work.nbit_reg(mixed)
+# Loading work.id_register(veeandbee)
+# Loading work.ex_register(bv)
+# Loading work.mem_register(bv)
+add wave -position insertpoint  \
+sim:/tb_pipelineregs/gCLK_HPER \
+sim:/tb_pipelineregs/s_CLK \
+sim:/tb_pipelineregs/IF_RST \
+sim:/tb_pipelineregs/IF_WE \
+sim:/tb_pipelineregs/IF_i_instr \
+sim:/tb_pipelineregs/IF_o_instr \
+sim:/tb_pipelineregs/IF_i_PCplus4 \
+sim:/tb_pipelineregs/IF_o_PCplus4 \
+sim:/tb_pipelineregs/ID_RST \
+sim:/tb_pipelineregs/ID_WE \
+sim:/tb_pipelineregs/ID_i_Branch \
+sim:/tb_pipelineregs/ID_o_Branch \
+sim:/tb_pipelineregs/ID_i_RegDst \
+sim:/tb_pipelineregs/ID_o_RegDst \
+sim:/tb_pipelineregs/ID_i_Jump \
+sim:/tb_pipelineregs/ID_o_Jump \
+sim:/tb_pipelineregs/ID_i_JR \
+sim:/tb_pipelineregs/ID_o_JR \
+sim:/tb_pipelineregs/ID_i_EqNe \
+sim:/tb_pipelineregs/ID_o_EqNe \
+sim:/tb_pipelineregs/ID_i_LtGt \
+sim:/tb_pipelineregs/ID_o_LtGt \
+sim:/tb_pipelineregs/ID_i_LSSigned \
+sim:/tb_pipelineregs/ID_o_LSSigned \
+sim:/tb_pipelineregs/ID_i_ALUOp \
+sim:/tb_pipelineregs/ID_o_ALUOp \
+sim:/tb_pipelineregs/ID_i_Data2Reg \
+sim:/tb_pipelineregs/ID_o_Data2Reg \
+sim:/tb_pipelineregs/ID_i_MemWrite \
+sim:/tb_pipelineregs/ID_o_MemWrite \
+sim:/tb_pipelineregs/ID_i_ALUSrc \
+sim:/tb_pipelineregs/ID_o_ALUSrc \
+sim:/tb_pipelineregs/ID_i_RegWrite \
+sim:/tb_pipelineregs/ID_o_RegWrite \
+sim:/tb_pipelineregs/ID_i_Link \
+sim:/tb_pipelineregs/ID_o_Link \
+sim:/tb_pipelineregs/ID_i_ShiftSrc \
+sim:/tb_pipelineregs/ID_o_ShiftSrc \
+sim:/tb_pipelineregs/ID_i_numorzero \
+sim:/tb_pipelineregs/ID_o_numorzero \
+sim:/tb_pipelineregs/ID_i_shiftLog \
+sim:/tb_pipelineregs/ID_o_shiftLog \
+sim:/tb_pipelineregs/ID_i_shiftDir \
+sim:/tb_pipelineregs/ID_o_shiftDir \
+sim:/tb_pipelineregs/ID_i_LSSize \
+sim:/tb_pipelineregs/ID_o_LSSize \
+sim:/tb_pipelineregs/ID_i_Rt_addr1 \
+sim:/tb_pipelineregs/ID_o_Rt_addr1 \
+sim:/tb_pipelineregs/ID_i_Rs_addr \
+sim:/tb_pipelineregs/ID_o_Rs_addr \
+sim:/tb_pipelineregs/ID_i_PCplus4 \
+sim:/tb_pipelineregs/ID_o_PCplus4 \
+sim:/tb_pipelineregs/ID_i_RegRead1 \
+sim:/tb_pipelineregs/ID_o_RegRead1 \
+sim:/tb_pipelineregs/ID_i_RegRead2 \
+sim:/tb_pipelineregs/ID_o_RegRead2 \
+sim:/tb_pipelineregs/ID_i_Rt_addr2 \
+sim:/tb_pipelineregs/ID_o_Rt_addr2 \
+sim:/tb_pipelineregs/ID_i_Rd_addr \
+sim:/tb_pipelineregs/ID_o_Rd_addr \
+sim:/tb_pipelineregs/EX_RST \
+sim:/tb_pipelineregs/EX_i_MemWr \
+sim:/tb_pipelineregs/EX_o_MemWr \
+sim:/tb_pipelineregs/EX_i_LSSigned \
+sim:/tb_pipelineregs/EX_o_LSSigned \
+sim:/tb_pipelineregs/EX_i_LSSize \
+sim:/tb_pipelineregs/EX_o_LSSize \
+sim:/tb_pipelineregs/EX_i_Data2Reg \
+sim:/tb_pipelineregs/EX_o_Data2Reg \
+sim:/tb_pipelineregs/EX_i_RegWrite \
+sim:/tb_pipelineregs/EX_o_RegWrite \
+sim:/tb_pipelineregs/EX_i_RdRt_addr \
+sim:/tb_pipelineregs/EX_o_RdRt_addr \
+sim:/tb_pipelineregs/EX_i_Rt \
+sim:/tb_pipelineregs/EX_o_Rt \
+sim:/tb_pipelineregs/EX_i_Data \
+sim:/tb_pipelineregs/EX_o_Data \
+sim:/tb_pipelineregs/MEM_RST \
+sim:/tb_pipelineregs/MEM_i_Data2Reg \
+sim:/tb_pipelineregs/MEM_o_Data2Reg \
+sim:/tb_pipelineregs/MEM_i_RegWrite \
+sim:/tb_pipelineregs/MEM_o_RegWrite \
+sim:/tb_pipelineregs/MEM_i_MemOut \
+sim:/tb_pipelineregs/MEM_o_MemOut \
+sim:/tb_pipelineregs/MEM_i_RdRt \
+sim:/tb_pipelineregs/MEM_o_RdRt \
+sim:/tb_pipelineregs/MEM_i_ALUOut \
+sim:/tb_pipelineregs/MEM_o_ALUOut \
+sim:/tb_pipelineregs/cCLK_PER
+run
+run
+run
+run
 vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
@@ -326,4 +730,397 @@ vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-ne
 # -- Loading package NUMERIC_STD
 # -- Compiling entity tb_pipelineregs
 # -- Compiling architecture behavior of tb_pipelineregs
->>>>>>> df40ff42f104462c6884d12338780683bbff0966
+vsim -novopt work.tb_pipelineregs
+# vsim -novopt work.tb_pipelineregs 
+# Loading std.standard
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_pipelineregs(behavior)
+# Loading work.if_register2(veeandbee)
+# Loading work.nbit_reg(mixed)
+# Loading work.id_register(veeandbee)
+# Loading work.ex_register(bv)
+# Loading work.mem_register(bv)
+add wave -position insertpoint  \
+sim:/tb_pipelineregs/gCLK_HPER \
+sim:/tb_pipelineregs/s_CLK \
+sim:/tb_pipelineregs/IF_RST \
+sim:/tb_pipelineregs/IF_WE \
+sim:/tb_pipelineregs/IF_i_instr \
+sim:/tb_pipelineregs/IF_o_instr \
+sim:/tb_pipelineregs/IF_i_PCplus4 \
+sim:/tb_pipelineregs/IF_o_PCplus4 \
+sim:/tb_pipelineregs/ID_RST \
+sim:/tb_pipelineregs/ID_WE \
+sim:/tb_pipelineregs/ID_i_Branch \
+sim:/tb_pipelineregs/ID_o_Branch \
+sim:/tb_pipelineregs/ID_i_RegDst \
+sim:/tb_pipelineregs/ID_o_RegDst \
+sim:/tb_pipelineregs/ID_i_Jump \
+sim:/tb_pipelineregs/ID_o_Jump \
+sim:/tb_pipelineregs/ID_i_JR \
+sim:/tb_pipelineregs/ID_o_JR \
+sim:/tb_pipelineregs/ID_i_EqNe \
+sim:/tb_pipelineregs/ID_o_EqNe \
+sim:/tb_pipelineregs/ID_i_LtGt \
+sim:/tb_pipelineregs/ID_o_LtGt \
+sim:/tb_pipelineregs/ID_i_LSSigned \
+sim:/tb_pipelineregs/ID_o_LSSigned \
+sim:/tb_pipelineregs/ID_i_ALUOp \
+sim:/tb_pipelineregs/ID_o_ALUOp \
+sim:/tb_pipelineregs/ID_i_Data2Reg \
+sim:/tb_pipelineregs/ID_o_Data2Reg \
+sim:/tb_pipelineregs/ID_i_MemWrite \
+sim:/tb_pipelineregs/ID_o_MemWrite \
+sim:/tb_pipelineregs/ID_i_ALUSrc \
+sim:/tb_pipelineregs/ID_o_ALUSrc \
+sim:/tb_pipelineregs/ID_i_RegWrite \
+sim:/tb_pipelineregs/ID_o_RegWrite \
+sim:/tb_pipelineregs/ID_i_Link \
+sim:/tb_pipelineregs/ID_o_Link \
+sim:/tb_pipelineregs/ID_i_ShiftSrc \
+sim:/tb_pipelineregs/ID_o_ShiftSrc \
+sim:/tb_pipelineregs/ID_i_numorzero \
+sim:/tb_pipelineregs/ID_o_numorzero \
+sim:/tb_pipelineregs/ID_i_shiftLog \
+sim:/tb_pipelineregs/ID_o_shiftLog \
+sim:/tb_pipelineregs/ID_i_shiftDir \
+sim:/tb_pipelineregs/ID_o_shiftDir \
+sim:/tb_pipelineregs/ID_i_LSSize \
+sim:/tb_pipelineregs/ID_o_LSSize \
+sim:/tb_pipelineregs/ID_i_Rt_addr1 \
+sim:/tb_pipelineregs/ID_o_Rt_addr1 \
+sim:/tb_pipelineregs/ID_i_Rs_addr \
+sim:/tb_pipelineregs/ID_o_Rs_addr \
+sim:/tb_pipelineregs/ID_i_PCplus4 \
+sim:/tb_pipelineregs/ID_o_PCplus4 \
+sim:/tb_pipelineregs/ID_i_RegRead1 \
+sim:/tb_pipelineregs/ID_o_RegRead1 \
+sim:/tb_pipelineregs/ID_i_RegRead2 \
+sim:/tb_pipelineregs/ID_o_RegRead2 \
+sim:/tb_pipelineregs/ID_i_Rt_addr2 \
+sim:/tb_pipelineregs/ID_o_Rt_addr2 \
+sim:/tb_pipelineregs/ID_i_Rd_addr \
+sim:/tb_pipelineregs/ID_o_Rd_addr \
+sim:/tb_pipelineregs/EX_RST \
+sim:/tb_pipelineregs/EX_i_MemWr \
+sim:/tb_pipelineregs/EX_o_MemWr \
+sim:/tb_pipelineregs/EX_i_LSSigned \
+sim:/tb_pipelineregs/EX_o_LSSigned \
+sim:/tb_pipelineregs/EX_i_LSSize \
+sim:/tb_pipelineregs/EX_o_LSSize \
+sim:/tb_pipelineregs/EX_i_Data2Reg \
+sim:/tb_pipelineregs/EX_o_Data2Reg \
+sim:/tb_pipelineregs/EX_i_RegWrite \
+sim:/tb_pipelineregs/EX_o_RegWrite \
+sim:/tb_pipelineregs/EX_i_RdRt_addr \
+sim:/tb_pipelineregs/EX_o_RdRt_addr \
+sim:/tb_pipelineregs/EX_i_Rt \
+sim:/tb_pipelineregs/EX_o_Rt \
+sim:/tb_pipelineregs/EX_i_Data \
+sim:/tb_pipelineregs/EX_o_Data \
+sim:/tb_pipelineregs/MEM_RST \
+sim:/tb_pipelineregs/MEM_i_Data2Reg \
+sim:/tb_pipelineregs/MEM_o_Data2Reg \
+sim:/tb_pipelineregs/MEM_i_RegWrite \
+sim:/tb_pipelineregs/MEM_o_RegWrite \
+sim:/tb_pipelineregs/MEM_i_MemOut \
+sim:/tb_pipelineregs/MEM_o_MemOut \
+sim:/tb_pipelineregs/MEM_i_RdRt \
+sim:/tb_pipelineregs/MEM_o_RdRt \
+sim:/tb_pipelineregs/MEM_i_ALUOut \
+sim:/tb_pipelineregs/MEM_o_ALUOut \
+sim:/tb_pipelineregs/cCLK_PER
+run
+run
+run
+vsim -novopt work.if_register2
+# vsim -novopt work.if_register2 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.if_register2(veeandbee)
+# Loading work.nbit_reg(mixed)
+add wave -position insertpoint  \
+sim:/if_register2/i_CLK \
+sim:/if_register2/i_RST \
+sim:/if_register2/i_WE \
+sim:/if_register2/i_instr \
+sim:/if_register2/i_PCplus4 \
+sim:/if_register2/o_instr \
+sim:/if_register2/o_PCplus4 \
+sim:/if_register2/tempSignalIn \
+sim:/if_register2/tempSignalOut
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+vsim -novopt work.tb_pipelineregs
+# vsim -novopt work.tb_pipelineregs 
+# Loading std.standard
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_pipelineregs(behavior)
+# Loading work.if_register2(veeandbee)
+# Loading work.nbit_reg(mixed)
+# Loading work.id_register(veeandbee)
+# Loading work.ex_register(bv)
+# Loading work.mem_register(bv)
+add wave -position insertpoint  \
+sim:/tb_pipelineregs/gCLK_HPER \
+sim:/tb_pipelineregs/s_CLK \
+sim:/tb_pipelineregs/IF_RST \
+sim:/tb_pipelineregs/IF_WE \
+sim:/tb_pipelineregs/IF_i_instr \
+sim:/tb_pipelineregs/IF_o_instr \
+sim:/tb_pipelineregs/IF_i_PCplus4 \
+sim:/tb_pipelineregs/IF_o_PCplus4 \
+sim:/tb_pipelineregs/ID_RST \
+sim:/tb_pipelineregs/ID_WE \
+sim:/tb_pipelineregs/ID_i_Branch \
+sim:/tb_pipelineregs/ID_o_Branch \
+sim:/tb_pipelineregs/ID_i_RegDst \
+sim:/tb_pipelineregs/ID_o_RegDst \
+sim:/tb_pipelineregs/ID_i_Jump \
+sim:/tb_pipelineregs/ID_o_Jump \
+sim:/tb_pipelineregs/ID_i_JR \
+sim:/tb_pipelineregs/ID_o_JR \
+sim:/tb_pipelineregs/ID_i_EqNe \
+sim:/tb_pipelineregs/ID_o_EqNe \
+sim:/tb_pipelineregs/ID_i_LtGt \
+sim:/tb_pipelineregs/ID_o_LtGt \
+sim:/tb_pipelineregs/ID_i_LSSigned \
+sim:/tb_pipelineregs/ID_o_LSSigned \
+sim:/tb_pipelineregs/ID_i_ALUOp \
+sim:/tb_pipelineregs/ID_o_ALUOp \
+sim:/tb_pipelineregs/ID_i_Data2Reg \
+sim:/tb_pipelineregs/ID_o_Data2Reg \
+sim:/tb_pipelineregs/ID_i_MemWrite \
+sim:/tb_pipelineregs/ID_o_MemWrite \
+sim:/tb_pipelineregs/ID_i_ALUSrc \
+sim:/tb_pipelineregs/ID_o_ALUSrc \
+sim:/tb_pipelineregs/ID_i_RegWrite \
+sim:/tb_pipelineregs/ID_o_RegWrite \
+sim:/tb_pipelineregs/ID_i_Link \
+sim:/tb_pipelineregs/ID_o_Link \
+sim:/tb_pipelineregs/ID_i_ShiftSrc \
+sim:/tb_pipelineregs/ID_o_ShiftSrc \
+sim:/tb_pipelineregs/ID_i_numorzero \
+sim:/tb_pipelineregs/ID_o_numorzero \
+sim:/tb_pipelineregs/ID_i_shiftLog \
+sim:/tb_pipelineregs/ID_o_shiftLog \
+sim:/tb_pipelineregs/ID_i_shiftDir \
+sim:/tb_pipelineregs/ID_o_shiftDir \
+sim:/tb_pipelineregs/ID_i_LSSize \
+sim:/tb_pipelineregs/ID_o_LSSize \
+sim:/tb_pipelineregs/ID_i_Rt_addr1 \
+sim:/tb_pipelineregs/ID_o_Rt_addr1 \
+sim:/tb_pipelineregs/ID_i_Rs_addr \
+sim:/tb_pipelineregs/ID_o_Rs_addr \
+sim:/tb_pipelineregs/ID_i_PCplus4 \
+sim:/tb_pipelineregs/ID_o_PCplus4 \
+sim:/tb_pipelineregs/ID_i_RegRead1 \
+sim:/tb_pipelineregs/ID_o_RegRead1 \
+sim:/tb_pipelineregs/ID_i_RegRead2 \
+sim:/tb_pipelineregs/ID_o_RegRead2 \
+sim:/tb_pipelineregs/ID_i_Rt_addr2 \
+sim:/tb_pipelineregs/ID_o_Rt_addr2 \
+sim:/tb_pipelineregs/ID_i_Rd_addr \
+sim:/tb_pipelineregs/ID_o_Rd_addr \
+sim:/tb_pipelineregs/EX_RST \
+sim:/tb_pipelineregs/EX_i_MemWr \
+sim:/tb_pipelineregs/EX_o_MemWr \
+sim:/tb_pipelineregs/EX_i_LSSigned \
+sim:/tb_pipelineregs/EX_o_LSSigned \
+sim:/tb_pipelineregs/EX_i_LSSize \
+sim:/tb_pipelineregs/EX_o_LSSize \
+sim:/tb_pipelineregs/EX_i_Data2Reg \
+sim:/tb_pipelineregs/EX_o_Data2Reg \
+sim:/tb_pipelineregs/EX_i_RegWrite \
+sim:/tb_pipelineregs/EX_o_RegWrite \
+sim:/tb_pipelineregs/EX_i_RdRt_addr \
+sim:/tb_pipelineregs/EX_o_RdRt_addr \
+sim:/tb_pipelineregs/EX_i_Rt \
+sim:/tb_pipelineregs/EX_o_Rt \
+sim:/tb_pipelineregs/EX_i_Data \
+sim:/tb_pipelineregs/EX_o_Data \
+sim:/tb_pipelineregs/MEM_RST \
+sim:/tb_pipelineregs/MEM_i_Data2Reg \
+sim:/tb_pipelineregs/MEM_o_Data2Reg \
+sim:/tb_pipelineregs/MEM_i_RegWrite \
+sim:/tb_pipelineregs/MEM_o_RegWrite \
+sim:/tb_pipelineregs/MEM_i_MemOut \
+sim:/tb_pipelineregs/MEM_o_MemOut \
+sim:/tb_pipelineregs/MEM_i_RdRt \
+sim:/tb_pipelineregs/MEM_o_RdRt \
+sim:/tb_pipelineregs/MEM_i_ALUOut \
+sim:/tb_pipelineregs/MEM_o_ALUOut \
+sim:/tb_pipelineregs/cCLK_PER
+run
+run
+run
+run
+run
+run
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# ** Warning: (vcom-6) -- Waiting for lock by "valvarez@co2048-13.ece.iastate.edu, pid = 13114". Lockfile is "/home/valvarez/cpre381/ProjectC/cpre/cpre-new/work/_lock".
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(412): (vcom-1167) Index value -27 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(446): (vcom-1167) Index value -27 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(412): (vcom-1272) Length of expected is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(446): (vcom-1272) Length of expected is 5; length of actual is 32.
+# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(453): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+vsim -novopt work.tb_pipelineregs
+# vsim -novopt work.tb_pipelineregs 
+# Loading std.standard
+# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_pipelineregs(behavior)
+# Loading work.if_register2(veeandbee)
+# Loading work.nbit_reg(mixed)
+# Loading work.id_register(veeandbee)
+# Loading work.ex_register(bv)
+# Loading work.mem_register(bv)
+add wave -position insertpoint  \
+sim:/tb_pipelineregs/gCLK_HPER \
+sim:/tb_pipelineregs/s_CLK \
+sim:/tb_pipelineregs/IF_RST \
+sim:/tb_pipelineregs/IF_WE \
+sim:/tb_pipelineregs/IF_i_instr \
+sim:/tb_pipelineregs/IF_o_instr \
+sim:/tb_pipelineregs/IF_i_PCplus4 \
+sim:/tb_pipelineregs/IF_o_PCplus4 \
+sim:/tb_pipelineregs/ID_RST \
+sim:/tb_pipelineregs/ID_WE \
+sim:/tb_pipelineregs/ID_i_Branch \
+sim:/tb_pipelineregs/ID_o_Branch \
+sim:/tb_pipelineregs/ID_i_RegDst \
+sim:/tb_pipelineregs/ID_o_RegDst \
+sim:/tb_pipelineregs/ID_i_Jump \
+sim:/tb_pipelineregs/ID_o_Jump \
+sim:/tb_pipelineregs/ID_i_JR \
+sim:/tb_pipelineregs/ID_o_JR \
+sim:/tb_pipelineregs/ID_i_EqNe \
+sim:/tb_pipelineregs/ID_o_EqNe \
+sim:/tb_pipelineregs/ID_i_LtGt \
+sim:/tb_pipelineregs/ID_o_LtGt \
+sim:/tb_pipelineregs/ID_i_LSSigned \
+sim:/tb_pipelineregs/ID_o_LSSigned \
+sim:/tb_pipelineregs/ID_i_ALUOp \
+sim:/tb_pipelineregs/ID_o_ALUOp \
+sim:/tb_pipelineregs/ID_i_Data2Reg \
+sim:/tb_pipelineregs/ID_o_Data2Reg \
+sim:/tb_pipelineregs/ID_i_MemWrite \
+sim:/tb_pipelineregs/ID_o_MemWrite \
+sim:/tb_pipelineregs/ID_i_ALUSrc \
+sim:/tb_pipelineregs/ID_o_ALUSrc \
+sim:/tb_pipelineregs/ID_i_RegWrite \
+sim:/tb_pipelineregs/ID_o_RegWrite \
+sim:/tb_pipelineregs/ID_i_Link \
+sim:/tb_pipelineregs/ID_o_Link \
+sim:/tb_pipelineregs/ID_i_ShiftSrc \
+sim:/tb_pipelineregs/ID_o_ShiftSrc \
+sim:/tb_pipelineregs/ID_i_numorzero \
+sim:/tb_pipelineregs/ID_o_numorzero \
+sim:/tb_pipelineregs/ID_i_shiftLog \
+sim:/tb_pipelineregs/ID_o_shiftLog \
+sim:/tb_pipelineregs/ID_i_shiftDir \
+sim:/tb_pipelineregs/ID_o_shiftDir \
+sim:/tb_pipelineregs/ID_i_LSSize \
+sim:/tb_pipelineregs/ID_o_LSSize \
+sim:/tb_pipelineregs/ID_i_Rt_addr1 \
+sim:/tb_pipelineregs/ID_o_Rt_addr1 \
+sim:/tb_pipelineregs/ID_i_Rs_addr \
+sim:/tb_pipelineregs/ID_o_Rs_addr \
+sim:/tb_pipelineregs/ID_o_PCplus4 \
+sim:/tb_pipelineregs/ID_i_RegRead1 \
+sim:/tb_pipelineregs/ID_o_RegRead1 \
+sim:/tb_pipelineregs/ID_i_RegRead2 \
+sim:/tb_pipelineregs/ID_o_RegRead2 \
+sim:/tb_pipelineregs/ID_i_Rt_addr2 \
+sim:/tb_pipelineregs/ID_o_Rt_addr2 \
+sim:/tb_pipelineregs/ID_i_Rd_addr \
+sim:/tb_pipelineregs/ID_o_Rd_addr \
+sim:/tb_pipelineregs/EX_RST \
+sim:/tb_pipelineregs/EX_o_MemWr \
+sim:/tb_pipelineregs/EX_o_LSSigned \
+sim:/tb_pipelineregs/EX_o_LSSize \
+sim:/tb_pipelineregs/EX_o_Data2Reg \
+sim:/tb_pipelineregs/EX_o_RegWrite \
+sim:/tb_pipelineregs/EX_i_RdRt_addr \
+sim:/tb_pipelineregs/EX_o_RdRt_addr \
+sim:/tb_pipelineregs/EX_i_Rt \
+sim:/tb_pipelineregs/EX_o_Rt \
+sim:/tb_pipelineregs/EX_i_Data \
+sim:/tb_pipelineregs/EX_o_Data \
+sim:/tb_pipelineregs/MEM_RST \
+sim:/tb_pipelineregs/MEM_o_Data2Reg \
+sim:/tb_pipelineregs/MEM_o_RegWrite \
+sim:/tb_pipelineregs/MEM_i_MemOut \
+sim:/tb_pipelineregs/MEM_o_MemOut \
+sim:/tb_pipelineregs/MEM_i_RdRt \
+sim:/tb_pipelineregs/MEM_o_RdRt \
+sim:/tb_pipelineregs/MEM_i_ALUOut \
+sim:/tb_pipelineregs/MEM_o_ALUOut \
+sim:/tb_pipelineregs/cCLK_PER
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
