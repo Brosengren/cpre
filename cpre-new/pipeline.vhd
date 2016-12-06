@@ -248,13 +248,13 @@ component MEM_register is
 	end component;
 
 	signal s0, s1, s2, s3, s4, s5, s6, s7, s8, s9 	: std_logic_vector(31 downto 0);
-	signal s10, s11, s12, s13, s14, s15, s16, s17	: std_logic_vector(31 dwonto 0);
+	signal s10, s11, s12, s13, s14, s15, s16, s17	: std_logic_vector(31 downto 0);
 	signal s18, s19, s20, s21, s22, s23, s24, s25	: std_logic_vector(31 downto 0);
 	signal s26, s27, s28, s29, s30, s31, s32, s33	: std_logic_vector(31 downto 0);
 	signal s34, s35, s36, s37, s38, s39, s40, s41	: std_logic_vector(31 downto 0);
 	signal s42, s43, s44, s45, s46, s47, s48, s49	: std_logic_vector(31 downto 0);
 	signal s50, s51, s52, s53, s54, s55, s56, s57	: std_logic_vector(31 downto 0);
-	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic_vector;
+	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
 
 	signal sup : std_logic_vector(4 downto 0);
 	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero	: std_logic;

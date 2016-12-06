@@ -2,9 +2,9 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity singlecycle is
-	port( PCCLK : in std_logic;
-				CLK   : in std_logic;
-				RESET : in std_logic);
+	port(	PCCLK : in std_logic;
+			CLK   : in std_logic;
+			RESET : in std_logic);
 end singlecycle;
 
 architecture BV of singlecycle is
@@ -14,7 +14,7 @@ architecture BV of singlecycle is
 				i_B : in std_logic;
 				i_S : in std_logic;
 				o_F : out std_logic);
-		end component;
+	end component;
 
 	component mux21 is
 		generic(N 	: integer := 32);
@@ -61,7 +61,7 @@ architecture BV of singlecycle is
 				shiftSrc	: out std_logic_vector(1 downto 0);
 				shiftLog	: out std_logic;
 				shiftDir	: out std_logic;
-				LSSigned  : out std_logic;
+				LSSigned	: out std_logic;
 				LSSize		: out std_logic_vector(1 downto 0));
 	end component;
 
@@ -87,7 +87,7 @@ architecture BV of singlecycle is
 	end component;
 
 	component extender16 is
-	  	port( 	i_A : in std_logic_vector(15 downto 0);
+		port( 	i_A : in std_logic_vector(15 downto 0);
 				i_C : in std_logic;
 				o_F : out std_logic_vector(31 downto 0));
 	end component;
@@ -116,12 +116,12 @@ architecture BV of singlecycle is
 	end component;
 
 	component Nbit_reg is
-  		generic(N : integer := 32);
+		generic(N : integer := 32);
 		port(	i_CLK  : in std_logic;
-        		i_RST  : in std_logic;
-        		i_WE   : in std_logic;
-        		i_D    : in std_logic_vector(N-1 downto 0);
-        		o_Q    : out std_logic_vector(N-1 downto 0));
+				i_RST  : in std_logic;
+				i_WE   : in std_logic;
+				i_D    : in std_logic_vector(N-1 downto 0);
+				o_Q    : out std_logic_vector(N-1 downto 0));
 	end component;
 
 	component ALU is
@@ -144,14 +144,14 @@ architecture BV of singlecycle is
 
 	component dmem is
 	generic( depth : integer := 10;
-					mif_file : string := "bubbleDmem.mif");
-  port( addr    : in std_logic_vector(31 downto 0);
-        data    : in std_logic_vector(31 downto 0);
-        we      : in std_logic;
-        clock1  : in std_logic := '1';
-        lssigned  : in std_logic;
-        op      : in std_logic_vector(1 downto 0);
-        dataout : out std_logic_vector(31 downto 0)); 
+		mif_file : string := "bubbleDmem.mif");
+	port(	addr		: in std_logic_vector(31 downto 0);
+			data		: in std_logic_vector(31 downto 0);
+			we			: in std_logic;
+			clock1		: in std_logic := '1';
+			lssigned	: in std_logic;
+			op			: in std_logic_vector(1 downto 0);
+			dataout		: out std_logic_vector(31 downto 0)); 
 	end component;
 
 	signal s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s13, s14, s15, s16, s19, s20, s21, s22, s29, s30, s31, s32 : std_logic_vector(31 downto 0);
@@ -361,11 +361,11 @@ architecture BV of singlecycle is
 
 		memfile : dmem
 		  port MAP( addr    => s22,
-  			      data    => s7,
-  			      we      => memWrite,
-  			      clock1  => CLK,
-  			      lssigned=> lssigned,
-  			      op      => lssize,
-  			      dataout => s10);
+				  data    => s7,
+				  we      => memWrite,
+				  clock1  => CLK,
+				  lssigned=> lssigned,
+				  op      => lssize,
+				  dataout => s10);
 
 end BV;
