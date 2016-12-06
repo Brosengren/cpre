@@ -9,6 +9,7 @@ entity control is
 				Jump		 : out std_logic;
 				JR			 : out std_logic;
 				Branch	 : out std_logic;
+        MemRead  : out std_logic;
 				Data2Reg : out std_logic_vector(1 downto 0);
 				ALUOp		 : out std_logic_vector(4 downto 0);
 				MemWrite : out std_logic;
@@ -120,7 +121,7 @@ architecture BRADENV of control is
 		Jump		 <= output(24);
 		JR			 <= output(23);
 		Branch	 <= output(22);
-		--MemRead <= output(21)
+		MemRead <= output(21);
 		Data2Reg <= output(20 downto 19);
 		ALUOp		 <= output(18 downto 14);
 		MemWrite <= output(13);

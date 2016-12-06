@@ -141,6 +141,7 @@ component MEM_register is
 				Jump		: out std_logic;
 				JR			: out std_logic;
 				Branch		: out std_logic;
+				MemRead  : out std_logic;
 				Data2Reg	: out std_logic_vector(1 downto 0);
 				ALUOp		: out std_logic_vector(4 downto 0);
 				MemWrite	: out std_logic;
