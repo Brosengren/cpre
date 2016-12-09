@@ -12,7 +12,7 @@ entity EX_register is
 			RegWrite  	: in std_logic;
 			RdRt_addr	: in std_logic_vector(4 downto 0);
 			Rt   		: in std_logic_vector(31 downto 0);
-		  Data 		: in std_logic_vector(31 downto 0);
+			Data 		: in std_logic_vector(31 downto 0);
 			
 			memWrite_o	: out std_logic;
 			LSSigned_o	: out std_logic;
