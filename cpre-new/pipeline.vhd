@@ -6,7 +6,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity pipeline is
-	port(	CLK		: in std_logic
+	port(	CLK		: in std_logic;
 			RESET	: in std_logic);
 end pipeline;
 	
@@ -296,13 +296,15 @@ architecture BV of pipeline is
 	signal s10, s11, s12, s13, s14, s15, s16, s17	: std_logic_vector(31 downto 0);
 	signal s18, s19, s20, s21, s22, s23, s24, s25	: std_logic_vector(31 downto 0);
 	signal s26, s27, s28, s29, s30, s31, s32, s33	: std_logic_vector(31 downto 0);
-	signal s34, s35, s36, s37, s38, s39, s40, s41	: std_logic_vector(31 downto 0);
+	signal s35, s36, s37, s38, s39, s40, s41		: std_logic_vector(31 downto 0);
 	signal s42, s43, s44, s45, s46, s47, s48, s49	: std_logic_vector(31 downto 0);
 	signal s50, s51, s52, s53, s54, s55, s56, s57	: std_logic_vector(31 downto 0);
 	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
 
+	signal s34 : std_logic;
+
 	signal sup : std_logic_vector(4 downto 0);
-	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero	: std_logic;
+	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero, datLogicDoh	: std_logic;
 	signal shiftlog, shiftdir, zero, lssigned, eqne, gtlt, link, memread : std_logic;
 	signal data2reg, ALUSrc, shiftSrc, lssize : std_logic_vector(1 downto 0);
 	signal ALUOp : std_logic_vector(4 downto 0);
@@ -310,6 +312,10 @@ architecture BV of pipeline is
 	signal garbage32 : std_logic_vector(31 downto 0);
 	signal in2ls1 : std_logic_vector(31 downto 0);
 	signal intomux1, intomux2, intomux3, intomux4 : std_logic_vector(31 downto 0);
+	signal ex_regdst, mem_regdst, wb_regdst, ex_shiftlog, ex_shiftdir : std_logic;
+	signal ex_shiftSrc : std_logic_vector(1 downto 0);
+
+
 
 	begin
 		
@@ -330,14 +336,16 @@ architecture BV of pipeline is
 						o_F			=> s3);
 
 		instr : imem
-			port MAP(	addres	=> s1(11 downto 2),
+			port MAP(	address	=> s1(11 downto 2),
 						clock	=> CLK,
 						q		=> s2);
+
+		datLogicDoh <= (branch and zero) or jump or jr;
 
 		mux1 : mux21
 			port MAP(	D0		=> s3,
 						D1		=> s10,
-						i_S		=> ,
+						i_S		=> datLogicDoh,
 						o_F		=> s32);
 
 		ifid_reg : IF_Register2
@@ -352,7 +360,7 @@ architecture BV of pipeline is
 						o_PCplus4	=> s5);
 
 		CONTROLLER : control
-			port MAP(	I 			=> s2,
+			port MAP(	I 			=> s4,
 						RegDst		=> regDst,
 						Jump		=> jump,
 						JR			=> jr,
@@ -405,7 +413,7 @@ architecture BV of pipeline is
 		mux2 : mux21
 			port MAP(	D0	=> s8,
 						D1	=> s6,
-						i_S => ALUSrc[0],
+						i_S => ALUSrc(0),
 						o_F => s33);
 
 		are_these_equal : branchLogic
@@ -455,7 +463,7 @@ architecture BV of pipeline is
 						i_S => jr,
 						o_F => s45);
 
-		idex_reg : ID_Register is
+		idex_reg : ID_Register
 			port MAP(	i_CLK		=> CLK,
 						i_RST		=> RESET,
 						i_WE		=> '1',
@@ -537,11 +545,11 @@ architecture BV of pipeline is
 		mux5 : mux21
 			port MAP(	D0	=> s16,
 						D1	=> s15,
-						i_S	=> ALUSrc[0],
+						i_S	=> ALUSrc(0),
 						o_F	=> s19);
 
 		mather : ALU
-			port MAP(	A			=> ss17,
+			port MAP(	A			=> s17,
 						B			=> s18,
 						op			=> ALUOp,
 						Cout		=> garbage1,
@@ -562,20 +570,20 @@ architecture BV of pipeline is
 						D2	=> s17,
 						D1	=> x"00000010",
 						D0	=> s37,
-						i_S	=> shiftSrc,
+						i_S	=> ex_shiftSrc,
 						o_F	=> s40);
 
 		mux9: mux21
 				port MAP(	D1	=> s38,
 						D0	=> s18,
-						i_S	=> shiftSrc(0),
+						i_S	=> ex_shiftSrc(0),
 						o_F	=> s39);
 
 		varshift : shifter
 			port MAP(	A		=> s39,
 						shift	=> s40(4 downto 0),
-						logic	=> shiftlog,
-						C		=> shiftdir,
+						logic	=> ex_shiftlog,
+						C		=> ex_shiftdir,
 						F		=> s20);
 
 		mux6 : mux41
@@ -601,7 +609,7 @@ architecture BV of pipeline is
 						MemByte_o	=> );
 
 		memfile : dmem
-			port MAP(	addr		=> ss24,
+			port MAP(	addr		=> s24,
 						data		=> s30,
 						we			=> memWrite,
 						clock1		=> CLK,
@@ -609,7 +617,7 @@ architecture BV of pipeline is
 						op			=> lssize,
 						dataout		=> s26);
 
-		memwb_reg : MEM_register is
+		memwb_reg : MEM_register
 			port MAP(	CLK			=> 
 						Reset		=> 
 						Data2Reg	=> 
@@ -621,7 +629,7 @@ architecture BV of pipeline is
 						RegWrite_o	=> 
 						MemOut_o	=> 
 						RdRt_o		=> 
-						ALUOut_o	=> 
+						ALUOut_o	=> );
 
 		mux7 : mux41
 			port MAP(	D3	=> s28,
@@ -638,8 +646,8 @@ architecture BV of pipeline is
 						EX_Rd			=> 
 						MEM_RegWrite	=> 
 						MEM_Rd			=> 
-						ForwardA		=> 
-						ForwardB		=> );
+						ForwardA		=> s36,
+						ForwardB		=> s35);
 			
 		hazard : hazarddetection
 			port MAP(	IF_Rs		=> 
