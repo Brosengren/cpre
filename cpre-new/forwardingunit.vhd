@@ -5,15 +5,14 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity forwardingunit is
-	port( ID_Rs        : in std_logic_vector(4 downto 0);
-        ID_Rt        : in std_logic_vector(4 downto 0);
-        EX_RegWrite  : in std_logic;
-        EX_Rd        : in std_logic_vector(4 downto 0);
-				MEM_RegWrite : in std_logic;
-        MEM_Rd       : in std_logic_vector(4 downto 0);
-        ForwardA     : out std_logic_vector(1 downto 0); --control for first input to ALU
-        ForwardB     : out std_logic_vector(1 downto 0)  --control for second input to ALU
-        );
+	port(	ID_Rs        : in std_logic_vector(4 downto 0);
+			ID_Rt        : in std_logic_vector(4 downto 0);
+			EX_RegWrite  : in std_logic;
+			EX_Rd        : in std_logic_vector(4 downto 0);
+			MEM_RegWrite : in std_logic;
+			MEM_Rd       : in std_logic_vector(4 downto 0);
+			ForwardA     : out std_logic_vector(1 downto 0); --control for first input to ALU
+			ForwardB     : out std_logic_vector(1 downto 0));  --control for second input to ALU
 end forwardingunit;
 
 architecture beevee of forwardingunit is
@@ -33,8 +32,8 @@ architecture beevee of forwardingunit is
 		--EX hazard
 		process(EX_RegWrite, EX_Rd, ID_Rs)
 		begin
-    if EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rs then
-    	ForwardA <= "11";
+	if EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rs then
+		ForwardA <= "11";
 			EX_hazardA <= '1';
 		end if;
 		end process;

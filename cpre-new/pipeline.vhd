@@ -13,77 +13,77 @@ end pipeline;
 architecture BV of pipeline is
 	
 	component IF_Register2 is
-	  port( i_CLK	 : in std_logic;
-			i_RST	 : in std_logic;
-			i_WE	  : in std_logic;
+		port( i_CLK		: in std_logic;
+			i_RST		: in std_logic;
+			i_WE		: in std_logic;
 	
-			i_instr   : in std_logic_vector(31 downto 0);
-			i_PCplus4 : in std_logic_vector(31 downto 0);
+			i_instr		: in std_logic_vector(31 downto 0);
+			i_PCplus4	: in std_logic_vector(31 downto 0);
 	
-			o_instr   : out std_logic_vector(31 downto 0);
-			o_PCplus4 : out std_logic_vector(31 downto 0));
+			o_instr		: out std_logic_vector(31 downto 0);
+			o_PCplus4	: out std_logic_vector(31 downto 0));
 	end component;
 	
 	component ID_Register is
-	  port( i_CLK	 	: in std_logic;
+		port( i_CLK	 	: in std_logic;
 			i_RST	 	: in std_logic;
-			i_WE	  	: in std_logic;
+			i_WE		: in std_logic;
 	
-			i_Branch  	: in std_logic;
-			i_RegDst  	: in std_logic;
+			i_Branch	: in std_logic;
+			i_RegDst	: in std_logic;
 			i_Jump		: in std_logic;
-			i_JR	  	: in std_logic; --jump register instruction
+			i_JR		: in std_logic; --jump register instruction
 			i_EqNe		: in std_logic;
 			i_LtGt		: in std_logic;
 			i_LSSigned	: in std_logic;
-			i_ALUOp   	: in std_logic_vector(4 downto 0);
+			i_ALUOp		: in std_logic_vector(4 downto 0);
 			i_PCplus4 	: in std_logic_vector(31 downto 0);
 			i_Data2Reg	: in std_logic_vector(1 downto 0);
 			i_MemWrite	: in std_logic;
-			i_ALUSrc  	: in std_logic_vector(1 downto 0);
+			i_ALUSrc	: in std_logic_vector(1 downto 0);
 			i_RegWrite	: in std_logic;
 			i_Link		: in std_logic;
 			i_ShiftSrc	: in std_logic_vector(1 downto 0);
 			i_numorzero	: in std_logic;
 			i_shiftLog	: in std_logic;
 			i_shiftDir	: in std_logic;
-			i_LSSize  	: in std_logic_vector(1 downto 0);
+			i_LSSize	: in std_logic_vector(1 downto 0);
 	
 			i_Rt_addr1	: in std_logic_vector(4 downto 0);
 			i_Rs_addr 	: in std_logic_vector(4 downto 0);
 			i_RegRead1	: in std_logic_vector(31 downto 0);
 			i_RegRead2	: in std_logic_vector(31 downto 0);
-			i_SEimm   	: in std_logic_vector(31 downto 0);
+			i_SEimm		: in std_logic_vector(31 downto 0);
 			i_Rd_addr 	: in std_logic_vector(4 downto 0);
 			i_Rt_addr2	: in std_logic_vector(4 downto 0);
 		
 	
-			o_Branch  	: out std_logic;
-			o_RegDst  	: out std_logic;
-			o_Jump   	: out std_logic;
+			o_Branch	: out std_logic;
+			o_RegDst	: out std_logic;
+			o_Jump		: out std_logic;
 			o_JR	 	: out std_logic; --jump register instruction
-			o_EqNe   	: out std_logic;
-			o_LtGt  	: out std_logic;
+			o_EqNe		: out std_logic;
+			o_LtGt		: out std_logic;
 			o_LSSigned	: out std_logic;
-			o_ALUOp   	: out std_logic_vector(4 downto 0);
-		   
+			o_ALUOp		: out std_logic_vector(4 downto 0);
+			
 			o_PCplus4 	: out std_logic_vector(31 downto 0);
 			o_Data2Reg	: out std_logic_vector(1 downto 0);
 			o_MemWrite	: out std_logic;
-			o_ALUSrc  	: out std_logic_vector(1 downto 0);
+			o_ALUSrc	: out std_logic_vector(1 downto 0);
 			o_RegWrite	: out std_logic;
 			o_Link		: out std_logic;
 			o_ShiftSrc	: out std_logic_vector(1 downto 0);
 			o_numorzero	: out std_logic;
 			o_shiftLog	: out std_logic;
 			o_shiftDir	: out std_logic;
-			o_LSSize  	: out std_logic_vector(1 downto 0);
+			o_LSSize	: out std_logic_vector(1 downto 0);
 	
 			o_Rt_addr1	: out std_logic_vector(4 downto 0);
 			o_Rs_addr	: out std_logic_vector(4 downto 0);
 			o_RegRead1	: out std_logic_vector(31 downto 0);
 			o_RegRead2	: out std_logic_vector(31 downto 0);
-			o_SEimm   	: out std_logic_vector(31 downto 0);
+			o_SEimm		: out std_logic_vector(31 downto 0);
 			o_Rd_addr 	: out std_logic_vector(4 downto 0);
 			o_Rt_addr2	: out std_logic_vector(4 downto 0));
 	end component;
@@ -99,23 +99,23 @@ architecture BV of pipeline is
 	
 				MemWr_o		: out std_logic;
 				MemSign_o	: out std_logic;
-				MemHW_o : out std_logic;
-				MemByte_o : out std_logic);
+				MemHW_o 	: out std_logic;
+				MemByte_o 	: out std_logic);
 	end component;
 
 	component MEM_register is
-		port(	CLK	   : in std_logic;
-				Reset	 : in std_logic;
-				Data2Reg  : in std_logic_vector(1 downto 0);
-				RegWrite  : in std_logic;
-				MemOut	: in std_logic_vector(31 downto 0);
-				RdRt	  : in std_logic_vector(31 downto 0);
-				AluOut	: in std_logic_vector(31 downto 0);
-				Data2Reg_o : out std_logic_vector(1 downto 0);
-				RegWrite_o : out std_logic;
-				MemOut_o   : out std_logic_vector(31 downto 0);
-				RdRt_o	 : out std_logic_vector(31 downto 0);
-				ALUOut_o   : out std_logic_vector(31 downto 0));
+		port(	CLK			: in std_logic;
+				Reset		: in std_logic;
+				Data2Reg	: in std_logic_vector(1 downto 0);
+				RegWrite	: in std_logic;
+				MemOut		: in std_logic_vector(31 downto 0);
+				RdRt		: in std_logic_vector(31 downto 0);
+				AluOut		: in std_logic_vector(31 downto 0);
+				Data2Reg_o	: out std_logic_vector(1 downto 0);
+				RegWrite_o	: out std_logic;
+				MemOut_o	: out std_logic_vector(31 downto 0);
+				RdRt_o		: out std_logic_vector(31 downto 0);
+				ALUOut_o	: out std_logic_vector(31 downto 0));
 		end component;
 
 	component mux is
@@ -127,27 +127,27 @@ architecture BV of pipeline is
 
 	component mux21 is
 		generic(N 	: integer := 32);
-		port(	D1  : in std_logic_vector(N-1 downto 0);
+		port(	D1	: in std_logic_vector(N-1 downto 0);
 				D0 	: in std_logic_vector(N-1 downto 0);
 				i_S : in std_logic;
 				o_F : out std_logic_vector(N-1 downto 0));
 	end component;
 
 	--component mux31 is
-	--	generic(N   : integer := 32);
+	--	generic(N	: integer := 32);
 	--	port(	D2 	: in std_logic_vector(N-1 downto 0);
 	--			D1 	: in std_logic_vector(N-1 downto 0);
-	--			D0  : in std_logic_vector(N-1 downto 0);
-	--			i_S : in std_logic_vector(  1 downto 0);
+	--			D0	: in std_logic_vector(N-1 downto 0);
+	--			i_S : in std_logic_vector(	1 downto 0);
 	--			o_F : out std_logic_vector(N-1 downto 0));
 	--end component;
 
 	component mux41 is
 		generic(N 	: integer := 32);
-		port(	D3  : in std_logic_vector(N-1 downto 0);
-				D2  : in std_logic_vector(N-1 downto 0);
-				D1  : in std_logic_vector(N-1 downto 0);
-				D0  : in std_logic_vector(N-1 downto 0);
+		port(	D3	: in std_logic_vector(N-1 downto 0);
+				D2	: in std_logic_vector(N-1 downto 0);
+				D1	: in std_logic_vector(N-1 downto 0);
+				D0	: in std_logic_vector(N-1 downto 0);
 				i_S : in std_logic_vector(1 downto 0);
 				o_F : out std_logic_vector(N-1 downto 0));
 	end component;
@@ -171,7 +171,7 @@ architecture BV of pipeline is
 				shiftSrc	: out std_logic_vector(1 downto 0);
 				shiftLog	: out std_logic;
 				shiftDir	: out std_logic;
-				LSSigned  	: out std_logic;
+				LSSigned	: out std_logic;
 				LSSize		: out std_logic_vector(1 downto 0));
 	end component;
 
@@ -190,10 +190,10 @@ architecture BV of pipeline is
 	end component;
 
 	component mult is
-		port( 	A  : in std_logic_vector(31 downto 0);
-				B  : in std_logic_vector(31 downto 0);
-				lo : out std_logic_vector(31 downto 0);
-				hi : out std_logic_vector(31 downto 0));
+		port( 	A	: in std_logic_vector(31 downto 0);
+				B	: in std_logic_vector(31 downto 0);
+				lo	: out std_logic_vector(31 downto 0);
+				hi	: out std_logic_vector(31 downto 0));
 	end component;
 
 	component extender16 is
@@ -214,34 +214,34 @@ architecture BV of pipeline is
 	end component;
 
 	component MIPS is
-		port( 	i_CLK	  	: in std_logic;
+		port( 	i_CLK		: in std_logic;
 				read_rs		: in std_logic_vector(4 downto 0);
 				read_rt		: in std_logic_vector(4 downto 0);
 				write_data 	: in std_logic_vector(31 downto 0);
 				write_addr 	: in std_logic_vector( 4 downto 0);
-				write_en   	: in std_logic;
-				reset	  	: in std_logic;
+				write_en	: in std_logic;
+				reset		: in std_logic;
 				rs		 	: out std_logic_vector(31 downto 0);
 				rt		 	: out std_logic_vector(31 downto 0));
 	end component;
 
 	component Nbit_reg is
 		generic(N : integer := 32);
-		port(	i_CLK  : in std_logic;
-				i_RST  : in std_logic;
-				i_WE   : in std_logic;
-				i_D	: in std_logic_vector(N-1 downto 0);
-				o_Q	: out std_logic_vector(N-1 downto 0));
+		port(	i_CLK	: in std_logic;
+				i_RST	: in std_logic;
+				i_WE	: in std_logic;
+				i_D		: in std_logic_vector(N-1 downto 0);
+				o_Q		: out std_logic_vector(N-1 downto 0));
 	end component;
 
 	component ALU is
 		port(	A			: in std_logic_vector(31 downto 0);
 				B			: in std_logic_vector(31 downto 0);
-				op	   		: in std_logic_vector(4 downto 0);
+				op			: in std_logic_vector(4 downto 0);
 				Cout	 	: out std_logic;
 				overflow 	: out std_logic;
 				zero	 	: out std_logic;
-				o_F	  		: out std_logic_vector(31 downto 0));
+				o_F			: out std_logic_vector(31 downto 0));
 	end component;
 
 	component imem is
@@ -253,25 +253,44 @@ architecture BV of pipeline is
 	end component;
 
 	component dmem is
-	generic( depth	: integer := 10;
-			mif_file : string := "bubbleDmem.mif");
-	port( addr  	: in std_logic_vector(31 downto 0);
-		data		: in std_logic_vector(31 downto 0);
-		we	  	: in std_logic;
-		clock1		: in std_logic := '1';
-		lssigned	: in std_logic;
-		op	  	: in std_logic_vector(1 downto 0);
-		dataout 	: out std_logic_vector(31 downto 0));
+		generic(depth		: integer := 10;
+				mif_file	: string := "bubbleDmem.mif");
+		port(	addr		: in std_logic_vector(31 downto 0);
+				data		: in std_logic_vector(31 downto 0);
+				we			: in std_logic;
+				clock1		: in std_logic := '1';
+				lssigned	: in std_logic;
+				op			: in std_logic_vector(1 downto 0);
+				dataout		: out std_logic_vector(31 downto 0));
 	end component;
 
 	component branchLogic is
 		port(	rs			: in std_logic_vector(31 downto 0);
-			 	rt			: in std_logic_vector(31 downto 0);
-			 	EQNE		: in std_logic;
-			 	LTGT		: in std_logic;
-			 	numorzero	: in std_logic;
+				rt			: in std_logic_vector(31 downto 0);
+				EQNE		: in std_logic;
+				LTGT		: in std_logic;
+				numorzero	: in std_logic;
 				zero		: out std_logic);
-	end branchLogic;
+	end component;
+
+	component forwardingunit is
+		port(	ID_Rs			: in std_logic_vector(4 downto 0);
+				ID_Rt			: in std_logic_vector(4 downto 0);
+				EX_RegWrite		: in std_logic;
+				EX_Rd			: in std_logic_vector(4 downto 0);
+				MEM_RegWrite	: in std_logic;
+				MEM_Rd			: in std_logic_vector(4 downto 0);
+				ForwardA		: out std_logic_vector(1 downto 0);  --control for first input to ALU
+				ForwardB		: out std_logic_vector(1 downto 0)); --control for second input to ALU
+	end component;
+
+	component hazarddetection is
+		port(	IF_Rs		: in std_logic_vector(4 downto 0);
+				IF_Rt		: in std_logic_vector(4 downto 0);
+				ID_MemRead	: in std_logic; 
+				ID_Rt		: in std_logic_vector(4 downto 0);
+				Stall		: out std_logic);
+	end component;
 
 	signal s0, s1, s2, s3, s4, s5, s6, s7, s8, s9 	: std_logic_vector(31 downto 0);
 	signal s10, s11, s12, s13, s14, s15, s16, s17	: std_logic_vector(31 downto 0);
@@ -295,42 +314,42 @@ architecture BV of pipeline is
 	begin
 		
 		PC : Nbit_reg
-			port MAP(	i_CLK => CLK,
-						i_RST => RESET,
-						i_WE  => '1',
-						i_D   => s32,
-						o_Q   => s1);
+			port MAP(	i_CLK	=> CLK,
+						i_RST	=> RESET,
+						i_WE	=> '1',
+						i_D		=> s32,
+						o_Q		=> s1);
 
 		adder1 : ALU
 			port MAP(	A			=> s1,
 						B			=> x"00000004",
-						op	   		=> "00010",
-						Cout	 	=> garbage1,
-						overflow 	=> garbage1,
-						zero	 	=> garbage1,
-						o_F	  		=> s3);
+						op			=> "00010",
+						Cout		=> garbage1,
+						overflow	=> garbage1,
+						zero		=> garbage1,
+						o_F			=> s3);
 
 		instr : imem
-			port MAP(	address => s1(11 downto 2),
-						clock   => CLK,
-						q	   => s2);
+			port MAP(	addres	=> s1(11 downto 2),
+						clock	=> CLK,
+						q		=> s2);
 
 		mux1 : mux21
-			port MAP(	D0  => s3,
-						D1  => s10,
-						i_S => ,
-						o_F => s32);
+			port MAP(	D0		=> s3,
+						D1		=> s10,
+						i_S		=> ,
+						o_F		=> s32);
 
-		if_reg : IF_Register2 
-	  		port MAP(	i_CLK	 => CLK,
-						i_RST	 => RESET,
-						i_WE	  => s34,
+		ifid_reg : IF_Register2
+			port MAP(	i_CLK		=> CLK,
+						i_RST		=> RESET,
+						i_WE		=> s34,
 				
-						i_instr   => s2,
-						i_PCplus4 => s3,
+						i_instr		=> s2,
+						i_PCplus4	=> s3,
 				
-						o_instr   => s4,
-						o_PCplus4 => s5);
+						o_instr		=> s4,
+						o_PCplus4	=> s5);
 
 		CONTROLLER : control
 			port MAP(	I 			=> s2,
@@ -354,106 +373,149 @@ architecture BV of pipeline is
 						LSSigned	=> lssigned,
 						LSSize		=> lssize);
 
-		adder2 : ALU
-			port MAP(	A			=> s5,
-						B			=> s7,
-						op	   		=> "00010",
-						Cout	 	=> garbage1,
-						overflow 	=> garbage1,
-						zero	 	=> garbage1,
-						o_F	  		=> s10);
-
 		signextende : extender16
-			port MAP(	i_A => s2(15 downto 0),
-						i_C => '1',
-						o_F => s6);
+			port MAP(	i_A	=> s4(15 downto 0),
+						i_C	=> '1',
+						o_F	=> s6);
+
+		mux10 : mux21
+			port MAP(	D1  => x"0000001F",
+						D0  => s31,
+						i_S => link,
+						o_F => s47);
+
+		mux11 : mux21
+			port MAP(	D1  => s5,
+						D0  => s29,
+						i_S => link,
+						o_F => s46);
+
 
 		registerFile : MIPS
-			port MAP(	i_CLK 		=> CLK,
-						read_rs 	=> s4(25 downto 21),
-						read_rt 	=> s4(20 downto 16),
-						write_data 	=> s29,
-						write_addr 	=> s31(4 downto 0),
-						write_en   	=> regWrite,
-						reset	  	=> RESET,
-						rs		 	=> s9,
-						rt		 	=> s8);
+			port MAP(	i_CLK		=> CLK,
+						read_rs		=> s4(25 downto 21),
+						read_rt		=> s4(20 downto 16),
+						write_data	=> s46,
+						write_addr	=> s47(4 downto 0),
+						write_en	=> regWrite,
+						reset		=> RESET,
+						rs			=> s9,
+						rt			=> s8);
 
 		mux2 : mux21
-			port MAP(	D0  => s8,
-						D1  => s6,
+			port MAP(	D0	=> s8,
+						D1	=> s6,
 						i_S => ALUSrc[0],
 						o_F => s33);
 
 		are_these_equal : branchLogic
 			port MAP(	rs			=> s9,
-					 	rt			=> s8,
-					 	EQNE		=> eqne,
-					 	LTGT		=> gtlt,
-					 	numorzero	=> numOrZero,
+						rt			=> s8,
+						EQNE		=> eqne,
+						LTGT		=> gtlt,
+						numorzero	=> numOrZero,
 						zero		=> zero);
 
+		in2ls1 <= "000000" & s4(25 downto 0);
+
+		ls1 : shifter
+			port MAP(	A		=> in2ls1,
+						shift	=> "00010",
+						logic	=> '0',
+						C		=> '0',
+						F		=> s42);
+
+		s43 <= s5(31 downto 28) & s42(27 downto 0);
+
+		ls2 : shifter
+			port MAP(	A		=> s6,
+						shift	=> "00010",
+						logic	=> '0',
+						C		=> '0',
+						F		=> s7);
+
+		adder2 : ALU
+			port MAP(	A			=> s5,
+						B			=> s7,
+						op			=> "00010",
+						Cout		=> garbage1,
+						overflow	=> garbage1,
+						zero		=> garbage1,
+						o_F			=> s10);
+
+		mux12 : mux21
+			port MAP(	D1  => s43,
+						D0  => s10,
+						i_S => jump,
+						o_F => s44);
+
+		mux13 : mux21
+			port MAP(	D1  => s9,
+						D0  => s44,
+						i_S => jr,
+						o_F => s45);
+
 		idex_reg : ID_Register is
-	  		port MAP(	i_CLK	 	=> CLK,
-						i_RST	 	=> RESET,
-						i_WE	  	=> '1',
+			port MAP(	i_CLK		=> CLK,
+						i_RST		=> RESET,
+						i_WE		=> '1',
 	
-						i_Branch  	=> 
-						i_RegDst  	=> 
+						i_Branch	=> 
+						i_RegDst	=> 
 						i_Jump		=> 
-						i_JR	  	=> 
+						i_JR		=> 
 						i_EqNe		=> 
 						i_LtGt		=> 
 						i_LSSigned	=> 
-						i_ALUOp   	=> 
-						i_PCplus4 	=> 
+						i_ALUOp		=> 
+						i_PCplus4	=> 
 						i_Data2Reg	=> 
 						i_MemWrite	=> 
-						i_ALUSrc  	=> 
+						i_ALUSrc	=> 
 						i_RegWrite	=> 
 						i_Link		=> 
 						i_ShiftSrc	=> 
 						i_numorzero	=> 
 						i_shiftLog	=> 
 						i_shiftDir	=> 
-						i_LSSize  	=> 
+						i_LSSize	=> 
 	
-		   				i_Rt_addr1	=> 
-						i_Rs_addr 	=> 
+						i_Rt_addr1	=> 
+						i_Rs_addr	=> 
 						i_RegRead1	=> 
 						i_RegRead2	=> 
-						i_SEimm   	=> 
-						i_Rd_addr 	=> 
+						i_SEimm		=> 
+						i_Rd_addr	=> 
 						i_Rt_addr2	=> 
 		
 	
-						o_Branch  	=> 
-						o_RegDst  	=> 
-						o_Jump   	=> 
-						o_JR	 	=> 
-						o_EqNe   	=> 
-						o_LtGt  	=> 
+						o_Branch	=> 
+						o_RegDst	=> 
+						o_Jump		=> 
+						o_JR		=> 
+						o_EqNe		=> 
+						o_LtGt		=> 
 						o_LSSigned	=> 
-						o_ALUOp   	=> 
-		   
-						o_PCplus4 	=> 
+						o_ALUOp		=> 
+		
+						o_PCplus4	=> 
 						o_Data2Reg	=> 
 						o_MemWrite	=> 
-						o_ALUSrc  	=> 
+						o_ALUSrc	=> 
 						o_RegWrite	=> 
 						o_Link		=> 
 						o_ShiftSrc	=> 
 						o_numorzero	=> 
 						o_shiftLog	=> 
 						o_shiftDir	=> 
-						o_LSSize  	=> 
+						o_LSSize	=> 
 	
 						o_Rt_addr1	=> 
 						o_Rs_addr	=> 
 						o_RegRead1	=> 
 						o_RegRead2	=> 
-						o_SEimm   	=> 
-						o_Rd_addr 	=> 
+						o_SEimm		=> 
+						o_Rd_addr	=> 
 						o_Rt_addr2	=> );
 
 		mux3 : mux41
@@ -461,35 +523,130 @@ architecture BV of pipeline is
 						D2	=> s29,
 						D1	=> x"00000000",
 						D0	=> s11,
-						i_S => s36,
-						o_F => s17);
+						i_S	=> s36,
+						o_F	=> s17);
 
 		mux4 : mux41
 			port MAP(	D3	=> s24,
 						D2	=> s29,
 						D1	=> x"00000000",
 						D0	=> s12,
-						i_S => s35,
-						o_F => s18);
+						i_S	=> s35,
+						o_F	=> s18);
 		
 		mux5 : mux21
-			port MAP(	D0  => s16,
-						D1  => s15,
-						i_S => ALUSrc[0],
-						o_F => s19);
+			port MAP(	D0	=> s16,
+						D1	=> s15,
+						i_S	=> ALUSrc[0],
+						o_F	=> s19);
+
+		mather : ALU
+			port MAP(	A			=> ss17,
+						B			=> s18,
+						op			=> ALUOp,
+						Cout		=> garbage1,
+						overflow	=> garbage1,
+						zero		=> garbage1,
+						o_F			=> S22);
+
+		multiplier : mult
+			port MAP(	A	=> s17,
+						B	=> s18,
+						hi	=> garbage32,
+						lo	=> s21);
+
+		s41 <= "000000000000000000000000000" & s37(11 downto 7);
+
+		mux8 : mux41
+			port MAP(	D3	=> x"00000000",
+						D2	=> s17,
+						D1	=> x"00000010",
+						D0	=> s37,
+						i_S	=> shiftSrc,
+						o_F	=> s40);
+
+		mux9: mux21
+				port MAP(	D1	=> s38,
+						D0	=> s18,
+						i_S	=> shiftSrc(0),
+						o_F	=> s39);
+
+		varshift : shifter
+			port MAP(	A		=> s39,
+						shift	=> s40(4 downto 0),
+						logic	=> shiftlog,
+						C		=> shiftdir,
+						F		=> s20);
 
 		mux6 : mux41
-			port MAP(	D3	=> s9,
-						D2	=> s8,
-						D1	=> s10,
+			port MAP(	D3	=> s20,
+						D2	=> s21,
+						D1	=> x"00000000",
 						D0	=> s22,
+						i_S	=> data2Reg,
+						o_F	=> s23);
+
+		exmem_reg : EX_register
+			port MAP(	CLK			=> 
+						Reset		=> 
+	
+						MemWr		=> 
+						MemSign		=> 
+						MemHW		=> 
+						MemByte		=> 
+	
+						MemWr_o		=> 
+						MemSign_o	=> 
+						MemHW_o		=> 
+						MemByte_o	=> );
+
+		memfile : dmem
+			port MAP(	addr		=> ss24,
+						data		=> s30,
+						we			=> memWrite,
+						clock1		=> CLK,
+						lssigned	=> lssigned,
+						op			=> lssize,
+						dataout		=> s26);
+
+		memwb_reg : MEM_register is
+			port MAP(	CLK			=> 
+						Reset		=> 
+						Data2Reg	=> 
+						RegWrite	=> 
+						MemOut		=> 
+						RdRt		=> 
+						AluOut		=> 
+						Data2Reg_o	=> 
+						RegWrite_o	=> 
+						MemOut_o	=> 
+						RdRt_o		=> 
+						ALUOut_o	=> 
+
+		mux7 : mux41
+			port MAP(	D3	=> s28,
+						D2	=> s28,
+						D1	=> s27,
+						D0	=> s28,
 						i_S => data2Reg,
-						o_F => s11);
+						o_F => s29);
 
-		
-
-		
-
+		fu : forwardingunit
+			port MAP(	ID_Rs			=> 
+						ID_Rt			=> 
+						EX_RegWrite		=> 
+						EX_Rd			=> 
+						MEM_RegWrite	=> 
+						MEM_Rd			=> 
+						ForwardA		=> 
+						ForwardB		=> );
+			
+		hazard : hazarddetection
+			port MAP(	IF_Rs		=> 
+						IF_Rt		=> 
+						ID_MemRead	=> 
+						ID_Rt		=> 
+						Stall		=> );
 
 
 

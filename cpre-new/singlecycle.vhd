@@ -2,9 +2,9 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity singlecycle is
-	port(	PCCLK : in std_logic;
-			CLK   : in std_logic;
-			RESET : in std_logic);
+	port(	PCCLK	: in std_logic;
+			CLK		: in std_logic;
+			RESET	: in std_logic);
 end singlecycle;
 
 architecture BV of singlecycle is
@@ -14,7 +14,7 @@ architecture BV of singlecycle is
 				i_B : in std_logic;
 				i_S : in std_logic;
 				o_F : out std_logic);
-	end component;
+		end component;
 
 	component mux21 is
 		generic(N 	: integer := 32);
@@ -25,7 +25,7 @@ architecture BV of singlecycle is
 	end component;
 
 	--component mux31 is
-	--	generic(N   : integer := 32);
+	--	generic(N	: integer := 32);
 	--	port(	D2 	: in std_logic_vector(N-1 downto 0);
 	--			D1 	: in std_logic_vector(N-1 downto 0);
 	--			D0  : in std_logic_vector(N-1 downto 0);
@@ -61,7 +61,7 @@ architecture BV of singlecycle is
 				shiftSrc	: out std_logic_vector(1 downto 0);
 				shiftLog	: out std_logic;
 				shiftDir	: out std_logic;
-				LSSigned	: out std_logic;
+				LSSigned  	: out std_logic;
 				LSSize		: out std_logic_vector(1 downto 0));
 	end component;
 
@@ -94,7 +94,7 @@ architecture BV of singlecycle is
 
 	component mem is
 		generic(depth_exp_of_2 	: integer := 10;
-				mif_filename	: string := "bubbleDmem.mif");
+				mif_filename	: string := "mem.mif");
 		port(	address			: IN STD_LOGIC_VECTOR (depth_exp_of_2-1 DOWNTO 0) := (OTHERS => '0');
 				byteena			: IN STD_LOGIC_VECTOR (3 DOWNTO 0) := (OTHERS => '1');
 				clock			: IN STD_LOGIC := '1';
@@ -109,7 +109,7 @@ architecture BV of singlecycle is
 				read_rt		: in std_logic_vector(4 downto 0);
 				write_data 	: in std_logic_vector(31 downto 0);
 				write_addr 	: in std_logic_vector( 4 downto 0);
-				write_en   	: in std_logic;
+				write_en	: in std_logic;
 				reset	  	: in std_logic;
 				rs		 	: out std_logic_vector(31 downto 0);
 				rt		 	: out std_logic_vector(31 downto 0));
@@ -117,17 +117,17 @@ architecture BV of singlecycle is
 
 	component Nbit_reg is
 		generic(N : integer := 32);
-		port(	i_CLK  : in std_logic;
-				i_RST  : in std_logic;
-				i_WE   : in std_logic;
-				i_D    : in std_logic_vector(N-1 downto 0);
-				o_Q    : out std_logic_vector(N-1 downto 0));
+		port(	i_CLK	: in std_logic;
+				i_RST	: in std_logic;
+				i_WE	: in std_logic;
+				i_D	 	: in std_logic_vector(N-1 downto 0);
+				o_Q	 	: out std_logic_vector(N-1 downto 0));
 	end component;
 
 	component ALU is
 		port(	A			: in std_logic_vector(31 downto 0);
 				B			: in std_logic_vector(31 downto 0);
-				op	   		: in std_logic_vector(4 downto 0);
+				op			: in std_logic_vector(4 downto 0);
 				Cout	 	: out std_logic;
 				overflow 	: out std_logic;
 				zero	 	: out std_logic;
@@ -136,7 +136,7 @@ architecture BV of singlecycle is
 	
 	component imem is
 		generic(depth_exp_of_2 	: integer := 10;
-				mif_filename 	: string := "bubbleImem.mif");
+				mif_filename 	: string := "newmerge.mif");
 		port(	address			: IN STD_LOGIC_VECTOR (depth_exp_of_2-1 DOWNTO 0) := (OTHERS => '0');
 				clock			: IN STD_LOGIC := '1';
 				q				: OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
@@ -144,60 +144,60 @@ architecture BV of singlecycle is
 
 	component dmem is
 	generic( depth : integer := 10;
-		mif_file : string := "bubbleDmem.mif");
-	port(	addr		: in std_logic_vector(31 downto 0);
-			data		: in std_logic_vector(31 downto 0);
-			we			: in std_logic;
-			clock1		: in std_logic := '1';
-			lssigned	: in std_logic;
-			op			: in std_logic_vector(1 downto 0);
-			dataout		: out std_logic_vector(31 downto 0)); 
+					mif_file : string := "mergeDmem.mif");
+  port( addr		: in std_logic_vector(31 downto 0);
+		data		: in std_logic_vector(31 downto 0);
+		we			: in std_logic;
+		clock1  	: in std_logic := '1';
+		lssigned	: in std_logic;
+		op			: in std_logic_vector(1 downto 0);
+		dataout 	: out std_logic_vector(31 downto 0)); 
 	end component;
 
-	signal s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s13, s14, s15, s16, s19, s20, s21, s22, s29, s30, s31, s32 : std_logic_vector(31 downto 0);
+	signal s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s19, s20, s21, s22, s29, s30, s31, s32 : std_logic_vector(31 downto 0);
 	signal s23, s24, s25, s26, s27, s28 : std_logic;
-	signal sup : std_logic_vector(4 downto 0);
+	--signal sup : std_logic_vector(4 downto 0);
 	signal regDst, jump, jr, branch, memWrite, regWrite, link, numOrZero, eqne, gtlt, shiftlog, shiftdir, zero, lssigned : std_logic;
 	signal data2reg, ALUSrc, shiftSrc, lssize : std_logic_vector(1 downto 0);
 	signal ALUOp : std_logic_vector(4 downto 0);
 	signal garbage1 : std_logic;
 	signal garbage32 : std_logic_vector(31 downto 0);
 	signal in2ls1 : std_logic_vector(31 downto 0);
-	signal intomux1, intomux2, intomux3, intomux4 : std_logic_vector(31 downto 0);
+	signal intomux1, intomux2, intomux3 : std_logic_vector(31 downto 0);
 
 	begin
 
 		PC : Nbit_reg
-			port MAP(	i_CLK => PCCLK,
-						i_RST => RESET,
-						i_WE  => '1',
-						i_D   => s21,
-						o_Q   => s1);
+			port MAP(	i_CLK 	=> PCCLK,
+						i_RST 	=> RESET,
+						i_WE  	=> '1',
+						i_D		=> s21,
+						o_Q		=> s1);
 
 		instr : imem
 			port MAP(	address => s1(11 downto 2),
-						clock   => CLK,
-						q       => s2);
+						clock	=> CLK,
+						q		=> s2);
 
 		CONTROLLER : control
-			port MAP( I 				=> s2,
+			port MAP( I 					=> s2,
 								RegDst		=> regDst,
-								Jump			=> jump,
-								JR				=> jr,
+								Jump		=> jump,
+								JR			=> jr,
 								Branch		=> branch,
 								Data2Reg	=> data2reg,
-								ALUOp			=> ALUOp,
+								ALUOp		=> ALUOp,
 								MemWrite	=> memWrite,
 								ALUSrc		=> ALUSrc,
 								RegWrite	=> regWrite,
-								Link			=> link,
+								Link		=> link,
 								numOrZero	=> numOrZero,
-								EQNE			=> eqne,
-								GTLT			=> gtlt,
+								EQNE		=> eqne,
+								GTLT		=> gtlt,
 								shiftSrc	=> shiftSrc,
 								shiftLog	=> shiftlog,
 								shiftDir	=> shiftdir,
-								LSSigned  => lssigned,
+								LSSigned	=> lssigned,
 								LSSize		=> lssize);
 
 		intomux1 <= "000000000000000000000000000" & s2(20 downto 16);
@@ -225,11 +225,11 @@ architecture BV of singlecycle is
 						i_S	=> ALUSrc,
 						o_F	=> s30);
 
-		s32 <= "000000000000000000000000000" & s5(11 downto 7);
+		s32 <= "000000000000000000000000000" & s2(10 downto 6);
 
 		mux4 : mux41
 			port MAP(	D3	=> x"00000000",
-						D2	=> s7,
+						D2	=> s6,
 						D1	=> x"00000010",
 						D0	=> s32,
 						i_S	=> shiftSrc,
@@ -238,8 +238,8 @@ architecture BV of singlecycle is
 		s24 <= not s23;
 
 		mux5 : mux
-			port MAP(	i_A	=> s23,
-						i_B => s24,
+			port MAP(	i_A	=> s24,
+						i_B => s23,
 						i_S => eqne,
 						o_F => s25);
 
@@ -252,8 +252,8 @@ architecture BV of singlecycle is
 						o_F => s27);
 
 		mux7 : mux
-			port MAP(	i_A => s25,
-						i_B => s27,
+			port MAP(	i_A => s27,
+						i_B => s25,
 						i_S => numOrZero,
 						o_F => zero);
 
@@ -262,8 +262,8 @@ architecture BV of singlecycle is
 						D2	=> s8,
 						D1	=> s10,
 						D0	=> s22,
-						i_S => data2Reg,
-						o_F => s11);
+						i_S	=> data2Reg,
+						o_F	=> s11);
 
 		mux9 : mux21
 			port MAP(	D1	=> s6,
@@ -284,88 +284,100 @@ architecture BV of singlecycle is
 						D0 	=> s19,
 						i_S => jump,
 						o_F => s20);
+						
+		mux12 :  mux21
+			port MAP(	D1  => s13,
+						D0  => s11,
+						i_S => link,
+						o_F => s12);
+				
+		mux13: mux21
+			port MAP(	D1	=> s5,
+						D0  => s7,
+						i_S => shiftSrc(0),
+						o_F => s17);
 
 		registerFile : MIPS
 			port MAP(	i_CLK 		=> CLK,
 						read_rs 	=> s2(25 downto 21),
 						read_rt 	=> s2(20 downto 16),
-						write_data 	=> s11,
+						write_data 	=> s12,
 						write_addr 	=> s4(4 downto 0),
-						write_en   	=> regWrite,
+						write_en	=> regWrite,
 						reset	  	=> RESET,
 						rs		 	=> s6,
 						rt		 	=> s7);
 
 		signextende : extender16
-			port MAP(	i_A => s2(15 downto 0),
-						i_C => '1',
-						o_F => s5);
+			port MAP(	i_A	=> s2(15 downto 0),
+						i_C	=> '1',
+						o_F	=> s5);
 
 		mather : ALU
 			port MAP(	A			=> s6,
 						B			=> s30,
-						op	   		=> ALUOp,
+						op			=> ALUOp,
 						Cout	 	=> garbage1,
 						overflow 	=> garbage1,
 						zero	 	=> s23,
 						o_F	  		=> S22);
 
 		multiplier : mult
-			port MAP(	A 	=> s6,
-						B 	=> s7,
+			port MAP(	A	=> s6,
+						B	=> s7,
 						hi	=> garbage32,
-						lo 	=> s8);
+						lo	=> s8);
 
 		varshift : shifter
-			port MAP(	A	 	=> s6,
-						shift 	=> s31(4 downto 0),
-						logic 	=> shiftlog,
-						C	 	=> shiftdir,
-						F	 	=> s9);
+			port MAP(	A		=> s17,
+						shift	=> s31(4 downto 0),
+						logic	=> shiftlog,
+						C		=> shiftdir,
+						F		=> s9);
 
 		in2ls1 <= "000000" & s2(25 downto 0);
 
 		ls1 : shifter
 			port MAP(	A		=> in2ls1,
 						shift	=> "00010",
-						logic 	=> '0',
-						C 		=> '1',
-						F 		=> s14);
+						logic	=> '0',
+						C		=> '0',
+						F		=> s14);
 
 		s29 <= s13(31 downto 28) & s14(27 downto 0);
 
 		ls2 : shifter
 			port MAP(	A		=> s5,
 						shift	=> "00010",
-						logic 	=> '0',
-						C 		=> '1',
-						F 		=> s15);
+						logic	=> '0',
+						C		=> '0',
+						F		=> s15);
 
 		adder1 : ALU
 			port MAP(	A			=> s1,
 						B			=> x"00000004",
-						op	   		=> "00010",
-						Cout	 	=> garbage1,
-						overflow 	=> garbage1,
-						zero	 	=> garbage1,
-						o_F	  		=> s13);
+						op			=> "00010",
+						Cout		=> garbage1,
+						overflow	=> garbage1,
+						zero		=> garbage1,
+						o_F			=> s13);
 
 		adder2 : ALU
 			port MAP(	A			=> s13,
 						B			=> s15,
-						op	   		=> "00010",
-						Cout	 	=> garbage1,
-						overflow 	=> garbage1,
-						zero	 	=> garbage1,
-						o_F	  		=> s16);
+						op			=> "00010",
+						Cout		=> garbage1,
+						overflow	=> garbage1,
+						zero		=> garbage1,
+						o_F			=> s16);
 
 		memfile : dmem
-		  port MAP( addr    => s22,
-				  data    => s7,
-				  we      => memWrite,
-				  clock1  => CLK,
-				  lssigned=> lssigned,
-				  op      => lssize,
-				  dataout => s10);
+			port MAP(	addr		=> s22,
+						data		=> s7,
+						we			=> memWrite,
+						clock1		=> CLK,
+						lssigned	=> lssigned,
+						op			=> lssize,
+						dataout		=> s10);
 
 end BV;
