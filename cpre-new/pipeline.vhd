@@ -29,22 +29,22 @@ architecture BV of pipeline is
 			i_RST	 	: in std_logic;
 			i_WE		: in std_logic;
 	
-			i_Branch	: in std_logic;
+		--	i_Branch	: in std_logic;
 			i_RegDst	: in std_logic;
-			i_Jump		: in std_logic;
-			i_JR		: in std_logic; --jump register instruction
-			i_EqNe		: in std_logic;
-			i_LtGt		: in std_logic;
+		--	i_Jump		: in std_logic;
+		--	i_JR		: in std_logic; --jump register instruction
+		--	i_EqNe		: in std_logic;
+		--	i_LtGt		: in std_logic;
 			i_LSSigned	: in std_logic;
 			i_ALUOp		: in std_logic_vector(4 downto 0);
 			i_PCplus4 	: in std_logic_vector(31 downto 0);
 			i_Data2Reg	: in std_logic_vector(1 downto 0);
 			i_MemWrite	: in std_logic;
-			i_ALUSrc	: in std_logic_vector(1 downto 0);
+		--	i_ALUSrc	: in std_logic_vector(1 downto 0);
 			i_RegWrite	: in std_logic;
-			i_Link		: in std_logic;
+		--	i_Link		: in std_logic;
 			i_ShiftSrc	: in std_logic_vector(1 downto 0);
-			i_numorzero	: in std_logic;
+		--	i_numorzero	: in std_logic;
 			i_shiftLog	: in std_logic;
 			i_shiftDir	: in std_logic;
 			i_LSSize	: in std_logic_vector(1 downto 0);
@@ -56,25 +56,25 @@ architecture BV of pipeline is
 			i_SEimm		: in std_logic_vector(31 downto 0);
 			i_Rd_addr 	: in std_logic_vector(4 downto 0);
 			i_Rt_addr2	: in std_logic_vector(4 downto 0);
-		
+			i_instr		: in std_logic_vector(31 downto 0);
 	
-			o_Branch	: out std_logic;
+		--	o_Branch	: out std_logic;
 			o_RegDst	: out std_logic;
-			o_Jump		: out std_logic;
-			o_JR	 	: out std_logic; --jump register instruction
-			o_EqNe		: out std_logic;
-			o_LtGt		: out std_logic;
+		--	o_Jump		: out std_logic;
+		--	o_JR	 	: out std_logic; --jump register instruction
+		--	o_EqNe		: out std_logic;
+		--	o_LtGt		: out std_logic;
 			o_LSSigned	: out std_logic;
 			o_ALUOp		: out std_logic_vector(4 downto 0);
 			
 			o_PCplus4 	: out std_logic_vector(31 downto 0);
 			o_Data2Reg	: out std_logic_vector(1 downto 0);
 			o_MemWrite	: out std_logic;
-			o_ALUSrc	: out std_logic_vector(1 downto 0);
+		--	o_ALUSrc	: out std_logic_vector(1 downto 0);
 			o_RegWrite	: out std_logic;
-			o_Link		: out std_logic;
+		--	o_Link		: out std_logic;
 			o_ShiftSrc	: out std_logic_vector(1 downto 0);
-			o_numorzero	: out std_logic;
+		--	o_numorzero	: out std_logic;
 			o_shiftLog	: out std_logic;
 			o_shiftDir	: out std_logic;
 			o_LSSize	: out std_logic_vector(1 downto 0);
@@ -238,9 +238,9 @@ architecture BV of pipeline is
 		port(	A			: in std_logic_vector(31 downto 0);
 				B			: in std_logic_vector(31 downto 0);
 				op			: in std_logic_vector(4 downto 0);
-				Cout	 	: out std_logic;
-				overflow 	: out std_logic;
-				zero	 	: out std_logic;
+				Cout		: out std_logic;
+				overflow	: out std_logic;
+				zero		: out std_logic;
 				o_F			: out std_logic_vector(31 downto 0));
 	end component;
 
@@ -312,8 +312,12 @@ architecture BV of pipeline is
 	signal garbage32 : std_logic_vector(31 downto 0);
 	signal in2ls1 : std_logic_vector(31 downto 0);
 	signal intomux1, intomux2, intomux3, intomux4 : std_logic_vector(31 downto 0);
-	signal ex_regdst, mem_regdst, wb_regdst, ex_shiftlog, ex_shiftdir : std_logic;
-	signal ex_shiftSrc : std_logic_vector(1 downto 0);
+
+	signal ex_regwrite, mem_regwrite, wb_regwrite, ex_shiftlog, ex_shiftdir : std_logic;
+	signal ex_shiftSrc ex_data2reg, mem_data2reg, wb_data2reg : std_logic_vector(1 downto 0);
+	signal ex_memwrite, mem_memwrite, ex_lssigned, mem_lssigned, id_regdst : std_logic;
+	signal ex_lssize, mem_lssize : std_logic_vector(1 downto 0);
+
 
 
 
@@ -468,22 +472,22 @@ architecture BV of pipeline is
 						i_RST		=> RESET,
 						i_WE		=> '1',
 	
-						i_Branch	=> 
-						i_RegDst	=> 
-						i_Jump		=> 
-						i_JR		=> 
-						i_EqNe		=> 
-						i_LtGt		=> 
-						i_LSSigned	=> 
+				--		i_Branch	=> 
+						i_RegDst	=> regDst,
+				--		i_Jump		=> 
+				--		i_JR		=> 
+				--		i_EqNe		=> 
+				--		i_LtGt		=> 
+						i_LSSigned	=> lssigned,
 						i_ALUOp		=> 
 						i_PCplus4	=> 
 						i_Data2Reg	=> 
 						i_MemWrite	=> 
-						i_ALUSrc	=> 
-						i_RegWrite	=> 
-						i_Link		=> 
+				--		i_ALUSrc	=> 
+						i_RegWrite	=> regWrite,
+				--		i_Link		=> 
 						i_ShiftSrc	=> 
-						i_numorzero	=> 
+				--		i_numorzero	=> 
 						i_shiftLog	=> 
 						i_shiftDir	=> 
 						i_LSSize	=> 
@@ -495,25 +499,25 @@ architecture BV of pipeline is
 						i_SEimm		=> 
 						i_Rd_addr	=> 
 						i_Rt_addr2	=> 
-		
+						i_instr		=> s5,
 	
-						o_Branch	=> 
+				--		o_Branch	=> 
 						o_RegDst	=> 
-						o_Jump		=> 
-						o_JR		=> 
-						o_EqNe		=> 
-						o_LtGt		=> 
+				--		o_Jump		=> 
+				--		o_JR		=> 
+				--		o_EqNe		=> 
+				--		o_LtGt		=> 
 						o_LSSigned	=> 
 						o_ALUOp		=> 
 		
 						o_PCplus4	=> 
 						o_Data2Reg	=> 
 						o_MemWrite	=> 
-						o_ALUSrc	=> 
+				--		o_ALUSrc	=> 
 						o_RegWrite	=> 
-						o_Link		=> 
+				--		o_Link		=> 
 						o_ShiftSrc	=> 
-						o_numorzero	=> 
+				--		o_numorzero	=> 
 						o_shiftLog	=> 
 						o_shiftDir	=> 
 						o_LSSize	=> 
@@ -524,7 +528,8 @@ architecture BV of pipeline is
 						o_RegRead2	=> 
 						o_SEimm		=> 
 						o_Rd_addr	=> 
-						o_Rt_addr2	=> );
+						o_Rt_addr2	=> 
+						o_instr		=> );
 
 		mux3 : mux41
 			port MAP(	D3	=> s24,
@@ -543,9 +548,9 @@ architecture BV of pipeline is
 						o_F	=> s18);
 		
 		mux5 : mux21
-			port MAP(	D0	=> s16,
-						D1	=> s15,
-						i_S	=> ALUSrc(0),
+			port MAP(	D0	=> s15,
+						D1	=> s16,
+						i_S	=> id_regdst,
 						o_F	=> s19);
 
 		mather : ALU
@@ -565,16 +570,16 @@ architecture BV of pipeline is
 
 		s41 <= "000000000000000000000000000" & s37(11 downto 7);
 
-		mux8 : mux41
+		mux9 : mux41
 			port MAP(	D3	=> x"00000000",
 						D2	=> s17,
 						D1	=> x"00000010",
-						D0	=> s37,
+						D0	=> s41,
 						i_S	=> ex_shiftSrc,
 						o_F	=> s40);
 
-		mux9: mux21
-				port MAP(	D1	=> s38,
+		mux8: mux21
+			port MAP(	D1	=> s38,
 						D0	=> s18,
 						i_S	=> ex_shiftSrc(0),
 						o_F	=> s39);
