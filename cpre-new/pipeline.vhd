@@ -326,6 +326,7 @@ architecture BV of pipeline is
 	signal ex_shiftSrc ex_data2reg, mem_data2reg, wb_data2reg : std_logic_vector(1 downto 0);
 	signal ex_memwrite, mem_memwrite, ex_lssigned, mem_lssigned, id_regdst : std_logic;
 	signal ex_lssize, mem_lssize : std_logic_vector(1 downto 0);
+	signal ex_aluop : std_logic_vector(4 downto 0);
 
 
 
@@ -488,7 +489,7 @@ architecture BV of pipeline is
 				--		i_EqNe		=>
 				--		i_LtGt		=>
 						i_LSSigned	=> lssigned,
-						i_ALUOp		=>
+						i_ALUOp		=> ALUOp,
 						i_PCplus4	=>
 						i_Data2Reg	=>
 						i_MemWrite	=>
@@ -511,13 +512,13 @@ architecture BV of pipeline is
 						i_instr		=> s5,
 
 				--		o_Branch	=>
-						o_RegDst	=>
+						o_RegDst	=> ex_reg
 				--		o_Jump		=>
 				--		o_JR		=>
 				--		o_EqNe		=>
 				--		o_LtGt		=>
-						o_LSSigned	=>
-						o_ALUOp		=>
+						o_LSSigned	=> ex_lssigned,
+						o_ALUOp		=> ex_aluop,
 
 						o_PCplus4	=>
 						o_Data2Reg	=>
