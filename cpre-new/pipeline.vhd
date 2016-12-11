@@ -490,26 +490,25 @@ architecture BV of pipeline is
 				--		i_LtGt		=>
 						i_LSSigned	=> lssigned,
 						i_ALUOp		=> ALUOp,
-						i_PCplus4	=>
-						i_Data2Reg	=>
-						i_MemWrite	=>
+						i_PCplus4	=> s5,
+						i_Data2Reg	=> data2reg,
+						i_MemWrite	=> memWrite,
 				--		i_ALUSrc	=>
 						i_RegWrite	=> regWrite,
 				--		i_Link		=>
-						i_ShiftSrc	=>
+						i_ShiftSrc	=> shiftSrc,
 				--		i_numorzero	=>
-						i_shiftLog	=>
-						i_shiftDir	=>
-						i_LSSize	=>
+						i_shiftLog	=> shiftlog,
+						i_shiftDir	=> shiftdir,
+						i_LSSize	=> lssize,
 
-						i_Rt_addr1	=>
-						i_Rs_addr	=>
-						i_RegRead1	=>
-						i_RegRead2	=>
-						i_SEimm		=>
-						i_Rd_addr	=>
-						i_Rt_addr2	=>
-						i_instr		=> s5,
+						i_Rt_addr1	=> s4(20 downto 16),
+						i_Rs_addr	=> s4(25 downto 21),
+						i_RegRead1	=> s9,
+						i_RegRead2	=> s33,
+						i_Rd_addr	=> s4(15 downto 11),
+						i_Rt_addr2	=> s4(20 downto 16),
+						i_instr		=> s4, --i dont think this is needed
 
 				--		o_Branch	=>
 						o_RegDst	=> ex_reg
@@ -521,24 +520,23 @@ architecture BV of pipeline is
 						o_ALUOp		=> ex_aluop,
 
 						o_PCplus4	=>
-						o_Data2Reg	=>
-						o_MemWrite	=>
+						o_Data2Reg	=> ex_data2reg,
+						o_MemWrite	=> ex_memwrite,
 				--		o_ALUSrc	=>
-						o_RegWrite	=>
+						o_RegWrite	=> ex_regwrite,
 				--		o_Link		=>
-						o_ShiftSrc	=>
+						o_ShiftSrc	=> ex_shiftSrc,
 				--		o_numorzero	=>
-						o_shiftLog	=>
-						o_shiftDir	=>
-						o_LSSize	=>
+						o_shiftLog	=> ex_shiftlog,
+						o_shiftDir	=> ex_shiftdir,
+						o_LSSize	=> ex_lssize,
 
-						o_Rt_addr1	=>
-						o_Rs_addr	=>
-						o_RegRead1	=>
-						o_RegRead2	=>
-						o_SEimm		=>
-						o_Rd_addr	=>
-						o_Rt_addr2	=>
+						o_Rt_addr1	=> s14,
+						o_Rs_addr	=> s13,
+						o_RegRead1	=> s11,
+						o_RegRead2	=> s12,
+						o_Rd_addr	=> s16,
+						o_Rt_addr2	=> s15,
 						o_instr		=> );
 
 		mux3 : mux41
@@ -618,16 +616,16 @@ architecture BV of pipeline is
 						LSSize		=> ex_lssize,
 						Data2Reg	=> ex_data2reg,
 						RegWrite	=> ex_regwrite,
-						RdRt_addr	=> ,
-						Rt			=> ,
+						RdRt_addr	=> s19,
+						Rt			=> s12,
 						Data		=> s23,
 						memWrite_o	=> mem_memwrite,
 						LSSigned_o	=> mem_lssigned,
 						LSSize_o	=> mem_lssize,
 						Data2Reg_o	=> mem_data2reg,
 						RegWrite_o	=> mem_regwrite,
-						RdRt_addr_o	=> ,
-						Rt_o		=> ,
+						RdRt_addr_o	=> s25,
+						Rt_o		=> s30,
 						Data_o		=> s24);
 
 		memfile : dmem
@@ -640,18 +638,18 @@ architecture BV of pipeline is
 						dataout		=> s26);
 
 		memwb_reg : MEM_register
-			port MAP(	CLK			=>
-						Reset		=>
-						Data2Reg	=>
-						RegWrite	=>
-						MemOut		=>
-						RdRt		=>
-						AluOut		=>
-						Data2Reg_o	=>
-						RegWrite_o	=>
-						MemOut_o	=>
-						RdRt_o		=>
-						ALUOut_o	=> );
+			port MAP(	CLK			=> CLK,
+						Reset		=> RESET,
+						Data2Reg	=> mem_data2reg,
+						RegWrite	=> mem_regwrite,
+						MemOut		=> s26,
+						RdRt		=> s25,
+						AluOut		=> s24,
+						Data2Reg_o	=> wb_data2reg,
+						RegWrite_o	=> wb_regwrite,
+						MemOut_o	=> s27,
+						RdRt_o		=> s31,
+						ALUOut_o	=> s28);
 
 		mux7 : mux41
 			port MAP(	D3	=> s28,
