@@ -311,6 +311,7 @@ architecture BV of pipeline is
 	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
 
 	signal s34 : std_logic;
+	signal hazard_flag : std_logic;
 
 	signal sup : std_logic_vector(4 downto 0);
 	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero, datLogicDoh	: std_logic;
@@ -519,7 +520,7 @@ architecture BV of pipeline is
 						o_LSSigned	=> ex_lssigned,
 						o_ALUOp		=> ex_aluop,
 
-						o_PCplus4	=>
+						o_PCplus4	=> --TODO
 						o_Data2Reg	=> ex_data2reg,
 						o_MemWrite	=> ex_memwrite,
 				--		o_ALUSrc	=>
@@ -537,7 +538,7 @@ architecture BV of pipeline is
 						o_RegRead2	=> s12,
 						o_Rd_addr	=> s16,
 						o_Rt_addr2	=> s15,
-						o_instr		=> );
+						o_instr		=> ); --TODO
 
 		mux3 : mux41
 			port MAP(	D3	=> s24,
@@ -660,21 +661,21 @@ architecture BV of pipeline is
 						o_F => s29);
 
 		fu : forwardingunit
-			port MAP(	ID_Rs			=>
-						ID_Rt			=>
-						EX_RegWrite		=>
-						EX_Rd			=>
-						MEM_RegWrite	=>
-						MEM_Rd			=>
+			port MAP(	ID_Rs			=> s13,
+						ID_Rt			=> s14,
+						EX_RegWrite		=> ex_regwrite,
+						EX_Rd			=> s25,
+						MEM_RegWrite	=> mem_regwrite,
+						MEM_Rd			=> s31,
 						ForwardA		=> s36,
 						ForwardB		=> s35);
 
 		hazard : hazarddetection
-			port MAP(	IF_Rs		=>
-						IF_Rt		=>
-						ID_MemRead	=>
-						ID_Rt		=>
-						Stall		=> );
+			port MAP(	IF_Rs		=> s4(25 downto 21),
+						IF_Rt		=> s4(20 downto 16),
+						ID_MemRead	=> memread,
+						ID_Rt		=> s15,
+						Stall		=> hazard_flag);
 
 
 
