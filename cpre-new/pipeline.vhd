@@ -298,7 +298,7 @@ architecture BV of pipeline is
 				IF_Rt		: in std_logic_vector(4 downto 0);
 				ID_MemRead	: in std_logic;
 				ID_Rt		: in std_logic_vector(4 downto 0);
-				Stall		: out std_logic);
+				LoadUse_Hazard : out std_logic);
 	end component;
 
 	signal s0, s1, s2, s3, s4, s5, s6, s7, s8, s9 	: std_logic_vector(31 downto 0);
@@ -311,7 +311,8 @@ architecture BV of pipeline is
 	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
 
 	signal s34 : std_logic;
-	signal hazard_flag : std_logic;
+	signal luhazard_flag : std_logic;
+	signal brjhazard_flag : std_logic;
 
 	signal sup : std_logic_vector(4 downto 0);
 	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero, datLogicDoh	: std_logic;
@@ -676,7 +677,8 @@ architecture BV of pipeline is
 						IF_Rt		=> s4(20 downto 16),
 						ID_MemRead	=> memread,
 						ID_Rt		=> s15,
-						Stall		=> hazard_flag);
+						LoadUse_Hazard	=> luhazard_flag,
+						BranchJump_Hazard => brj_hazard_flag);
 
 
 
