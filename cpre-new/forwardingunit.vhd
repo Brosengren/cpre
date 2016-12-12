@@ -24,59 +24,39 @@ architecture beevee of forwardingunit is
 
 	begin
 
-		EX_hazardA <= '0';
-		EX_hazardB <= '0';
-		MEM_hazardA <= '0';
-		MEM_hazardB <= '0';
-
 		--EX hazard
 		process(EX_RegWrite, EX_Rd, ID_Rs)
 		begin
-	if EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rs then
-		ForwardA <= "11";
-			EX_hazardA <= '1';
-		end if;
-		end process;
 
-		process(EX_Rd, ID_Rt, EX_RegWrite)
-		begin
+		if EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rs then
+			ForwardA <= "11";
+		end if;
+
 		if EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rt then
 			ForwardB <= "11";
-			EX_hazardB <= '1';
 		end if;
-		end process;
 
 		--MEM hazard
-		process(MEM_RegWrite, MEM_Rd, ID_Rs)
-		begin
 		if MEM_RegWrite = '1' and not(MEM_Rd = "00000") and MEM_Rd = ID_Rs
-		and (EX_hazardA = '0') then
+		and not(EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rs) then
 			ForwardA <= "10";
-			MEM_hazardA <= '1';
 		end if;
-		end process;
 
-		process(MEM_RegWrite, MEM_Rd, ID_Rt)
-		begin
 		if MEM_RegWrite = '1' and not(MEM_Rd = "00000") and MEM_Rd = ID_Rt
-		and (EX_hazardB = '0') then
+		and not(EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rt) then
 			ForwardB <= "10";
-			MEM_hazardB <= '1';
 		end if;
-		end process;
-		
-		process(EX_hazardA, MEM_hazardA)
-		begin
-		if EX_hazardA = '0' and MEM_hazardA = '0' then
+
+		if (EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rs)
+		or (MEM_RegWrite = '1' and not(MEM_Rd = "00000") and MEM_Rd = ID_Rs) then
 		  ForwardA <= "00";
 		end if;
-		end process;
-		
-		process(EX_hazardB, MEM_hazardB)
-		begin
-		if EX_hazardB = '0' and MEM_hazardB = '0' then
+
+		if (EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rt)
+		or (MEM_RegWrite = '1' and not(MEM_Rd = "00000") and MEM_Rd = ID_Rt) then
 		  ForwardB <= "00";
 		end if;
+
 		end process;
 
 end beevee;
