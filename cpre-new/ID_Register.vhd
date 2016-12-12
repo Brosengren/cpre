@@ -31,7 +31,7 @@ entity ID_Register is
 		i_Rt_addr2 : in std_logic_vector(4 downto 0);
 		i_Rt_addr1 : in std_logic_vector(4 downto 0);
 		i_Rs_addr : in std_logic_vector(4 downto 0);
-		i_PCplus4 : in std_logic_vector(31 downto 0);
+	--	i_PCplus4 : in std_logic_vector(31 downto 0);
 		i_instr		: in std_logic_vector(31 downto 0);
 	
 
@@ -60,7 +60,7 @@ entity ID_Register is
 		o_Rt_addr2 : out std_logic_vector(4 downto 0);
 		o_Rt_addr1  : out std_logic_vector(4 downto 0);
 		o_Rs_addr   : out std_logic_vector(4 downto 0);
-		o_PCplus4 : out std_logic_vector(31 downto 0);
+	--	o_PCplus4 : out std_logic_vector(31 downto 0);
 		o_instr		: out std_logic_vector(31 downto 0));
 end ID_Register;
 
@@ -90,7 +90,7 @@ begin
 	tempSignalIn(11 downto 7) <= i_ALUOp;
 	tempSignalIn(16 downto 12) <= i_Rt_addr1;
 	tempSignalIn(21 downto 17) <= i_Rs_addr;
-	tempSignalIn(53 downto 22) <= i_PCplus4;
+--	tempSignalIn(53 downto 22) <= i_PCplus4;
 	tempSignalIn(55 downto 54) <= i_Data2Reg;
 	tempSignalIn(56) <= i_MemWrite;
 --	tempSignalIn(58 downto 57) <= i_ALUSrc;
@@ -125,7 +125,7 @@ begin
 	o_ALUOp    	<= tempSignalOut(11 downto 7);
 	o_Rt_addr1 	<= tempSignalOut(16 downto 12);
 	o_Rs_addr  	<= tempSignalOut(21 downto 17);
-	o_PCplus4  	<= tempSignalOut(53 downto 22);
+--	o_PCplus4  	<= tempSignalOut(53 downto 22);
 	o_Data2Reg 	<= tempSignalOut(55 downto 54);
 	o_MemWrite 	<= tempSignalOut(56);
 --	o_ALUSrc   	<= tempSignalOut(58 downto 57);

@@ -37,7 +37,7 @@ architecture BV of pipeline is
 		--	i_LtGt		: in std_logic;
 			i_LSSigned	: in std_logic;
 			i_ALUOp		: in std_logic_vector(4 downto 0);
-			i_PCplus4 	: in std_logic_vector(31 downto 0);
+		--	i_PCplus4 	: in std_logic_vector(31 downto 0);
 			i_Data2Reg	: in std_logic_vector(1 downto 0);
 			i_MemWrite	: in std_logic;
 		--	i_ALUSrc	: in std_logic_vector(1 downto 0);
@@ -67,7 +67,7 @@ architecture BV of pipeline is
 			o_LSSigned	: out std_logic;
 			o_ALUOp		: out std_logic_vector(4 downto 0);
 
-			o_PCplus4 	: out std_logic_vector(31 downto 0);
+		--	o_PCplus4 	: out std_logic_vector(31 downto 0);
 			o_Data2Reg	: out std_logic_vector(1 downto 0);
 			o_MemWrite	: out std_logic;
 		--	o_ALUSrc	: out std_logic_vector(1 downto 0);
@@ -491,7 +491,8 @@ architecture BV of pipeline is
 				--		i_LtGt		=>
 						i_LSSigned	=> lssigned,
 						i_ALUOp		=> ALUOp,
-						i_PCplus4	=> s5,
+
+				--		i_PCplus4	=> s5,
 						i_Data2Reg	=> data2reg,
 						i_MemWrite	=> memWrite,
 				--		i_ALUSrc	=>
@@ -520,7 +521,7 @@ architecture BV of pipeline is
 						o_LSSigned	=> ex_lssigned,
 						o_ALUOp		=> ex_aluop,
 
-						o_PCplus4	=> --TODO
+				--		o_PCplus4	=> --TODO
 						o_Data2Reg	=> ex_data2reg,
 						o_MemWrite	=> ex_memwrite,
 				--		o_ALUSrc	=>
@@ -538,7 +539,7 @@ architecture BV of pipeline is
 						o_RegRead2	=> s12,
 						o_Rd_addr	=> s16,
 						o_Rt_addr2	=> s15,
-						o_instr		=> ); --TODO
+						o_instr		=> s37); --TODO
 
 		mux3 : mux41
 			port MAP(	D3	=> s24,
