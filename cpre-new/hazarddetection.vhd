@@ -6,6 +6,8 @@ entity hazarddetection is
 				IF_Rt        : in std_logic_vector(4 downto 0);
 				ID_MemRead   : in std_logic;
 				ID_Rt        : in std_logic_vector(4 downto 0);
+				Branch       : in std_logic;
+				Jump		 : in std_logic;
 				LoadUse_Hazard : out std_logic;
 				BranchJump_Hazard : out std_logic);
 end hazarddetection;
@@ -25,6 +27,14 @@ architecture beevee of hazarddetection is
 	end if;
 	end process;
 
-	--Branch
+	--Branch/Jump
+	process(Branch, Jump)
+	begin
+	if (Branch = '1' or Jump = '1') then
+		BranchJump_Hazard <= '1';
+	else
+		BranchJump_Hazard <= '0';
+	end if;
+	end process;
 
 end beevee;

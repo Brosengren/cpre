@@ -298,7 +298,10 @@ architecture BV of pipeline is
 				IF_Rt		: in std_logic_vector(4 downto 0);
 				ID_MemRead	: in std_logic;
 				ID_Rt		: in std_logic_vector(4 downto 0);
-				LoadUse_Hazard : out std_logic);
+				Branch       : in std_logic;
+				Jump		 : in std_logic;
+				LoadUse_Hazard : out std_logic;
+				BranchJump_Hazard : out std_logic);
 	end component;
 
 	signal s0, s1, s2, s3, s4, s5, s6, s7, s8, s9 	: std_logic_vector(31 downto 0);
@@ -313,6 +316,7 @@ architecture BV of pipeline is
 	signal s34 : std_logic;
 	signal luhazard_flag : std_logic;
 	signal brjhazard_flag : std_logic;
+	signal PC_WE : std_logic;
 
 	signal sup : std_logic_vector(4 downto 0);
 	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero, datLogicDoh	: std_logic;
@@ -335,10 +339,12 @@ architecture BV of pipeline is
 
 	begin
 
+		LU_WE <= not luhazard_flag;
+
 		PC : Nbit_reg
 			port MAP(	i_CLK	=> CLK,
 						i_RST	=> RESET,
-						i_WE	=> '1',
+						i_WE	=> LU_WE,
 						i_D		=> s32,
 						o_Q		=> s1);
 
@@ -366,8 +372,8 @@ architecture BV of pipeline is
 
 		ifid_reg : IF_Register2
 			port MAP(	i_CLK		=> CLK,
-						i_RST		=> RESET,
-						i_WE		=> s34,
+						i_RST		=> brjhazard_flag,
+						i_WE		=> LU_WE,
 
 						i_instr		=> s2,
 						i_PCplus4	=> s3,
@@ -676,8 +682,10 @@ architecture BV of pipeline is
 						IF_Rt		=> s4(20 downto 16),
 						ID_MemRead	=> memread,
 						ID_Rt		=> s15,
+						Branch		=> branch,
+						Jump		=> jump,
 						LoadUse_Hazard	=> luhazard_flag,
-						BranchJump_Hazard => brj_hazard_flag);
+						BranchJump_Hazard => brjhazard_flag);
 
 
 
