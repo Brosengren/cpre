@@ -316,7 +316,7 @@ architecture BV of pipeline is
 	signal s34 : std_logic;
 	signal luhazard_flag : std_logic;
 	signal brjhazard_flag : std_logic;
-	signal PC_WE : std_logic;
+	signal LU_WE : std_logic;
 
 	signal sup : std_logic_vector(4 downto 0);
 	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero, datLogicDoh	: std_logic;
