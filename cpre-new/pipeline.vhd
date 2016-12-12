@@ -85,7 +85,8 @@ architecture BV of pipeline is
 			o_RegRead2	: out std_logic_vector(31 downto 0);
 			o_SEimm		: out std_logic_vector(31 downto 0);
 			o_Rd_addr 	: out std_logic_vector(4 downto 0);
-			o_Rt_addr2	: out std_logic_vector(4 downto 0));
+			o_Rt_addr2	: out std_logic_vector(4 downto 0);
+			o_instr		: out std_logic_vector(31 downto 0));
 	end component;
 
 	component EX_register is
@@ -118,12 +119,12 @@ architecture BV of pipeline is
 				Data2Reg	: in std_logic_vector(1 downto 0);
 				RegWrite	: in std_logic;
 				MemOut		: in std_logic_vector(31 downto 0);
-				RdRt		: in std_logic_vector(31 downto 0);
+				RdRt		: in std_logic_vector(4 downto 0);
 				AluOut		: in std_logic_vector(31 downto 0);
 				Data2Reg_o	: out std_logic_vector(1 downto 0);
 				RegWrite_o	: out std_logic;
 				MemOut_o	: out std_logic_vector(31 downto 0);
-				RdRt_o		: out std_logic_vector(31 downto 0);
+				RdRt_o		: out std_logic_vector(4 downto 0);
 				ALUOut_o	: out std_logic_vector(31 downto 0));
 		end component;
 
@@ -163,6 +164,7 @@ architecture BV of pipeline is
 
 	component control is
 		port( 	I 			: in std_logic_vector(31 downto 0);
+				hazard		: in std_logic;
 				RegDst		: out std_logic;
 				Jump		: out std_logic;
 				JR			: out std_logic;
@@ -255,7 +257,7 @@ architecture BV of pipeline is
 
 	component imem is
 		generic(depth_exp_of_2 	: integer := 10;
-				mif_filename 	: string := "bubbleImem.mif");
+				mif_filename 	: string := "allinstImem.mif");
 		port(	address			: IN STD_LOGIC_VECTOR (depth_exp_of_2-1 DOWNTO 0) := (OTHERS => '0');
 				clock			: IN STD_LOGIC := '1';
 				q				: OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
@@ -263,7 +265,7 @@ architecture BV of pipeline is
 
 	component dmem is
 		generic(depth		: integer := 10;
-				mif_file	: string := "bubbleDmem.mif");
+				mif_file	: string := "Dmem.mif");
 		port(	addr		: in std_logic_vector(31 downto 0);
 				data		: in std_logic_vector(31 downto 0);
 				we			: in std_logic;
@@ -305,15 +307,18 @@ architecture BV of pipeline is
 	end component;
 
 	signal s0, s1, s2, s3, s4, s5, s6, s7, s8, s9 	: std_logic_vector(31 downto 0);
-	signal s10, s11, s12, s13, s14, s15, s16, s17	: std_logic_vector(31 downto 0);
-	signal s18, s19, s20, s21, s22, s23, s24, s25	: std_logic_vector(31 downto 0);
-	signal s26, s27, s28, s29, s30, s31, s32, s33	: std_logic_vector(31 downto 0);
-	signal s35, s36, s37, s38, s39, s40, s41		: std_logic_vector(31 downto 0);
+	signal s10, s11, s12, s17	: std_logic_vector(31 downto 0);
+	signal s18, s20, s21, s22, s23, s24	: std_logic_vector(31 downto 0);
+	signal s26, s27, s28, s29, s30, s32, s33	: std_logic_vector(31 downto 0);
+	signal s37, s38, s39, s40, s41		: std_logic_vector(31 downto 0);
 	signal s42, s43, s44, s45, s46, s47, s48, s49	: std_logic_vector(31 downto 0);
 	signal s50, s51, s52, s53, s54, s55, s56, s57	: std_logic_vector(31 downto 0);
 	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
 
+	signal s13, s14, s15, s16, s19, s25, s31 : std_logic_vector(4 downto 0);
+	signal s35, s36 : std_logic_vector(1 downto 0);
 	signal s34 : std_logic;
+
 	signal luhazard_flag : std_logic;
 	signal brjhazard_flag : std_logic;
 	signal LU_WE : std_logic;
@@ -329,8 +334,11 @@ architecture BV of pipeline is
 	signal intomux1, intomux2, intomux3, intomux4 : std_logic_vector(31 downto 0);
 
 	signal ex_regwrite, mem_regwrite, wb_regwrite, ex_shiftlog, ex_shiftdir : std_logic;
-	signal ex_shiftSrc ex_data2reg, mem_data2reg, wb_data2reg : std_logic_vector(1 downto 0);
-	signal ex_memwrite, mem_memwrite, ex_lssigned, mem_lssigned, id_regdst : std_logic;
+	signal ex_shiftSrc : std_logic_vector(1 downto 0); 
+	signal ex_data2reg : std_logic_vector(1 downto 0); 
+	signal mem_data2reg : std_logic_vector(1 downto 0);
+	signal wb_data2reg : std_logic_vector(1 downto 0);
+	signal ex_memwrite, mem_memwrite, ex_lssigned, mem_lssigned, ex_regdst : std_logic;
 	signal ex_lssize, mem_lssize : std_logic_vector(1 downto 0);
 	signal ex_aluop : std_logic_vector(4 downto 0);
 
@@ -383,6 +391,7 @@ architecture BV of pipeline is
 
 		CONTROLLER : control
 			port MAP(	I 			=> s4,
+						hazard		=> '0',
 						RegDst		=> regDst,
 						Jump		=> jump,
 						JR			=> jr,
@@ -408,9 +417,11 @@ architecture BV of pipeline is
 						i_C	=> '1',
 						o_F	=> s6);
 
+		s48 <= "000000000000000000000000000" & s31;
+
 		mux10 : mux21
 			port MAP(	D1  => x"0000001F",
-						D0  => s31,
+						D0  => s48,
 						i_S => link,
 						o_F => s47);
 
@@ -513,6 +524,7 @@ architecture BV of pipeline is
 
 						i_Rt_addr1	=> s4(20 downto 16),
 						i_Rs_addr	=> s4(25 downto 21),
+						i_SEimm		=> s6,
 						i_RegRead1	=> s9,
 						i_RegRead2	=> s33,
 						i_Rd_addr	=> s4(15 downto 11),
@@ -520,7 +532,7 @@ architecture BV of pipeline is
 						i_instr		=> s4, --i dont think this is needed
 
 				--		o_Branch	=>
-						o_RegDst	=> ex_reg
+						o_RegDst	=> ex_regdst,
 				--		o_Jump		=>
 				--		o_JR		=>
 				--		o_EqNe		=>
@@ -528,7 +540,7 @@ architecture BV of pipeline is
 						o_LSSigned	=> ex_lssigned,
 						o_ALUOp		=> ex_aluop,
 
-				--		o_PCplus4	=> --TODO
+				--		o_PCplus4	=> 
 						o_Data2Reg	=> ex_data2reg,
 						o_MemWrite	=> ex_memwrite,
 				--		o_ALUSrc	=>
@@ -542,11 +554,12 @@ architecture BV of pipeline is
 
 						o_Rt_addr1	=> s14,
 						o_Rs_addr	=> s13,
+						o_SEimm		=> s38,
 						o_RegRead1	=> s11,
 						o_RegRead2	=> s12,
 						o_Rd_addr	=> s16,
 						o_Rt_addr2	=> s15,
-						o_instr		=> s37); --TODO
+						o_instr		=> s37);
 
 		mux3 : mux41
 			port MAP(	D3	=> s24,
@@ -564,11 +577,16 @@ architecture BV of pipeline is
 						i_S	=> s35,
 						o_F	=> s18);
 
+		s49 <= "000000000000000000000000000" & s15;
+		s50 <= "000000000000000000000000000" & s16;
+
 		mux5 : mux21
-			port MAP(	D0	=> s15,
-						D1	=> s16,
-						i_S	=> id_regdst,
-						o_F	=> s19);
+			port MAP(	D0	=> s49,
+						D1	=> s50,
+						i_S	=> ex_regdst,
+						o_F	=> s51);
+
+		s19 <= s51(4 downto 0);
 
 		mather : ALU
 			port MAP(	A			=> s17,

@@ -27,6 +27,7 @@ entity ID_Register is
 		
 		i_RegRead1: in std_logic_vector(31 downto 0);
 		i_RegRead2: in std_logic_vector(31 downto 0);
+		i_SEimm : in std_logic_vector(31 downto 0);
 		i_Rd_addr : in std_logic_vector(4 downto 0);
 		i_Rt_addr2 : in std_logic_vector(4 downto 0);
 		i_Rt_addr1 : in std_logic_vector(4 downto 0);
@@ -56,6 +57,7 @@ entity ID_Register is
 		
 		o_RegRead1: out std_logic_vector(31 downto 0);
 		o_RegRead2: out std_logic_vector(31 downto 0);
+		o_SEimm	: out std_logic_vector(31 downto 0);
 		o_Rd_addr : out std_logic_vector(4 downto 0);
 		o_Rt_addr2 : out std_logic_vector(4 downto 0);
 		o_Rt_addr1  : out std_logic_vector(4 downto 0);
@@ -103,7 +105,7 @@ begin
 	tempSignalIn(68 downto 67) <= i_LSSize;
 	tempSignalIn(100 downto 69) <= i_RegRead1;
 	tempSignalIn(132 downto 101) <= i_RegRead2;
---	tempSignalIn(164 downto 133) <= i_SEimm;
+	tempSignalIn(164 downto 133) <= i_SEimm;
 	tempSignalIn(169 downto 165) <= i_Rd_addr;
 	tempSignalIn(174 downto 170) <= i_Rt_addr2;
 	tempSignalIn(206 downto 175) <= i_instr;
@@ -138,7 +140,7 @@ begin
 	o_LSSize   	<= tempSignalOut(68 downto 67);
 	o_RegRead1 	<= tempSignalOut(100 downto 69);
 	o_RegRead2 	<= tempSignalOut(132 downto 101);
---	o_SEimm    	<= tempSignalOut(164 downto 133);
+	o_SEimm    	<= tempSignalOut(164 downto 133);
 	o_Rd_addr  	<= tempSignalOut(169 downto 165);
 	o_Rt_addr2 	<= tempSignalOut(174 downto 170);
 	o_instr		<= tempSignalOut(206 downto 175);
