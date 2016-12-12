@@ -312,6 +312,7 @@ architecture BV of pipeline is
 
 	signal s34 : std_logic;
 	signal luhazard_flag : std_logic;
+	signal brjhazard_flag : std_logic;
 
 	signal sup : std_logic_vector(4 downto 0);
 	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero, datLogicDoh	: std_logic;
@@ -675,7 +676,8 @@ architecture BV of pipeline is
 						IF_Rt		=> s4(20 downto 16),
 						ID_MemRead	=> memread,
 						ID_Rt		=> s15,
-						LoadUse_Hazard	=> lu_hazard_flag);
+						LoadUse_Hazard	=> luhazard_flag,
+						BranchJump_Hazard => brj_hazard_flag);
 
 
 

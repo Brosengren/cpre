@@ -6,7 +6,8 @@ entity hazarddetection is
 				IF_Rt        : in std_logic_vector(4 downto 0);
 				ID_MemRead   : in std_logic;
 				ID_Rt        : in std_logic_vector(4 downto 0);
-				LoadUse_Hazard : out std_logic);
+				LoadUse_Hazard : out std_logic;
+				BranchJump_Hazard : out std_logic);
 end hazarddetection;
 
 architecture beevee of hazarddetection is
