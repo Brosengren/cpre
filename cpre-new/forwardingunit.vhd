@@ -25,7 +25,7 @@ architecture beevee of forwardingunit is
 	begin
 
 		--EX hazard
-		process(EX_RegWrite, EX_Rd, ID_Rs)
+		process(EX_RegWrite, EX_Rd, ID_Rs, ID_Rt, MEM_RegWrite, MEM_Rd)
 		begin
 
 		if EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rs then
