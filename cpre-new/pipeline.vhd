@@ -315,8 +315,8 @@ architecture BV of pipeline is
 	signal s26, s27, s28, s29, s30, s32, s33	: std_logic_vector(31 downto 0);
 	signal s37, s38, s39, s40, s41		: std_logic_vector(31 downto 0);
 	signal s42, s43, s44, s45, s46, s47, s48, s49	: std_logic_vector(31 downto 0);
-	signal s50, s51 : std_logic_vector(31 downto 0);
---	signal s52, s53, s54, s55, s56, s57
+	signal s50, s51, s52 : std_logic_vector(31 downto 0);
+--	signal , s53, s54, s55, s56, s57	
 --	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
 
 	signal s13, s14, s15, s16, s19, s25, s31 : std_logic_vector(4 downto 0);
@@ -442,7 +442,7 @@ architecture BV of pipeline is
 						read_rt		=> s4(20 downto 16),
 						write_data	=> s46,
 						write_addr	=> s47(4 downto 0),
-						write_en	=> regWrite,
+						write_en	=> wb_regWrite,
 						reset		=> RESET,
 						rs			=> s9,
 						rt			=> s8);
@@ -609,7 +609,7 @@ architecture BV of pipeline is
 						hi	=> garbage32,
 						lo	=> s21);
 
-		s41 <= "000000000000000000000000000" & s37(11 downto 7);
+		s41 <= "000000000000000000000000000" & s37(10 downto 6);
 
 		mux9 : mux41
 			port MAP(	D3	=> x"00000000",
@@ -637,7 +637,7 @@ architecture BV of pipeline is
 						D2	=> s21,
 						D1	=> x"00000000",
 						D0	=> s22,
-						i_S	=> data2Reg,
+						i_S	=> ex_data2Reg,
 						o_F	=> s23);
 
 		exmem_reg : EX_register
@@ -689,7 +689,7 @@ architecture BV of pipeline is
 						D2	=> s28,
 						D1	=> s27,
 						D0	=> s28,
-						i_S => data2Reg,
+						i_S => wb_data2Reg,
 						o_F => s29);
 
 		fu : forwardingunit
