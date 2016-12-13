@@ -287,9 +287,9 @@ architecture BV of pipeline is
 	component forwardingunit is
 		port(	ID_Rs			: in std_logic_vector(4 downto 0);
 				ID_Rt			: in std_logic_vector(4 downto 0);
-				EX_RegWrite		: in std_logic;
+				MEM_RegWrite		: in std_logic;
 				EX_Rd			: in std_logic_vector(4 downto 0);
-				MEM_RegWrite	: in std_logic;
+				WB_RegWrite	: in std_logic;
 				MEM_Rd			: in std_logic_vector(4 downto 0);
 				ForwardA		: out std_logic_vector(1 downto 0);  --control for first input to ALU
 				ForwardB		: out std_logic_vector(1 downto 0)); --control for second input to ALU
@@ -336,8 +336,8 @@ architecture BV of pipeline is
 --signal intomux1, intomux2, intomux3, intomux4 : std_logic_vector(31 downto 0);
 
 	signal ex_regwrite, mem_regwrite, wb_regwrite, ex_shiftlog, ex_shiftdir : std_logic;
-	signal ex_shiftSrc : std_logic_vector(1 downto 0); 
-	signal ex_data2reg : std_logic_vector(1 downto 0); 
+	signal ex_shiftSrc : std_logic_vector(1 downto 0);
+	signal ex_data2reg : std_logic_vector(1 downto 0);
 	signal mem_data2reg : std_logic_vector(1 downto 0);
 	signal wb_data2reg : std_logic_vector(1 downto 0);
 	signal ex_memwrite, mem_memwrite, ex_lssigned, mem_lssigned, ex_regdst : std_logic;
@@ -542,7 +542,7 @@ architecture BV of pipeline is
 						o_LSSigned	=> ex_lssigned,
 						o_ALUOp		=> ex_aluop,
 
-				--		o_PCplus4	=> 
+				--		o_PCplus4	=>
 						o_Data2Reg	=> ex_data2reg,
 						o_MemWrite	=> ex_memwrite,
 				--		o_ALUSrc	=>
@@ -691,9 +691,9 @@ architecture BV of pipeline is
 		fu : forwardingunit
 			port MAP(	ID_Rs			=> s13,
 						ID_Rt			=> s14,
-						EX_RegWrite		=> ex_regwrite,
-						EX_Rd			=> s25,
 						MEM_RegWrite	=> mem_regwrite,
+						EX_Rd			=> s25,
+						WB_RegWrite	=> wb_regwrite,
 						MEM_Rd			=> s31,
 						ForwardA		=> s36,
 						ForwardB		=> s35);
