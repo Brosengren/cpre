@@ -378,7 +378,7 @@ architecture BV of pipeline is
 
 		mux1 : mux21
 			port MAP(	D0		=> s3,
-						D1		=> s10,
+						D1		=> s45,
 						i_S		=> datLogicDoh,
 						o_F		=> s32);
 
@@ -442,7 +442,7 @@ architecture BV of pipeline is
 						read_rt		=> s4(20 downto 16),
 						write_data	=> s46,
 						write_addr	=> s47(4 downto 0),
-						write_en	=> wb_regWrite,
+						write_en	=> wb_regwrite,
 						reset		=> RESET,
 						rs			=> s9,
 						rt			=> s8);
@@ -502,7 +502,7 @@ architecture BV of pipeline is
 
 		idex_reg : ID_Register
 			port MAP(	i_CLK		=> CLK,
-						i_RST		=> RESET,
+						i_RST		=> brjhazard_flag,
 						i_WE		=> '1',
 
 				--		i_Branch	=>
@@ -565,7 +565,7 @@ architecture BV of pipeline is
 						o_Rd_addr	=> s16,
 						o_Rt_addr2	=> s15,
 						o_instr		=> s37,
-						o_Rt_data	=> s51);
+						o_Rt_data	=> s52);
 
 		mux3 : mux41
 			port MAP(	D3	=> s24,
@@ -601,7 +601,7 @@ architecture BV of pipeline is
 						Cout		=> garbage1,
 						overflow	=> garbage1,
 						zero		=> garbage1,
-						o_F			=> S22);
+						o_F			=> s22);
 
 		multiplier : mult
 			port MAP(	A	=> s17,
@@ -635,7 +635,7 @@ architecture BV of pipeline is
 		mux6 : mux41
 			port MAP(	D3	=> s20,
 						D2	=> s21,
-						D1	=> x"00000000",
+						D1	=> s22,
 						D0	=> s22,
 						i_S	=> ex_data2Reg,
 						o_F	=> s23);
@@ -650,7 +650,7 @@ architecture BV of pipeline is
 						Data2Reg	=> ex_data2reg,
 						RegWrite	=> ex_regwrite,
 						RdRt_addr	=> s19,
-						Rt			=> s51,
+						Rt			=> s52,
 						Data		=> s23,
 						memWrite_o	=> mem_memwrite,
 						LSSigned_o	=> mem_lssigned,
@@ -664,10 +664,10 @@ architecture BV of pipeline is
 		memfile : dmem
 			port MAP(	addr		=> s24,
 						data		=> s30,
-						we			=> memWrite,
+						we			=> mem_memWrite,
 						clock1		=> CLK,
-						lssigned	=> lssigned,
-						op			=> lssize,
+						lssigned	=> mem_lssigned,
+						op			=> mem_lssize,
 						dataout		=> s26);
 
 		memwb_reg : MEM_register
