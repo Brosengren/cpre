@@ -47,13 +47,13 @@ architecture beevee of forwardingunit is
 			ForwardB <= "10";
 		end if;
 
-		if (EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rs)
-		or (MEM_RegWrite = '1' and not(MEM_Rd = "00000") and MEM_Rd = ID_Rs) then
+		if not ((EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rs)
+		or (MEM_RegWrite = '1' and not(MEM_Rd = "00000") and MEM_Rd = ID_Rs)) then
 		  ForwardA <= "00";
 		end if;
 
-		if (EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rt)
-		or (MEM_RegWrite = '1' and not(MEM_Rd = "00000") and MEM_Rd = ID_Rt) then
+		if not ((EX_RegWrite = '1' and not(EX_Rd = "00000") and EX_Rd = ID_Rt)
+		or (MEM_RegWrite = '1' and not(MEM_Rd = "00000") and MEM_Rd = ID_Rt)) then
 		  ForwardB <= "00";
 		end if;
 
