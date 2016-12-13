@@ -1,27 +1,26 @@
-<<<<<<< HEAD
-.DS_Store
-=======
 # Compiled source #
 ###################
-#*.com
-#*.class
-#*.dll
-#*.exe
-#*.o
-#*.so
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.dat
+*.dbs
 
 # Packages #
 ############
 # it's better to unpack these files and commit the raw source
 # git has its own built in compression methods
-#*.7z
-#*.dmg
-#*.gz
-#*.iso
-#*.jar
-#*.rar
-#*.tar
-#*.zip
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
 # Logs and databases #
 ######################
@@ -42,4 +41,5 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
->>>>>>> bb468a737d1fdaf0fd5474158ad8cbd83e2026ef
+
+cpre-new/work/
