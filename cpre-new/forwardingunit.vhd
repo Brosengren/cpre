@@ -17,11 +17,6 @@ end forwardingunit;
 
 architecture beevee of forwardingunit is
 
-	signal EX_hazardA : std_logic;
-	signal EX_hazardB : std_logic;
-	signal MEM_hazardA : std_logic;
-	signal MEM_hazardB : std_logic;
-
 	begin
 
 		--EX hazard

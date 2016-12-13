@@ -164,7 +164,7 @@ architecture BV of pipeline is
 
 	component control is
 		port( 	I 			: in std_logic_vector(31 downto 0);
-				hazard		: in std_logic;
+			--	hazard		: in std_logic;
 				RegDst		: out std_logic;
 				Jump		: out std_logic;
 				JR			: out std_logic;
@@ -296,34 +296,36 @@ architecture BV of pipeline is
 	end component;
 
 	component hazarddetection is
-		port(	IF_Rs		: in std_logic_vector(4 downto 0);
-				IF_Rt		: in std_logic_vector(4 downto 0);
-				ID_MemRead	: in std_logic;
-				ID_Rt		: in std_logic_vector(4 downto 0);
-				Branch       : in std_logic;
-				Jump		 : in std_logic;
-				LoadUse_Hazard : out std_logic;
-				BranchJump_Hazard : out std_logic);
+		port(	CLK					: in std_logic;
+				IF_Rs				: in std_logic_vector(4 downto 0);
+				IF_Rt				: in std_logic_vector(4 downto 0);
+				ID_MemRead			: in std_logic;
+				ID_Rt				: in std_logic_vector(4 downto 0);
+				Branch				: in std_logic;
+				Jump				: in std_logic;
+				LoadUse_Hazard		: out std_logic;
+				BranchJump_Hazard	: out std_logic);
 	end component;
 
-	signal s0, s1, s2, s3, s4, s5, s6, s7, s8, s9 	: std_logic_vector(31 downto 0);
+	signal s1, s2, s3, s4, s5, s6, s7, s8, s9 	: std_logic_vector(31 downto 0);
 	signal s10, s11, s12, s17	: std_logic_vector(31 downto 0);
 	signal s18, s20, s21, s22, s23, s24	: std_logic_vector(31 downto 0);
 	signal s26, s27, s28, s29, s30, s32, s33	: std_logic_vector(31 downto 0);
 	signal s37, s38, s39, s40, s41		: std_logic_vector(31 downto 0);
 	signal s42, s43, s44, s45, s46, s47, s48, s49	: std_logic_vector(31 downto 0);
-	signal s50, s51, s52, s53, s54, s55, s56, s57	: std_logic_vector(31 downto 0);
-	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
+	signal s50, s51 : std_logic_vector(31 downto 0);
+--	signal s52, s53, s54, s55, s56, s57	
+--	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
 
 	signal s13, s14, s15, s16, s19, s25, s31 : std_logic_vector(4 downto 0);
 	signal s35, s36 : std_logic_vector(1 downto 0);
-	signal s34 : std_logic;
+--	signal s34 : std_logic;
 
 	signal luhazard_flag : std_logic;
 	signal brjhazard_flag : std_logic;
 	signal LU_WE : std_logic;
 
-	signal sup : std_logic_vector(4 downto 0);
+--	signal sup : std_logic_vector(4 downto 0);
 	signal regDst, jump, jr, branch, memWrite, regWrite, numOrZero, datLogicDoh	: std_logic;
 	signal shiftlog, shiftdir, zero, lssigned, eqne, gtlt, link, memread : std_logic;
 	signal data2reg, ALUSrc, shiftSrc, lssize : std_logic_vector(1 downto 0);
@@ -331,7 +333,7 @@ architecture BV of pipeline is
 	signal garbage1 : std_logic;
 	signal garbage32 : std_logic_vector(31 downto 0);
 	signal in2ls1 : std_logic_vector(31 downto 0);
-	signal intomux1, intomux2, intomux3, intomux4 : std_logic_vector(31 downto 0);
+--signal intomux1, intomux2, intomux3, intomux4 : std_logic_vector(31 downto 0);
 
 	signal ex_regwrite, mem_regwrite, wb_regwrite, ex_shiftlog, ex_shiftdir : std_logic;
 	signal ex_shiftSrc : std_logic_vector(1 downto 0); 
@@ -391,7 +393,7 @@ architecture BV of pipeline is
 
 		CONTROLLER : control
 			port MAP(	I 			=> s4,
-						hazard		=> '0',
+					--	hazard		=> RESET,
 						RegDst		=> regDst,
 						Jump		=> jump,
 						JR			=> jr,
@@ -591,7 +593,7 @@ architecture BV of pipeline is
 		mather : ALU
 			port MAP(	A			=> s17,
 						B			=> s18,
-						op			=> ALUOp,
+						op			=> ex_aluop,
 						Cout		=> garbage1,
 						overflow	=> garbage1,
 						zero		=> garbage1,
@@ -697,14 +699,15 @@ architecture BV of pipeline is
 						ForwardB		=> s35);
 
 		hazard : hazarddetection
-			port MAP(	IF_Rs		=> s4(25 downto 21),
-						IF_Rt		=> s4(20 downto 16),
-						ID_MemRead	=> memread,
-						ID_Rt		=> s15,
-						Branch		=> branch,
-						Jump		=> jump,
-						LoadUse_Hazard	=> luhazard_flag,
-						BranchJump_Hazard => brjhazard_flag);
+			port MAP(	CLK					=> CLK,
+						IF_Rs				=> s4(25 downto 21),
+						IF_Rt				=> s4(20 downto 16),
+						ID_MemRead			=> memread,
+						ID_Rt				=> s15,
+						Branch				=> branch,
+						Jump				=> jump,
+						LoadUse_Hazard		=> luhazard_flag,
+						BranchJump_Hazard	=> brjhazard_flag);
 
 
 
