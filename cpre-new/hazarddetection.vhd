@@ -16,7 +16,7 @@ architecture beevee of hazarddetection is
 
 	begin
 
-	--Load-use hazard
+	--Load-use hazard: Stall IF register, Flush ID register
 	process(ID_MemRead, ID_Rt, IF_Rs, IF_Rt)
 	begin
 	if ( (ID_MemRead = '1')
@@ -27,7 +27,7 @@ architecture beevee of hazarddetection is
 	end if;
 	end process;
 
-	--Branch/Jump
+	--Branch/Jump: Clear IF register in next cycle
 	process(Branch, Jump)
 	begin
 	if (Branch = '1' or Jump = '1') then
