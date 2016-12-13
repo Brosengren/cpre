@@ -57,6 +57,7 @@ architecture BV of pipeline is
 			i_Rd_addr 	: in std_logic_vector(4 downto 0);
 			i_Rt_addr2	: in std_logic_vector(4 downto 0);
 			i_instr		: in std_logic_vector(31 downto 0);
+			i_Rt_data	: in std_logic_vector(31 downto 0);
 
 		--	o_Branch	: out std_logic;
 			o_RegDst	: out std_logic;
@@ -86,7 +87,8 @@ architecture BV of pipeline is
 			o_SEimm		: out std_logic_vector(31 downto 0);
 			o_Rd_addr 	: out std_logic_vector(4 downto 0);
 			o_Rt_addr2	: out std_logic_vector(4 downto 0);
-			o_instr		: out std_logic_vector(31 downto 0));
+			o_instr		: out std_logic_vector(31 downto 0);
+			o_Rt_data	: out std_logic_vector(31 downto 0));
 	end component;
 
 	component EX_register is
@@ -314,7 +316,7 @@ architecture BV of pipeline is
 	signal s37, s38, s39, s40, s41		: std_logic_vector(31 downto 0);
 	signal s42, s43, s44, s45, s46, s47, s48, s49	: std_logic_vector(31 downto 0);
 	signal s50, s51 : std_logic_vector(31 downto 0);
---	signal s52, s53, s54, s55, s56, s57	
+--	signal s52, s53, s54, s55, s56, s57
 --	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
 
 	signal s13, s14, s15, s16, s19, s25, s31 : std_logic_vector(4 downto 0);
@@ -532,6 +534,7 @@ architecture BV of pipeline is
 						i_Rd_addr	=> s4(15 downto 11),
 						i_Rt_addr2	=> s4(20 downto 16),
 						i_instr		=> s4, --i dont think this is needed
+						i_Rt_data	=> s8,
 
 				--		o_Branch	=>
 						o_RegDst	=> ex_regdst,
@@ -561,7 +564,8 @@ architecture BV of pipeline is
 						o_RegRead2	=> s12,
 						o_Rd_addr	=> s16,
 						o_Rt_addr2	=> s15,
-						o_instr		=> s37);
+						o_instr		=> s37,
+						o_Rt_data	=> s51);
 
 		mux3 : mux41
 			port MAP(	D3	=> s24,
@@ -646,7 +650,7 @@ architecture BV of pipeline is
 						Data2Reg	=> ex_data2reg,
 						RegWrite	=> ex_regwrite,
 						RdRt_addr	=> s19,
-						Rt			=> s12,
+						Rt			=> s51,
 						Data		=> s23,
 						memWrite_o	=> mem_memwrite,
 						LSSigned_o	=> mem_lssigned,
