@@ -1,4 +1,4 @@
-# //  ModelSim SE-64 10.1c Jul 27 2012 Linux 3.10.0-327.28.3.el7.x86_64
+# //  ModelSim SE-64 10.1c Jul 27 2012 Linux 3.10.0-327.28.2.el7.x86_64
 # //
 # //  Copyright 1991-2012 Mentor Graphics Corporation
 # //  All Rights Reserved.
@@ -7,566 +7,798 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/forwardingunit.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity forwardingunit
-# -- Compiling architecture beevee of forwardingunit
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/branchLogic.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity branchLogic
-# -- Compiling architecture BV of branchLogic
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/pipeline.vhd
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 400
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 400
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 400
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Causality operation skipped due to absense of debug database file
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 5000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 5000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+vcom -reportprogress 300 -work work /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity pipeline
 # -- Compiling architecture BV of pipeline
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/MEM_register.vhd
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(552): near "o_RegWrite": expecting ',' or ')'
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(570): Statement cannot be labeled.
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(703): (vcom-1272) Length of formal "ID_Rt" is 5; length of actual is 32.
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(724): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity MEM_register
-# -- Compiling architecture BV of MEM_register
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+# -- Compiling entity pipeline
+# -- Compiling architecture BV of pipeline
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(552): near "o_RegWrite": expecting ',' or ')'
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(570): Statement cannot be labeled.
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(703): (vcom-1272) Length of formal "ID_Rt" is 5; length of actual is 32.
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(724): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# -- Compiling architecture veeandbee of ID_Register
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd
+# -- Compiling entity pipeline
+# -- Compiling architecture BV of pipeline
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(552): near "o_RegWrite": expecting ',' or ')'
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(570): Statement cannot be labeled.
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(703): (vcom-1272) Length of formal "ID_Rt" is 5; length of actual is 32.
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(724): VHDL Compiler exiting
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity IF_Register2
-# -- Compiling architecture veeandbee of IF_Register2
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/forwardingunit.vhd
+# -- Compiling entity pipeline
+# -- Compiling architecture BV of pipeline
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(703): (vcom-1272) Length of formal "ID_Rt" is 5; length of actual is 32.
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(724): VHDL Compiler exiting
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity forwardingunit
-# -- Compiling architecture beevee of forwardingunit
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# -- Compiling entity pipeline
+# -- Compiling architecture BV of pipeline
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(701): (vcom-1136) Unknown identifier "s54".
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(703): Illegal target for signal assignment.
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(703): (vcom-1136) Unknown identifier "s55".
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(707): (vcom-1136) Unknown identifier "s55".
+# ** Error: /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(728): VHDL Compiler exiting
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(201): (vcom-1484) Unknown formal identifier "i_Rt".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(202): (vcom-1484) Unknown formal identifier "i_Rs".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(222): (vcom-1484) Unknown formal identifier "o_Rt".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(223): (vcom-1484) Unknown formal identifier "o_Rs".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(240): (vcom-1484) Unknown formal identifier "MemWr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(241): (vcom-1484) Unknown formal identifier "MemSign".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(242): (vcom-1484) Unknown formal identifier "MemHW".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(243): (vcom-1484) Unknown formal identifier "MemByte".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(244): (vcom-1484) Unknown formal identifier "MemWr_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(245): (vcom-1484) Unknown formal identifier "MemSign_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(246): (vcom-1484) Unknown formal identifier "MemHW_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(247): (vcom-1484) Unknown formal identifier "MemByte_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(255): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(293): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_RegRead1" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_RegRead2" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_SEimm" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_Rd_addr" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(235): (vcom-1035) Formal port "i_Rt_addr2" has OPEN or no actual associated with it.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(240): (vcom-1484) Unknown formal identifier "MemWr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(241): (vcom-1484) Unknown formal identifier "MemSign".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(242): (vcom-1484) Unknown formal identifier "MemHW".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(243): (vcom-1484) Unknown formal identifier "MemByte".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(244): (vcom-1484) Unknown formal identifier "MemWr_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(245): (vcom-1484) Unknown formal identifier "MemSign_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(246): (vcom-1484) Unknown formal identifier "MemHW_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(247): (vcom-1484) Unknown formal identifier "MemByte_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(255): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(293): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(212): (vcom-1136) Unknown identifier "ID_i_RegRead1".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(213): (vcom-1136) Unknown identifier "ID_i_RegRead2".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(214): (vcom-1136) Unknown identifier "ID_i_SEimm".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(215): (vcom-1136) Unknown identifier "ID_i_Rd_addr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(216): (vcom-1136) Unknown identifier "ID_i_Rt_addr2".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(240): (vcom-1136) Unknown identifier "ID_o_RegRead1".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(241): (vcom-1136) Unknown identifier "ID_o_RegRead2".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(242): (vcom-1136) Unknown identifier "ID_o_SEimm".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(243): (vcom-1136) Unknown identifier "ID_o_Rd_addr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(244): (vcom-1136) Unknown identifier "ID_o_Rt_addr2".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(253): (vcom-1484) Unknown formal identifier "MemWr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(254): (vcom-1484) Unknown formal identifier "MemSign".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(255): (vcom-1484) Unknown formal identifier "MemHW".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(256): (vcom-1484) Unknown formal identifier "MemByte".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(257): (vcom-1484) Unknown formal identifier "MemWr_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(258): (vcom-1484) Unknown formal identifier "MemSign_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(259): (vcom-1484) Unknown formal identifier "MemHW_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1484) Unknown formal identifier "MemByte_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(268): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(273): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(306): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(222): (vcom-1136) Unknown identifier "ID_i_Rt".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(223): (vcom-1136) Unknown identifier "ID_i_Rs".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(250): (vcom-1136) Unknown identifier "ID_o_Rt".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(251): (vcom-1136) Unknown identifier "ID_o_Rs".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(258): (vcom-1484) Unknown formal identifier "MemWr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(259): (vcom-1484) Unknown formal identifier "MemSign".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1484) Unknown formal identifier "MemHW".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(261): (vcom-1484) Unknown formal identifier "MemByte".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(262): (vcom-1484) Unknown formal identifier "MemWr_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(263): (vcom-1484) Unknown formal identifier "MemSign_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(264): (vcom-1484) Unknown formal identifier "MemHW_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(265): (vcom-1484) Unknown formal identifier "MemByte_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(273): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(278): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(311): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(258): (vcom-1484) Unknown formal identifier "MemWr".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(259): (vcom-1484) Unknown formal identifier "MemSign".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(260): (vcom-1484) Unknown formal identifier "MemHW".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(261): (vcom-1484) Unknown formal identifier "MemByte".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(262): (vcom-1484) Unknown formal identifier "MemWr_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(263): (vcom-1484) Unknown formal identifier "MemSign_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(264): (vcom-1484) Unknown formal identifier "MemHW_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(265): (vcom-1484) Unknown formal identifier "MemByte_o".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(273): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(278): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(311): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(266): near "_": expecting ',' or ')'
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(275): Statement cannot be labeled.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(281): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(286): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(281): (vcom-1272) Length of formal "RdRt" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(286): (vcom-1272) Length of formal "RdRt_o" is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(280): (vcom-1136) Unknown identifier "EX_o_MemOut".
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(338): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): Length field for bit string literal is not defined until VHDL 2008.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): (vcom-1449) Truncated bit string literal (length 0) has deleted character '1'; all deleted characters must be '0'.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(315): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(316): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(319): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(320): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(323): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(324): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(327): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(328): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(331): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(332): (vcom-1272) Length of expected is 32; length of actual is 0.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(338): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(336): near "'": syntax error
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(340): near "'": syntax error
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(364): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(340): near "'": syntax error
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(364): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vsim work.tb_pipelineregs
-# vsim work.tb_pipelineregs 
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd(41): (vopt-1127) Entity work.nbit_reg was not selected for default binding because it is out of date relative to dependency ieee.std_logic_1164. 
-# ** Warning: [1] /home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd(41): (vopt-3473) Component instance "AllTheSignals : Nbit_reg" is not bound.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(252): (vopt-1130) Port "i_SEimm" of entity "ID_Register" is not in the component being instantiated.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd(65): Vopt Compiler exiting
+# -- Compiling entity pipeline
+# -- Compiling architecture BV of pipeline
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.pipeline(bv)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# ** Error: (vsim-3732) /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(568): No default binding for component at 'idex_reg'.
+#  (Port 'o_ALUSrc' is not on the entity.)
+#         Region: /pipeline/idex_reg
+# ** Error: (vsim-3732) /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/pipeline.vhd(568): No default binding for component at 'idex_reg'.
+#  (Port 'i_ALUSrc' is not on the entity.)
+#         Region: /pipeline/idex_reg
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
 # Error loading design
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/ID_Register.vhd
+add wave sim:/pipeline/*
+# Unrecognized dataset prefix: sim
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+# Dataset not found: sim
+force -freeze sim:/pipeline/RESET 1 0
+# Dataset not found: sim
+run 100
+# No Design Loaded!
+force -freeze sim:/pipeline/RESET 0 0
+# Dataset not found: sim
+run 5000
+# No Design Loaded!
+vsim -work work *.vhd
+# ** Error: (vish-3296) Unknown option '-work'.
+# Use the -help option for complete vsim usage.
+# Error loading design
+vcom -work work *.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity ID_Register
-# -- Compiling architecture veeandbee of ID_Register
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/IF_Register2.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity IF_Register2
-# -- Compiling architecture veeandbee of IF_Register2
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/EX_register.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
+# -- Loading package ATTRIBUTES
+# -- Loading package std_logic_misc
+# -- Compiling entity ALU
+# -- Compiling architecture BradenVenecia of ALU
+# -- Compiling entity ALU1
+# -- Compiling architecture BradenVenecia of ALU1
+# -- Compiling entity BVadder
+# -- Compiling architecture BradenVenecia of BVadder
 # -- Compiling entity EX_register
 # -- Compiling architecture BV of EX_register
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/MEM_register.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
+# -- Compiling entity ID_Register
+# -- Compiling architecture veeandbee of ID_Register
+# -- Compiling entity IF_Register2
+# -- Compiling architecture veeandbee of IF_Register2
 # -- Compiling entity MEM_register
 # -- Compiling architecture BV of MEM_register
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vsim -novopt work.tb_pipelineregs
-# vsim -novopt work.tb_pipelineregs 
-# Loading std.standard
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.tb_pipelineregs(behavior)
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.if_register2(veeandbee)
-# Loading work.if_register2(veeandbee)
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.nbit_reg(mixed)
-# ** Error: D:/cpre/cpre-new/Nbit_reg.vhd: This version of the compiler is incompatible with the library .dat file.
-# ** Error: D:/cpre/cpre-new/Nbit_reg.vhd(1): near "<byte 0x01>": illegal character found in source
-# ** Error: D:/cpre/cpre-new/Nbit_reg.vhd(1): near "p ": Identifier may not contain non-graphic character.
-# ** Error: D:/cpre/cpre-new/Nbit_reg.vhd(1): VHDL Compiler exiting
-# ** Error: /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
-# ** Error: subinvocation of vcom failed; return status = 1.
-# ** Error: (vsim-3171) Could not find machine code for '/home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.nbit_reg(mixed)'.
-# No such file or directory. (errno = ENOENT)
-# Load interrupted
-# Error loading design
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/Nbit_reg.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
+# -- Compiling entity MIPS
+# -- Compiling architecture BRADEN of MIPS
 # -- Compiling entity Nbit_reg
 # -- Compiling architecture mixed of Nbit_reg
-vsim -novopt work.tb_pipelineregs
-# vsim -novopt work.tb_pipelineregs 
+# -- Compiling entity OCStr
+# -- Compiling architecture structure of OCStr
+# -- Compiling entity adder
+# -- Compiling architecture structure of adder
+# -- Compiling entity and2
+# -- Compiling architecture dataflow of and2
+# -- Compiling entity ander
+# -- Compiling architecture BradenVenecia of ander
+# -- Compiling entity branchLogic
+# -- Compiling architecture BV of branchLogic
+# -- Compiling entity control
+# -- Compiling architecture BRADENV of control
+# -- Compiling entity decoder532
+# -- Compiling architecture BRADEN of decoder532
+# -- Compiling entity dff
+# -- Compiling architecture mixed of dff
+# -- Compiling entity dmem
+# -- Compiling architecture BV of dmem
+# -- Compiling entity extender16
+# -- Compiling architecture dataflow of extender16
+# -- Compiling entity extender8
+# -- Compiling architecture dataflow of extender8
+# -- Compiling entity fa_st
+# -- Compiling architecture structure of fa_st
+# -- Compiling entity fasub
+# -- Compiling architecture structure of fasub
+# -- Compiling entity forwardingunit
+# -- Compiling architecture beevee of forwardingunit
+# -- Compiling entity hazarddetection
+# -- Compiling architecture beevee of hazarddetection
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity imem
+# -- Compiling architecture behavioral of imem
+# -- Compiling entity inv
+# -- Compiling architecture dataflow of inv
+# -- Compiling entity mem
+# -- Compiling architecture behavioral of mem
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mult
+# -- Compiling architecture BradenVenecia of mult
+# -- Compiling entity mux
+# -- Compiling architecture structure of mux
+# -- Compiling entity mux21
+# -- Compiling architecture BRADEN of mux21
+# -- Compiling entity mux321
+# -- Compiling architecture BRADEN of mux321
+# -- Compiling entity mux41
+# -- Compiling architecture BRADEN of mux41
+# -- Compiling entity muxN_st
+# -- Compiling architecture structure of muxN_st
+# -- Compiling entity mux_lb
+# -- Compiling architecture BRADEN of mux_lb
+# -- Compiling entity mux_st
+# -- Compiling architecture structure of mux_st
+# -- Compiling entity or2
+# -- Compiling architecture dataflow of or2
+# -- Compiling entity pipeline
+# -- Compiling architecture BV of pipeline
+# -- Compiling entity shifter
+# -- Compiling architecture structure of shifter
+# -- Compiling entity singlecycle
+# -- Compiling architecture BV of singlecycle
+# -- Compiling entity tb_pipelineregs
+# -- Compiling architecture behavior of tb_pipelineregs
+# -- Compiling entity xor2
+# -- Compiling architecture dataflow of xor2
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
 # Loading std.standard
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.pipeline(bv)
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.tb_pipelineregs(behavior)
-# Loading work.if_register2(veeandbee)
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.nbit_reg(mixed)
+# Loading work.pipeline(bv)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.nbit_reg(mixed)
 # Loading work.nbit_reg(mixed)
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.id_register(veeandbee)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.alu(bradenvenecia)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.alu1(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.adder(structure)
+# Loading work.adder(structure)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.xor2(dataflow)
+# Loading work.xor2(dataflow)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.and2(dataflow)
+# Loading work.and2(dataflow)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.or2(dataflow)
+# Loading work.or2(dataflow)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.imem(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mux21(braden)
+# Loading work.mux21(braden)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.if_register2(veeandbee)
+# Loading work.if_register2(veeandbee)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.control(bradenv)
+# Loading work.control(bradenv)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.extender16(dataflow)
+# Loading work.extender16(dataflow)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mips(braden)
+# Loading work.mips(braden)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.decoder532(braden)
+# Loading work.decoder532(braden)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mux321(braden)
+# Loading work.mux321(braden)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.branchlogic(bv)
+# Loading work.branchlogic(bv)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mux(structure)
+# Loading work.mux(structure)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.inv(dataflow)
+# Loading work.inv(dataflow)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.shifter(structure)
+# Loading work.shifter(structure)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.id_register(veeandbee)
 # Loading work.id_register(veeandbee)
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.ex_register(bv)
-# Loading work.ex_register(bv)
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.mem_register(bv)
-# Loading work.mem_register(bv)
-add wave -position insertpoint  \
-sim:/tb_pipelineregs/testEX/CLK \
-sim:/tb_pipelineregs/testEX/Reset \
-sim:/tb_pipelineregs/testEX/memWrite \
-sim:/tb_pipelineregs/testEX/LSSigned \
-sim:/tb_pipelineregs/testEX/LSSize \
-sim:/tb_pipelineregs/testEX/Data2Reg \
-sim:/tb_pipelineregs/testEX/RegWrite \
-sim:/tb_pipelineregs/testEX/RdRt_addr \
-sim:/tb_pipelineregs/testEX/Rt \
-sim:/tb_pipelineregs/testEX/Data \
-sim:/tb_pipelineregs/testEX/memWrite_o \
-sim:/tb_pipelineregs/testEX/LSSigned_o \
-sim:/tb_pipelineregs/testEX/LSSize_o \
-sim:/tb_pipelineregs/testEX/Data2Reg_o \
-sim:/tb_pipelineregs/testEX/RegWrite_o \
-sim:/tb_pipelineregs/testEX/RdRt_addr_o \
-sim:/tb_pipelineregs/testEX/Rt_o \
-sim:/tb_pipelineregs/testEX/Data_o \
-sim:/tb_pipelineregs/testEX/tempSignalIn \
-sim:/tb_pipelineregs/testEX/tempSignalOut
-run
-run
-run
-run
-run
-run
-run
-run
-run
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vsim -novopt work.tb_pipelineregs
-# vsim -novopt work.tb_pipelineregs 
-# Loading std.standard
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mux41(braden)
+# Loading work.mux41(braden)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mult(bradenvenecia)
 # Loading ieee.numeric_std(body)
-# Loading work.tb_pipelineregs(behavior)
-# Loading work.if_register2(veeandbee)
-# Loading work.nbit_reg(mixed)
-# Loading work.id_register(veeandbee)
+# Loading work.mult(bradenvenecia)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.ander(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.bvadder(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.fa_st(structure)
+# Loading work.fa_st(structure)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.ex_register(bv)
 # Loading work.ex_register(bv)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.dmem(bv)
+# Loading work.dmem(bv)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mem(behavioral)
+# Loading work.mem(behavioral)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mux_lb(braden)
+# Loading work.mux_lb(braden)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.extender8(dataflow)
+# Loading work.extender8(dataflow)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mem_register(bv)
 # Loading work.mem_register(bv)
-add wave -position insertpoint  \
-sim:/tb_pipelineregs/gCLK_HPER \
-sim:/tb_pipelineregs/s_CLK \
-sim:/tb_pipelineregs/IF_RST \
-sim:/tb_pipelineregs/IF_WE \
-sim:/tb_pipelineregs/IF_i_instr \
-sim:/tb_pipelineregs/IF_o_instr \
-sim:/tb_pipelineregs/IF_i_PCplus4 \
-sim:/tb_pipelineregs/IF_o_PCplus4 \
-sim:/tb_pipelineregs/ID_RST \
-sim:/tb_pipelineregs/ID_WE \
-sim:/tb_pipelineregs/ID_i_Branch \
-sim:/tb_pipelineregs/ID_o_Branch \
-sim:/tb_pipelineregs/ID_i_RegDst \
-sim:/tb_pipelineregs/ID_o_RegDst \
-sim:/tb_pipelineregs/ID_i_Jump \
-sim:/tb_pipelineregs/ID_o_Jump \
-sim:/tb_pipelineregs/ID_i_JR \
-sim:/tb_pipelineregs/ID_o_JR \
-sim:/tb_pipelineregs/ID_i_EqNe \
-sim:/tb_pipelineregs/ID_o_EqNe \
-sim:/tb_pipelineregs/ID_i_LtGt \
-sim:/tb_pipelineregs/ID_o_LtGt \
-sim:/tb_pipelineregs/ID_i_LSSigned \
-sim:/tb_pipelineregs/ID_o_LSSigned \
-sim:/tb_pipelineregs/ID_i_ALUOp \
-sim:/tb_pipelineregs/ID_o_ALUOp \
-sim:/tb_pipelineregs/ID_i_Data2Reg \
-sim:/tb_pipelineregs/ID_o_Data2Reg \
-sim:/tb_pipelineregs/ID_i_MemWrite \
-sim:/tb_pipelineregs/ID_o_MemWrite \
-sim:/tb_pipelineregs/ID_i_ALUSrc \
-sim:/tb_pipelineregs/ID_o_ALUSrc \
-sim:/tb_pipelineregs/ID_i_RegWrite \
-sim:/tb_pipelineregs/ID_o_RegWrite \
-sim:/tb_pipelineregs/ID_i_Link \
-sim:/tb_pipelineregs/ID_o_Link \
-sim:/tb_pipelineregs/ID_i_ShiftSrc \
-sim:/tb_pipelineregs/ID_o_ShiftSrc \
-sim:/tb_pipelineregs/ID_i_numorzero \
-sim:/tb_pipelineregs/ID_o_numorzero \
-sim:/tb_pipelineregs/ID_i_shiftLog \
-sim:/tb_pipelineregs/ID_o_shiftLog \
-sim:/tb_pipelineregs/ID_i_shiftDir \
-sim:/tb_pipelineregs/ID_o_shiftDir \
-sim:/tb_pipelineregs/ID_i_LSSize \
-sim:/tb_pipelineregs/ID_o_LSSize \
-sim:/tb_pipelineregs/ID_i_Rt_addr1 \
-sim:/tb_pipelineregs/ID_o_Rt_addr1 \
-sim:/tb_pipelineregs/ID_i_Rs_addr \
-sim:/tb_pipelineregs/ID_o_Rs_addr \
-sim:/tb_pipelineregs/ID_i_PCplus4 \
-sim:/tb_pipelineregs/ID_o_PCplus4 \
-sim:/tb_pipelineregs/ID_i_RegRead1 \
-sim:/tb_pipelineregs/ID_o_RegRead1 \
-sim:/tb_pipelineregs/ID_i_RegRead2 \
-sim:/tb_pipelineregs/ID_o_RegRead2 \
-sim:/tb_pipelineregs/ID_i_Rt_addr2 \
-sim:/tb_pipelineregs/ID_o_Rt_addr2 \
-sim:/tb_pipelineregs/ID_i_Rd_addr \
-sim:/tb_pipelineregs/ID_o_Rd_addr \
-sim:/tb_pipelineregs/EX_RST \
-sim:/tb_pipelineregs/EX_i_MemWr \
-sim:/tb_pipelineregs/EX_o_MemWr \
-sim:/tb_pipelineregs/EX_i_LSSigned \
-sim:/tb_pipelineregs/EX_o_LSSigned \
-sim:/tb_pipelineregs/EX_i_LSSize \
-sim:/tb_pipelineregs/EX_o_LSSize \
-sim:/tb_pipelineregs/EX_i_Data2Reg \
-sim:/tb_pipelineregs/EX_o_Data2Reg \
-sim:/tb_pipelineregs/EX_i_RegWrite \
-sim:/tb_pipelineregs/EX_o_RegWrite \
-sim:/tb_pipelineregs/EX_i_RdRt_addr \
-sim:/tb_pipelineregs/EX_o_RdRt_addr \
-sim:/tb_pipelineregs/EX_i_Rt \
-sim:/tb_pipelineregs/EX_o_Rt \
-sim:/tb_pipelineregs/EX_i_Data \
-sim:/tb_pipelineregs/EX_o_Data \
-sim:/tb_pipelineregs/MEM_RST \
-sim:/tb_pipelineregs/MEM_i_Data2Reg \
-sim:/tb_pipelineregs/MEM_o_Data2Reg \
-sim:/tb_pipelineregs/MEM_i_RegWrite \
-sim:/tb_pipelineregs/MEM_o_RegWrite \
-sim:/tb_pipelineregs/MEM_i_MemOut \
-sim:/tb_pipelineregs/MEM_o_MemOut \
-sim:/tb_pipelineregs/MEM_i_RdRt \
-sim:/tb_pipelineregs/MEM_o_RdRt \
-sim:/tb_pipelineregs/MEM_i_ALUOut \
-sim:/tb_pipelineregs/MEM_o_ALUOut \
-sim:/tb_pipelineregs/cCLK_PER
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.forwardingunit(beevee)
+# Loading work.forwardingunit(beevee)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.hazarddetection(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 5000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
 run
 run
 run
@@ -607,510 +839,1492 @@ run
 run
 run
 run
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vsim -novopt work.tb_pipelineregs
-# vsim -novopt work.tb_pipelineregs 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
 # Loading std.standard
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
 # Loading ieee.numeric_std(body)
-# Loading work.tb_pipelineregs(behavior)
-# Loading work.if_register2(veeandbee)
-# Loading work.nbit_reg(mixed)
-# Loading work.id_register(veeandbee)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
 # Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
 # Loading work.mem_register(bv)
-add wave -position insertpoint  \
-sim:/tb_pipelineregs/gCLK_HPER \
-sim:/tb_pipelineregs/s_CLK \
-sim:/tb_pipelineregs/IF_RST \
-sim:/tb_pipelineregs/IF_WE \
-sim:/tb_pipelineregs/IF_i_instr \
-sim:/tb_pipelineregs/IF_o_instr \
-sim:/tb_pipelineregs/IF_i_PCplus4 \
-sim:/tb_pipelineregs/IF_o_PCplus4 \
-sim:/tb_pipelineregs/ID_RST \
-sim:/tb_pipelineregs/ID_WE \
-sim:/tb_pipelineregs/ID_i_Branch \
-sim:/tb_pipelineregs/ID_o_Branch \
-sim:/tb_pipelineregs/ID_i_RegDst \
-sim:/tb_pipelineregs/ID_o_RegDst \
-sim:/tb_pipelineregs/ID_i_Jump \
-sim:/tb_pipelineregs/ID_o_Jump \
-sim:/tb_pipelineregs/ID_i_JR \
-sim:/tb_pipelineregs/ID_o_JR \
-sim:/tb_pipelineregs/ID_i_EqNe \
-sim:/tb_pipelineregs/ID_o_EqNe \
-sim:/tb_pipelineregs/ID_i_LtGt \
-sim:/tb_pipelineregs/ID_o_LtGt \
-sim:/tb_pipelineregs/ID_i_LSSigned \
-sim:/tb_pipelineregs/ID_o_LSSigned \
-sim:/tb_pipelineregs/ID_i_ALUOp \
-sim:/tb_pipelineregs/ID_o_ALUOp \
-sim:/tb_pipelineregs/ID_i_Data2Reg \
-sim:/tb_pipelineregs/ID_o_Data2Reg \
-sim:/tb_pipelineregs/ID_i_MemWrite \
-sim:/tb_pipelineregs/ID_o_MemWrite \
-sim:/tb_pipelineregs/ID_i_ALUSrc \
-sim:/tb_pipelineregs/ID_o_ALUSrc \
-sim:/tb_pipelineregs/ID_i_RegWrite \
-sim:/tb_pipelineregs/ID_o_RegWrite \
-sim:/tb_pipelineregs/ID_i_Link \
-sim:/tb_pipelineregs/ID_o_Link \
-sim:/tb_pipelineregs/ID_i_ShiftSrc \
-sim:/tb_pipelineregs/ID_o_ShiftSrc \
-sim:/tb_pipelineregs/ID_i_numorzero \
-sim:/tb_pipelineregs/ID_o_numorzero \
-sim:/tb_pipelineregs/ID_i_shiftLog \
-sim:/tb_pipelineregs/ID_o_shiftLog \
-sim:/tb_pipelineregs/ID_i_shiftDir \
-sim:/tb_pipelineregs/ID_o_shiftDir \
-sim:/tb_pipelineregs/ID_i_LSSize \
-sim:/tb_pipelineregs/ID_o_LSSize \
-sim:/tb_pipelineregs/ID_i_Rt_addr1 \
-sim:/tb_pipelineregs/ID_o_Rt_addr1 \
-sim:/tb_pipelineregs/ID_i_Rs_addr \
-sim:/tb_pipelineregs/ID_o_Rs_addr \
-sim:/tb_pipelineregs/ID_i_PCplus4 \
-sim:/tb_pipelineregs/ID_o_PCplus4 \
-sim:/tb_pipelineregs/ID_i_RegRead1 \
-sim:/tb_pipelineregs/ID_o_RegRead1 \
-sim:/tb_pipelineregs/ID_i_RegRead2 \
-sim:/tb_pipelineregs/ID_o_RegRead2 \
-sim:/tb_pipelineregs/ID_i_Rt_addr2 \
-sim:/tb_pipelineregs/ID_o_Rt_addr2 \
-sim:/tb_pipelineregs/ID_i_Rd_addr \
-sim:/tb_pipelineregs/ID_o_Rd_addr \
-sim:/tb_pipelineregs/EX_RST \
-sim:/tb_pipelineregs/EX_i_MemWr \
-sim:/tb_pipelineregs/EX_o_MemWr \
-sim:/tb_pipelineregs/EX_i_LSSigned \
-sim:/tb_pipelineregs/EX_o_LSSigned \
-sim:/tb_pipelineregs/EX_i_LSSize \
-sim:/tb_pipelineregs/EX_o_LSSize \
-sim:/tb_pipelineregs/EX_i_Data2Reg \
-sim:/tb_pipelineregs/EX_o_Data2Reg \
-sim:/tb_pipelineregs/EX_i_RegWrite \
-sim:/tb_pipelineregs/EX_o_RegWrite \
-sim:/tb_pipelineregs/EX_i_RdRt_addr \
-sim:/tb_pipelineregs/EX_o_RdRt_addr \
-sim:/tb_pipelineregs/EX_i_Rt \
-sim:/tb_pipelineregs/EX_o_Rt \
-sim:/tb_pipelineregs/EX_i_Data \
-sim:/tb_pipelineregs/EX_o_Data \
-sim:/tb_pipelineregs/MEM_RST \
-sim:/tb_pipelineregs/MEM_i_Data2Reg \
-sim:/tb_pipelineregs/MEM_o_Data2Reg \
-sim:/tb_pipelineregs/MEM_i_RegWrite \
-sim:/tb_pipelineregs/MEM_o_RegWrite \
-sim:/tb_pipelineregs/MEM_i_MemOut \
-sim:/tb_pipelineregs/MEM_o_MemOut \
-sim:/tb_pipelineregs/MEM_i_RdRt \
-sim:/tb_pipelineregs/MEM_o_RdRt \
-sim:/tb_pipelineregs/MEM_i_ALUOut \
-sim:/tb_pipelineregs/MEM_o_ALUOut \
-sim:/tb_pipelineregs/cCLK_PER
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 5400
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
 run
 run
 run
 run
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vsim -novopt work.tb_pipelineregs
-# vsim -novopt work.tb_pipelineregs 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
 # Loading std.standard
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
 # Loading ieee.numeric_std(body)
-# Loading work.tb_pipelineregs(behavior)
-# Loading work.if_register2(veeandbee)
-# Loading work.nbit_reg(mixed)
-# Loading work.id_register(veeandbee)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
 # Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
 # Loading work.mem_register(bv)
-add wave -position insertpoint  \
-sim:/tb_pipelineregs/gCLK_HPER \
-sim:/tb_pipelineregs/s_CLK \
-sim:/tb_pipelineregs/IF_RST \
-sim:/tb_pipelineregs/IF_WE \
-sim:/tb_pipelineregs/IF_i_instr \
-sim:/tb_pipelineregs/IF_o_instr \
-sim:/tb_pipelineregs/IF_i_PCplus4 \
-sim:/tb_pipelineregs/IF_o_PCplus4 \
-sim:/tb_pipelineregs/ID_RST \
-sim:/tb_pipelineregs/ID_WE \
-sim:/tb_pipelineregs/ID_i_Branch \
-sim:/tb_pipelineregs/ID_o_Branch \
-sim:/tb_pipelineregs/ID_i_RegDst \
-sim:/tb_pipelineregs/ID_o_RegDst \
-sim:/tb_pipelineregs/ID_i_Jump \
-sim:/tb_pipelineregs/ID_o_Jump \
-sim:/tb_pipelineregs/ID_i_JR \
-sim:/tb_pipelineregs/ID_o_JR \
-sim:/tb_pipelineregs/ID_i_EqNe \
-sim:/tb_pipelineregs/ID_o_EqNe \
-sim:/tb_pipelineregs/ID_i_LtGt \
-sim:/tb_pipelineregs/ID_o_LtGt \
-sim:/tb_pipelineregs/ID_i_LSSigned \
-sim:/tb_pipelineregs/ID_o_LSSigned \
-sim:/tb_pipelineregs/ID_i_ALUOp \
-sim:/tb_pipelineregs/ID_o_ALUOp \
-sim:/tb_pipelineregs/ID_i_Data2Reg \
-sim:/tb_pipelineregs/ID_o_Data2Reg \
-sim:/tb_pipelineregs/ID_i_MemWrite \
-sim:/tb_pipelineregs/ID_o_MemWrite \
-sim:/tb_pipelineregs/ID_i_ALUSrc \
-sim:/tb_pipelineregs/ID_o_ALUSrc \
-sim:/tb_pipelineregs/ID_i_RegWrite \
-sim:/tb_pipelineregs/ID_o_RegWrite \
-sim:/tb_pipelineregs/ID_i_Link \
-sim:/tb_pipelineregs/ID_o_Link \
-sim:/tb_pipelineregs/ID_i_ShiftSrc \
-sim:/tb_pipelineregs/ID_o_ShiftSrc \
-sim:/tb_pipelineregs/ID_i_numorzero \
-sim:/tb_pipelineregs/ID_o_numorzero \
-sim:/tb_pipelineregs/ID_i_shiftLog \
-sim:/tb_pipelineregs/ID_o_shiftLog \
-sim:/tb_pipelineregs/ID_i_shiftDir \
-sim:/tb_pipelineregs/ID_o_shiftDir \
-sim:/tb_pipelineregs/ID_i_LSSize \
-sim:/tb_pipelineregs/ID_o_LSSize \
-sim:/tb_pipelineregs/ID_i_Rt_addr1 \
-sim:/tb_pipelineregs/ID_o_Rt_addr1 \
-sim:/tb_pipelineregs/ID_i_Rs_addr \
-sim:/tb_pipelineregs/ID_o_Rs_addr \
-sim:/tb_pipelineregs/ID_i_PCplus4 \
-sim:/tb_pipelineregs/ID_o_PCplus4 \
-sim:/tb_pipelineregs/ID_i_RegRead1 \
-sim:/tb_pipelineregs/ID_o_RegRead1 \
-sim:/tb_pipelineregs/ID_i_RegRead2 \
-sim:/tb_pipelineregs/ID_o_RegRead2 \
-sim:/tb_pipelineregs/ID_i_Rt_addr2 \
-sim:/tb_pipelineregs/ID_o_Rt_addr2 \
-sim:/tb_pipelineregs/ID_i_Rd_addr \
-sim:/tb_pipelineregs/ID_o_Rd_addr \
-sim:/tb_pipelineregs/EX_RST \
-sim:/tb_pipelineregs/EX_i_MemWr \
-sim:/tb_pipelineregs/EX_o_MemWr \
-sim:/tb_pipelineregs/EX_i_LSSigned \
-sim:/tb_pipelineregs/EX_o_LSSigned \
-sim:/tb_pipelineregs/EX_i_LSSize \
-sim:/tb_pipelineregs/EX_o_LSSize \
-sim:/tb_pipelineregs/EX_i_Data2Reg \
-sim:/tb_pipelineregs/EX_o_Data2Reg \
-sim:/tb_pipelineregs/EX_i_RegWrite \
-sim:/tb_pipelineregs/EX_o_RegWrite \
-sim:/tb_pipelineregs/EX_i_RdRt_addr \
-sim:/tb_pipelineregs/EX_o_RdRt_addr \
-sim:/tb_pipelineregs/EX_i_Rt \
-sim:/tb_pipelineregs/EX_o_Rt \
-sim:/tb_pipelineregs/EX_i_Data \
-sim:/tb_pipelineregs/EX_o_Data \
-sim:/tb_pipelineregs/MEM_RST \
-sim:/tb_pipelineregs/MEM_i_Data2Reg \
-sim:/tb_pipelineregs/MEM_o_Data2Reg \
-sim:/tb_pipelineregs/MEM_i_RegWrite \
-sim:/tb_pipelineregs/MEM_o_RegWrite \
-sim:/tb_pipelineregs/MEM_i_MemOut \
-sim:/tb_pipelineregs/MEM_o_MemOut \
-sim:/tb_pipelineregs/MEM_i_RdRt \
-sim:/tb_pipelineregs/MEM_o_RdRt \
-sim:/tb_pipelineregs/MEM_i_ALUOut \
-sim:/tb_pipelineregs/MEM_o_ALUOut \
-sim:/tb_pipelineregs/cCLK_PER
-run
-run
-run
-vsim -novopt work.if_register2
-# vsim -novopt work.if_register2 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.if_register2(veeandbee)
-# Loading work.nbit_reg(mixed)
-add wave -position insertpoint  \
-sim:/if_register2/i_CLK \
-sim:/if_register2/i_RST \
-sim:/if_register2/i_WE \
-sim:/if_register2/i_instr \
-sim:/if_register2/i_PCplus4 \
-sim:/if_register2/o_instr \
-sim:/if_register2/o_PCplus4 \
-sim:/if_register2/tempSignalIn \
-sim:/if_register2/tempSignalOut
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 6700
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+vcom -work work muc_lb.vhd
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# ** Error: (vcom-7) Failed to open design unit file "muc_lb.vhd" in read mode.
+# No such file or directory. (errno = ENOENT)
+# /remote/Modelsim/10.1c/modeltech/linux_x86_64/vcom failed.
+vcom -work work mux_lb.vhd
 # Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vsim -novopt work.tb_pipelineregs
-# vsim -novopt work.tb_pipelineregs 
+# -- Compiling entity mux_lb
+# -- Compiling architecture BRADEN of mux_lb
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
 # Loading std.standard
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
 # Loading ieee.numeric_std(body)
-# Loading work.tb_pipelineregs(behavior)
-# Loading work.if_register2(veeandbee)
-# Loading work.nbit_reg(mixed)
-# Loading work.id_register(veeandbee)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
 # Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Refreshing /home/bradenr/Desktop/cpre/ProjC/cpre/cpre-new/work.mux_lb(braden)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
 # Loading work.mem_register(bv)
-add wave -position insertpoint  \
-sim:/tb_pipelineregs/gCLK_HPER \
-sim:/tb_pipelineregs/s_CLK \
-sim:/tb_pipelineregs/IF_RST \
-sim:/tb_pipelineregs/IF_WE \
-sim:/tb_pipelineregs/IF_i_instr \
-sim:/tb_pipelineregs/IF_o_instr \
-sim:/tb_pipelineregs/IF_i_PCplus4 \
-sim:/tb_pipelineregs/IF_o_PCplus4 \
-sim:/tb_pipelineregs/ID_RST \
-sim:/tb_pipelineregs/ID_WE \
-sim:/tb_pipelineregs/ID_i_Branch \
-sim:/tb_pipelineregs/ID_o_Branch \
-sim:/tb_pipelineregs/ID_i_RegDst \
-sim:/tb_pipelineregs/ID_o_RegDst \
-sim:/tb_pipelineregs/ID_i_Jump \
-sim:/tb_pipelineregs/ID_o_Jump \
-sim:/tb_pipelineregs/ID_i_JR \
-sim:/tb_pipelineregs/ID_o_JR \
-sim:/tb_pipelineregs/ID_i_EqNe \
-sim:/tb_pipelineregs/ID_o_EqNe \
-sim:/tb_pipelineregs/ID_i_LtGt \
-sim:/tb_pipelineregs/ID_o_LtGt \
-sim:/tb_pipelineregs/ID_i_LSSigned \
-sim:/tb_pipelineregs/ID_o_LSSigned \
-sim:/tb_pipelineregs/ID_i_ALUOp \
-sim:/tb_pipelineregs/ID_o_ALUOp \
-sim:/tb_pipelineregs/ID_i_Data2Reg \
-sim:/tb_pipelineregs/ID_o_Data2Reg \
-sim:/tb_pipelineregs/ID_i_MemWrite \
-sim:/tb_pipelineregs/ID_o_MemWrite \
-sim:/tb_pipelineregs/ID_i_ALUSrc \
-sim:/tb_pipelineregs/ID_o_ALUSrc \
-sim:/tb_pipelineregs/ID_i_RegWrite \
-sim:/tb_pipelineregs/ID_o_RegWrite \
-sim:/tb_pipelineregs/ID_i_Link \
-sim:/tb_pipelineregs/ID_o_Link \
-sim:/tb_pipelineregs/ID_i_ShiftSrc \
-sim:/tb_pipelineregs/ID_o_ShiftSrc \
-sim:/tb_pipelineregs/ID_i_numorzero \
-sim:/tb_pipelineregs/ID_o_numorzero \
-sim:/tb_pipelineregs/ID_i_shiftLog \
-sim:/tb_pipelineregs/ID_o_shiftLog \
-sim:/tb_pipelineregs/ID_i_shiftDir \
-sim:/tb_pipelineregs/ID_o_shiftDir \
-sim:/tb_pipelineregs/ID_i_LSSize \
-sim:/tb_pipelineregs/ID_o_LSSize \
-sim:/tb_pipelineregs/ID_i_Rt_addr1 \
-sim:/tb_pipelineregs/ID_o_Rt_addr1 \
-sim:/tb_pipelineregs/ID_i_Rs_addr \
-sim:/tb_pipelineregs/ID_o_Rs_addr \
-sim:/tb_pipelineregs/ID_i_PCplus4 \
-sim:/tb_pipelineregs/ID_o_PCplus4 \
-sim:/tb_pipelineregs/ID_i_RegRead1 \
-sim:/tb_pipelineregs/ID_o_RegRead1 \
-sim:/tb_pipelineregs/ID_i_RegRead2 \
-sim:/tb_pipelineregs/ID_o_RegRead2 \
-sim:/tb_pipelineregs/ID_i_Rt_addr2 \
-sim:/tb_pipelineregs/ID_o_Rt_addr2 \
-sim:/tb_pipelineregs/ID_i_Rd_addr \
-sim:/tb_pipelineregs/ID_o_Rd_addr \
-sim:/tb_pipelineregs/EX_RST \
-sim:/tb_pipelineregs/EX_i_MemWr \
-sim:/tb_pipelineregs/EX_o_MemWr \
-sim:/tb_pipelineregs/EX_i_LSSigned \
-sim:/tb_pipelineregs/EX_o_LSSigned \
-sim:/tb_pipelineregs/EX_i_LSSize \
-sim:/tb_pipelineregs/EX_o_LSSize \
-sim:/tb_pipelineregs/EX_i_Data2Reg \
-sim:/tb_pipelineregs/EX_o_Data2Reg \
-sim:/tb_pipelineregs/EX_i_RegWrite \
-sim:/tb_pipelineregs/EX_o_RegWrite \
-sim:/tb_pipelineregs/EX_i_RdRt_addr \
-sim:/tb_pipelineregs/EX_o_RdRt_addr \
-sim:/tb_pipelineregs/EX_i_Rt \
-sim:/tb_pipelineregs/EX_o_Rt \
-sim:/tb_pipelineregs/EX_i_Data \
-sim:/tb_pipelineregs/EX_o_Data \
-sim:/tb_pipelineregs/MEM_RST \
-sim:/tb_pipelineregs/MEM_i_Data2Reg \
-sim:/tb_pipelineregs/MEM_o_Data2Reg \
-sim:/tb_pipelineregs/MEM_i_RegWrite \
-sim:/tb_pipelineregs/MEM_o_RegWrite \
-sim:/tb_pipelineregs/MEM_i_MemOut \
-sim:/tb_pipelineregs/MEM_o_MemOut \
-sim:/tb_pipelineregs/MEM_i_RdRt \
-sim:/tb_pipelineregs/MEM_o_RdRt \
-sim:/tb_pipelineregs/MEM_i_ALUOut \
-sim:/tb_pipelineregs/MEM_o_ALUOut \
-sim:/tb_pipelineregs/cCLK_PER
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 6700
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
 run
 run
 run
 run
 run
 run
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# ** Warning: (vcom-6) -- Waiting for lock by "valvarez@co2048-13.ece.iastate.edu, pid = 13114". Lockfile is "/home/valvarez/cpre381/ProjectC/cpre/cpre-new/work/_lock".
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(412): (vcom-1167) Index value -27 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(446): (vcom-1167) Index value -27 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(412): (vcom-1272) Length of expected is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(446): (vcom-1272) Length of expected is 5; length of actual is 32.
-# ** Error: /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd(453): VHDL Compiler exiting
-vcom -reportprogress 300 -work work /home/valvarez/cpre381/ProjectC/cpre/cpre-new/tb_pipelineregs.vhd
-# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pipelineregs
-# -- Compiling architecture behavior of tb_pipelineregs
-vsim -novopt work.tb_pipelineregs
-# vsim -novopt work.tb_pipelineregs 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
 # Loading std.standard
-# Refreshing /home/valvarez/cpre381/ProjectC/cpre/cpre-new/work.tb_pipelineregs(behavior)
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.tb_pipelineregs(behavior)
-# Loading work.if_register2(veeandbee)
+# Loading work.pipeline(bv)
 # Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
 # Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
 # Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
 # Loading work.mem_register(bv)
-add wave -position insertpoint  \
-sim:/tb_pipelineregs/gCLK_HPER \
-sim:/tb_pipelineregs/s_CLK \
-sim:/tb_pipelineregs/IF_RST \
-sim:/tb_pipelineregs/IF_WE \
-sim:/tb_pipelineregs/IF_i_instr \
-sim:/tb_pipelineregs/IF_o_instr \
-sim:/tb_pipelineregs/IF_i_PCplus4 \
-sim:/tb_pipelineregs/IF_o_PCplus4 \
-sim:/tb_pipelineregs/ID_RST \
-sim:/tb_pipelineregs/ID_WE \
-sim:/tb_pipelineregs/ID_i_Branch \
-sim:/tb_pipelineregs/ID_o_Branch \
-sim:/tb_pipelineregs/ID_i_RegDst \
-sim:/tb_pipelineregs/ID_o_RegDst \
-sim:/tb_pipelineregs/ID_i_Jump \
-sim:/tb_pipelineregs/ID_o_Jump \
-sim:/tb_pipelineregs/ID_i_JR \
-sim:/tb_pipelineregs/ID_o_JR \
-sim:/tb_pipelineregs/ID_i_EqNe \
-sim:/tb_pipelineregs/ID_o_EqNe \
-sim:/tb_pipelineregs/ID_i_LtGt \
-sim:/tb_pipelineregs/ID_o_LtGt \
-sim:/tb_pipelineregs/ID_i_LSSigned \
-sim:/tb_pipelineregs/ID_o_LSSigned \
-sim:/tb_pipelineregs/ID_i_ALUOp \
-sim:/tb_pipelineregs/ID_o_ALUOp \
-sim:/tb_pipelineregs/ID_i_Data2Reg \
-sim:/tb_pipelineregs/ID_o_Data2Reg \
-sim:/tb_pipelineregs/ID_i_MemWrite \
-sim:/tb_pipelineregs/ID_o_MemWrite \
-sim:/tb_pipelineregs/ID_i_ALUSrc \
-sim:/tb_pipelineregs/ID_o_ALUSrc \
-sim:/tb_pipelineregs/ID_i_RegWrite \
-sim:/tb_pipelineregs/ID_o_RegWrite \
-sim:/tb_pipelineregs/ID_i_Link \
-sim:/tb_pipelineregs/ID_o_Link \
-sim:/tb_pipelineregs/ID_i_ShiftSrc \
-sim:/tb_pipelineregs/ID_o_ShiftSrc \
-sim:/tb_pipelineregs/ID_i_numorzero \
-sim:/tb_pipelineregs/ID_o_numorzero \
-sim:/tb_pipelineregs/ID_i_shiftLog \
-sim:/tb_pipelineregs/ID_o_shiftLog \
-sim:/tb_pipelineregs/ID_i_shiftDir \
-sim:/tb_pipelineregs/ID_o_shiftDir \
-sim:/tb_pipelineregs/ID_i_LSSize \
-sim:/tb_pipelineregs/ID_o_LSSize \
-sim:/tb_pipelineregs/ID_i_Rt_addr1 \
-sim:/tb_pipelineregs/ID_o_Rt_addr1 \
-sim:/tb_pipelineregs/ID_i_Rs_addr \
-sim:/tb_pipelineregs/ID_o_Rs_addr \
-sim:/tb_pipelineregs/ID_o_PCplus4 \
-sim:/tb_pipelineregs/ID_i_RegRead1 \
-sim:/tb_pipelineregs/ID_o_RegRead1 \
-sim:/tb_pipelineregs/ID_i_RegRead2 \
-sim:/tb_pipelineregs/ID_o_RegRead2 \
-sim:/tb_pipelineregs/ID_i_Rt_addr2 \
-sim:/tb_pipelineregs/ID_o_Rt_addr2 \
-sim:/tb_pipelineregs/ID_i_Rd_addr \
-sim:/tb_pipelineregs/ID_o_Rd_addr \
-sim:/tb_pipelineregs/EX_RST \
-sim:/tb_pipelineregs/EX_o_MemWr \
-sim:/tb_pipelineregs/EX_o_LSSigned \
-sim:/tb_pipelineregs/EX_o_LSSize \
-sim:/tb_pipelineregs/EX_o_Data2Reg \
-sim:/tb_pipelineregs/EX_o_RegWrite \
-sim:/tb_pipelineregs/EX_i_RdRt_addr \
-sim:/tb_pipelineregs/EX_o_RdRt_addr \
-sim:/tb_pipelineregs/EX_i_Rt \
-sim:/tb_pipelineregs/EX_o_Rt \
-sim:/tb_pipelineregs/EX_i_Data \
-sim:/tb_pipelineregs/EX_o_Data \
-sim:/tb_pipelineregs/MEM_RST \
-sim:/tb_pipelineregs/MEM_o_Data2Reg \
-sim:/tb_pipelineregs/MEM_o_RegWrite \
-sim:/tb_pipelineregs/MEM_i_MemOut \
-sim:/tb_pipelineregs/MEM_o_MemOut \
-sim:/tb_pipelineregs/MEM_i_RdRt \
-sim:/tb_pipelineregs/MEM_o_RdRt \
-sim:/tb_pipelineregs/MEM_i_ALUOut \
-sim:/tb_pipelineregs/MEM_o_ALUOut \
-sim:/tb_pipelineregs/cCLK_PER
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 6700
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 8000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 39000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 39000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 39000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 39000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 39000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -novopt work.pipeline
+# vsim -gui -novopt work.pipeline 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.pipeline(bv)
+# Loading work.nbit_reg(mixed)
+# Loading synopsys.attributes
+# Loading ieee.std_logic_misc(body)
+# Loading work.alu(bradenvenecia)
+# Loading work.alu1(bradenvenecia)
+# Loading work.adder(structure)
+# Loading work.xor2(dataflow)
+# Loading work.and2(dataflow)
+# Loading work.or2(dataflow)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.imem(behavioral)
+# Loading work.mux21(braden)
+# Loading work.if_register2(veeandbee)
+# Loading work.control(bradenv)
+# Loading work.extender16(dataflow)
+# Loading work.mips(braden)
+# Loading work.decoder532(braden)
+# Loading work.mux321(braden)
+# Loading work.branchlogic(bv)
+# Loading work.mux(structure)
+# Loading work.inv(dataflow)
+# Loading work.shifter(structure)
+# Loading work.id_register(veeandbee)
+# Loading work.mux41(braden)
+# Loading ieee.numeric_std(body)
+# Loading work.mult(bradenvenecia)
+# Loading work.ander(bradenvenecia)
+# Loading work.bvadder(bradenvenecia)
+# Loading work.fa_st(structure)
+# Loading work.ex_register(bv)
+# Loading work.dmem(bv)
+# Loading work.mem(behavioral)
+# Loading work.mux_lb(braden)
+# Loading work.extender8(dataflow)
+# Loading work.mem_register(bv)
+# Loading work.forwardingunit(beevee)
+# Loading work.hazarddetection(beevee)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline/idex_reg/o_ALUSrc(0) has no driver.
+# This port will contribute value (U) to the signal network.
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 0  Instance: /pipeline/instr
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/memfile/damemory
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ns  Iteration: 1  Instance: /pipeline/instr
+force -freeze sim:/pipeline/RESET 0 0
+run 36000
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ns  Iteration: 3  Instance: /pipeline/memfile/damemory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 run
 run
 run

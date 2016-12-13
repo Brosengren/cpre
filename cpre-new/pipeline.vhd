@@ -40,7 +40,7 @@ architecture BV of pipeline is
 		--	i_PCplus4 	: in std_logic_vector(31 downto 0);
 			i_Data2Reg	: in std_logic_vector(1 downto 0);
 			i_MemWrite	: in std_logic;
-		--	i_ALUSrc	: in std_logic_vector(1 downto 0);
+			i_ALUSrc	: in std_logic_vector(1 downto 0);
 			i_RegWrite	: in std_logic;
 		--	i_Link		: in std_logic;
 			i_ShiftSrc	: in std_logic_vector(1 downto 0);
@@ -71,7 +71,7 @@ architecture BV of pipeline is
 		--	o_PCplus4 	: out std_logic_vector(31 downto 0);
 			o_Data2Reg	: out std_logic_vector(1 downto 0);
 			o_MemWrite	: out std_logic;
-		--	o_ALUSrc	: out std_logic_vector(1 downto 0);
+			o_ALUSrc	: out std_logic_vector(1 downto 0);
 			o_RegWrite	: out std_logic;
 		--	o_Link		: out std_logic;
 			o_ShiftSrc	: out std_logic_vector(1 downto 0);
@@ -259,7 +259,7 @@ architecture BV of pipeline is
 
 	component imem is
 		generic(depth_exp_of_2 	: integer := 10;
-				mif_filename 	: string := "allinstImem.mif");
+				mif_filename 	: string := "bubbleImem.mif");
 		port(	address			: IN STD_LOGIC_VECTOR (depth_exp_of_2-1 DOWNTO 0) := (OTHERS => '0');
 				clock			: IN STD_LOGIC := '1';
 				q				: OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
@@ -267,7 +267,7 @@ architecture BV of pipeline is
 
 	component dmem is
 		generic(depth		: integer := 10;
-				mif_file	: string := "Dmem.mif");
+				mif_file	: string := "bubbleDmem.mif");
 		port(	addr		: in std_logic_vector(31 downto 0);
 				data		: in std_logic_vector(31 downto 0);
 				we			: in std_logic;
@@ -315,11 +315,11 @@ architecture BV of pipeline is
 	signal s26, s27, s28, s29, s30, s32, s33	: std_logic_vector(31 downto 0);
 	signal s37, s38, s39, s40, s41		: std_logic_vector(31 downto 0);
 	signal s42, s43, s44, s45, s46, s47, s48, s49	: std_logic_vector(31 downto 0);
-	signal s50, s51, s52 : std_logic_vector(31 downto 0);
---	signal , s53, s54, s55, s56, s57	
+	signal s50, s51, s52, s53, s54 : std_logic_vector(31 downto 0);
+--	signal , s56, s57	
 --	signal s58, s59, s60, s61, s62, s63, s64, s65	: std_logic;
 
-	signal s13, s14, s15, s16, s19, s25, s31 : std_logic_vector(4 downto 0);
+	signal s13, s14, s15, s16, s19, s25, s31, s55	: std_logic_vector(4 downto 0);
 	signal s35, s36 : std_logic_vector(1 downto 0);
 --	signal s34 : std_logic;
 
@@ -341,7 +341,7 @@ architecture BV of pipeline is
 	signal ex_shiftSrc : std_logic_vector(1 downto 0);
 	signal ex_data2reg : std_logic_vector(1 downto 0);
 	signal mem_data2reg : std_logic_vector(1 downto 0);
-	signal wb_data2reg : std_logic_vector(1 downto 0);
+	signal wb_data2reg, ex_alusrc : std_logic_vector(1 downto 0);
 	signal ex_memwrite, mem_memwrite, ex_lssigned, mem_lssigned, ex_regdst : std_logic;
 	signal ex_lssize, mem_lssize : std_logic_vector(1 downto 0);
 	signal ex_aluop : std_logic_vector(4 downto 0);
@@ -517,7 +517,7 @@ architecture BV of pipeline is
 				--		i_PCplus4	=> s5,
 						i_Data2Reg	=> data2reg,
 						i_MemWrite	=> memWrite,
-				--		i_ALUSrc	=>
+						i_ALUSrc	=> ALUSrc,
 						i_RegWrite	=> regWrite,
 				--		i_Link		=>
 						i_ShiftSrc	=> shiftSrc,
@@ -548,7 +548,7 @@ architecture BV of pipeline is
 				--		o_PCplus4	=>
 						o_Data2Reg	=> ex_data2reg,
 						o_MemWrite	=> ex_memwrite,
-				--		o_ALUSrc	=>
+						o_ALUSrc	=> ex_alusrc,
 						o_RegWrite	=> ex_regwrite,
 				--		o_Link		=>
 						o_ShiftSrc	=> ex_shiftSrc,
@@ -556,14 +556,14 @@ architecture BV of pipeline is
 						o_shiftLog	=> ex_shiftlog,
 						o_shiftDir	=> ex_shiftdir,
 						o_LSSize	=> ex_lssize,
-
+						
+						o_Rd_addr	=> s16,
+						o_Rt_addr2	=> s15,
 						o_Rt_addr1	=> s14,
 						o_Rs_addr	=> s13,
 						o_SEimm		=> s38,
 						o_RegRead1	=> s11,
 						o_RegRead2	=> s12,
-						o_Rd_addr	=> s16,
-						o_Rt_addr2	=> s15,
 						o_instr		=> s37,
 						o_Rt_data	=> s52);
 
@@ -691,13 +691,23 @@ architecture BV of pipeline is
 						D0	=> s28,
 						i_S => wb_data2Reg,
 						o_F => s29);
+		
+		s53 <= "000000000000000000000000000" & s14;
+
+		mux14 : mux21
+			port MAP(	D1	=> x"FFFFFFFF",
+						D0	=> s53,
+						i_S	=> ex_alusrc(0),
+						o_F	=> s54);
+
+		s55 <= s54(4 downto 0);
 
 		fu : forwardingunit
 			port MAP(	ID_Rs			=> s13,
-						ID_Rt			=> s14,
+						ID_Rt			=> s55,
 						MEM_RegWrite	=> mem_regwrite,
 						EX_Rd			=> s25,
-						WB_RegWrite	=> wb_regwrite,
+						WB_RegWrite		=> wb_regwrite,
 						MEM_Rd			=> s31,
 						ForwardA		=> s36,
 						ForwardB		=> s35);
@@ -708,8 +718,8 @@ architecture BV of pipeline is
 						IF_Rt				=> s4(20 downto 16),
 						ID_MemRead			=> memread,
 						ID_Rt				=> s15,
-						Branch				=> branch,
-						Jump				=> jump,
+						Branch				=> datLogicDoh,
+						Jump				=> datLogicDoh,
 						LoadUse_Hazard		=> luhazard_flag,
 						BranchJump_Hazard	=> brjhazard_flag);
 

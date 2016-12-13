@@ -16,7 +16,7 @@ entity ID_Register is
 		i_ALUOp   : in std_logic_vector(4 downto 0);
 		i_Data2Reg: in std_logic_vector(1 downto 0);
 		i_MemWrite: in std_logic;
-	--	i_ALUSrc  : in std_logic_vector(1 downto 0);
+		i_ALUSrc  : in std_logic_vector(1 downto 0);
 		i_RegWrite: in std_logic;
 	--	i_Link    : in std_logic;
 		i_ShiftSrc: in std_logic_vector(1 downto 0);
@@ -47,7 +47,7 @@ entity ID_Register is
 		o_ALUOp   : out std_logic_vector(4 downto 0);
 		o_Data2Reg: out std_logic_vector(1 downto 0);
 		o_MemWrite: out std_logic;
-	--	o_ALUSrc  : out std_logic_vector(1 downto 0);
+		o_ALUSrc  : out std_logic_vector(1 downto 0);
 		o_RegWrite: out std_logic;
 	--	o_Link    : out std_logic;
 		o_ShiftSrc: out std_logic_vector(1 downto 0);

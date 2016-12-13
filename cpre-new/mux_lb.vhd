@@ -13,10 +13,10 @@ architecture BRADEN of mux_lb is
   signal f0, f1, f2, f3 : std_logic_vector(7 downto 0);  
 
 begin
-  f0 <= i_A(31 downto 24);
-  f1 <= i_A(23 downto 16);
-  f2 <= i_A(15 downto 8);
-  f3 <= i_A(7 downto 0);
+  f3 <= i_A(31 downto 24);
+  f2 <= i_A(23 downto 16);
+  f1 <= i_A(15 downto 8);
+  f0 <= i_A(7 downto 0);
     
     with i_S select
       o_F <=  f0 when "00",
