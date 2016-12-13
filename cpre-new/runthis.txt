@@ -1,0 +1,134 @@
+force -deposit sim:/pipeline/s0 32'h00000000 0
+force -deposit sim:/pipeline/s1 32'h00000000 0
+force -deposit sim:/pipeline/s2 32'h00000000 0
+force -deposit sim:/pipeline/s3 32'h00000000 0
+force -deposit sim:/pipeline/s4 32'h00000000 0
+force -deposit sim:/pipeline/s5 32'h00000000 0
+force -deposit sim:/pipeline/s6 32'h00000000 0
+force -deposit sim:/pipeline/s7 32'h00000000 0
+force -deposit sim:/pipeline/s8 32'h00000000 0
+force -deposit sim:/pipeline/s9 32'h00000000 0
+force -deposit sim:/pipeline/s10 32'h00000000 0
+force -deposit sim:/pipeline/s11 32'h00000000 0
+force -deposit sim:/pipeline/s12 32'h0000000 0
+force -deposit sim:/pipeline/s17 32'h00000000 0
+force -deposit sim:/pipeline/s18 32'h00000000 0
+force -deposit sim:/pipeline/s20 32'h00000000 0
+force -deposit sim:/pipeline/s21 32'h00000000 0
+force -deposit sim:/pipeline/s22 32'h00000000 0
+force -deposit sim:/pipeline/s23 32'h00000000 0
+force -deposit sim:/pipeline/s24 32'h00000000 0
+force -deposit sim:/pipeline/s26 32'h00000000 0
+force -deposit sim:/pipeline/s27 32'h00000000 0
+force -deposit sim:/pipeline/s28 32'h00000000 0
+force -deposit sim:/pipeline/s29 32'h00000000 0
+force -deposit sim:/pipeline/s30 32'h00000000 0
+force -deposit sim:/pipeline/s32 32'h00000000 0
+force -deposit sim:/pipeline/s33 32'h00000000 0
+force -deposit sim:/pipeline/s37 32'h00000000 0
+force -deposit sim:/pipeline/s38 32'h00000000 0
+force -deposit sim:/pipeline/s39 32'h0000000 0
+force -deposit sim:/pipeline/s40 32'h00000000 0
+force -deposit sim:/pipeline/s41 32'h00000000 0
+force -deposit sim:/pipeline/s42 32'h00000000 0
+force -deposit sim:/pipeline/s43 32'h00000000 0
+force -deposit sim:/pipeline/s44 32'h00000000 0
+force -deposit sim:/pipeline/s45 32'h00000000 0
+force -deposit sim:/pipeline/s46 32'h00000000 0
+force -deposit sim:/pipeline/s47 32'h00000000 0
+force -deposit sim:/pipeline/s48 32'h00000000 0
+force -deposit sim:/pipeline/s49 32'h00000000 0
+force -deposit sim:/pipeline/s50 32'h00000000 0
+force -deposit sim:/pipeline/s51 32'h00000000 0
+force -deposit sim:/pipeline/s52 32'h00000000 0
+force -deposit sim:/pipeline/s53 32'h00000000 0
+force -deposit sim:/pipeline/s54 32'h00000000 0
+force -deposit sim:/pipeline/s55 32'h00000000 0
+force -deposit sim:/pipeline/s56 32'h00000000 0
+force -deposit sim:/pipeline/s57 32'h00000000 0
+force -deposit sim:/pipeline/s58 0 0
+force -deposit sim:/pipeline/s59 0 0
+force -deposit sim:/pipeline/s60 0 0
+force -deposit sim:/pipeline/s61 0 0
+force -deposit sim:/pipeline/s62 0 0
+force -deposit sim:/pipeline/s63 0 0
+force -deposit sim:/pipeline/s64 0 0
+force -deposit sim:/pipeline/s65 0 0
+force -deposit sim:/pipeline/s13 5'h00 0
+force -deposit sim:/pipeline/s14 5'h00 0
+force -deposit sim:/pipeline/s15 5'h00 0
+force -deposit sim:/pipeline/s16 5'h00 0
+force -deposit sim:/pipeline/s19 5'h00 0
+force -deposit sim:/pipeline/s25 5'h00 0
+force -deposit sim:/pipeline/s31 5'h00 0
+force -deposit sim:/pipeline/s35 2'h0 0
+force -deposit sim:/pipeline/s36 2'h0 0
+force -deposit sim:/pipeline/s34 0 0
+force -deposit sim:/pipeline/luhazard_flag 0 0
+force -deposit sim:/pipeline/brjhazard_flag 0 0
+force -deposit sim:/pipeline/LU_WE 0 0
+force -deposit sim:/pipeline/sup 5'h00 0
+force -deposit sim:/pipeline/regDst 0 0
+force -deposit sim:/pipeline/jump 0 0
+force -deposit sim:/pipeline/jr 0 0
+force -deposit sim:/pipeline/branch 0 0
+force -deposit sim:/pipeline/memWrite 0 0
+force -deposit sim:/pipeline/regWrite 0 0
+force -deposit sim:/pipeline/numOrZero 0 0
+force -deposit sim:/pipeline/datLogicDoh 0 0
+force -deposit sim:/pipeline/shiftlog 0 0
+force -deposit sim:/pipeline/shiftdir 0 0
+force -deposit sim:/pipeline/zero 0 0
+force -deposit sim:/pipeline/lssigned 0 0
+force -deposit sim:/pipeline/eqne 0 0
+force -deposit sim:/pipeline/gtlt 0 0
+force -deposit sim:/pipeline/link 0 0
+force -deposit sim:/pipeline/memread 0 0
+force -deposit sim:/pipeline/data2reg 2'h0 0
+force -deposit sim:/pipeline/ALUSrc 2'h0 0
+force -deposit sim:/pipeline/shiftSrc 2'h0 0
+force -deposit sim:/pipeline/lssize 2'h0 0
+force -deposit sim:/pipeline/ALUOp 5'h00 0
+force -deposit sim:/pipeline/garbage1 0 0
+force -deposit sim:/pipeline/garbage32 32'h00000000 0
+force -deposit sim:/pipeline/in2ls1 32'h00000000 0
+force -deposit sim:/pipeline/intomux1 32'h00000000 0
+force -deposit sim:/pipeline/intomux2 32'h00000000 0
+force -deposit sim:/pipeline/intomux3 32'h00000000 0
+force -deposit sim:/pipeline/intomux4 32'h00000000 0
+force -deposit sim:/pipeline/ex_regwrite 0 0
+force -deposit sim:/pipeline/mem_regwrite 0 0
+force -deposit sim:/pipeline/wb_regwrite 0 0
+force -deposit sim:/pipeline/ex_shiftlog 0 0
+force -deposit sim:/pipeline/ex_shiftdir 0 0
+force -deposit sim:/pipeline/ex_shiftSrc 2'h0 0
+force -deposit sim:/pipeline/ex_data2reg 2'h0 0
+force -deposit sim:/pipeline/mem_data2reg 2'h0 0
+force -deposit sim:/pipeline/wb_data2reg 2'h0 0
+force -deposit sim:/pipeline/ex_memwrite 0 0
+force -deposit sim:/pipeline/mem_memwrite 0 0
+force -deposit sim:/pipeline/ex_lssigned 0 0
+force -deposit sim:/pipeline/mem_lssigned 0 0
+force -deposit sim:/pipeline/ex_regdst 0 0
+force -deposit sim:/pipeline/ex_lssize 2'h0 0
+
+force -deposit sim:/pipeline/mem_lssize 2'h0 0
+force -deposit sim:/pipeline/ex_aluop 5'h00 0
+force -freeze sim:/pipeline/RESET 1 0
+run 1
+force -freeze sim:/pipeline/RESET 0 0
+run 99
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+
+
+
+lol this is actually what we need
+
+quit -sim
+vsim -gui -novopt work.pipeline
+add wave sim:/pipeline/*
+force -freeze sim:/pipeline/CLK 1 0, 0 {50 ns} -r 100
+force -freeze sim:/pipeline/RESET 1 0
+run 100
+force -freeze sim:/pipeline/RESET 0 0
+run 400

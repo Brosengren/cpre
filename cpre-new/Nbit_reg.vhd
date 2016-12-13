@@ -33,7 +33,7 @@ begin
     -- glitchy behavior on startup.
     process (i_CLK, i_RST, i_D)
     begin
-      if (i_RST = '1') then
+      if (i_RST = '1' and rising_edge(i_CLK)) then
         s_Q(i) <= '0'; -- Use "(others => '0')" for N-bit values
       elsif (rising_edge(i_CLK)) then
         s_Q(i) <= s_D(i);
